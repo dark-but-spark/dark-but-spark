@@ -1,0 +1,9 @@
+{
+    "python.REPL.enableREPLSmartSend": false,
+    "java.debug.settings.onBuildFailureProceed": true,
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "cmath": "cpp",
+        "complex": "cpp"
+    }
+}
