@@ -5,5 +5,6 @@
     "files.associations": {
         "cmath": "cpp",
         "complex": "cpp"
-    }
+    },
+    "markdown.validate.enabled": true
 }
