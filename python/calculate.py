@@ -1,4 +1,6 @@
 import math 
+import flask
+import latex2sympy2
 e=1e-5
 x=e
 sum=0
