@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ScanString",
+            "request": "launch",
+            "mainClass": "ScanString",
+            "projectName": "dark-but-spark_13c2f3b4"
+        },
+        {
+            "type": "java",
+            "name": "ScanFormString",
+            "request": "launch",
+            "mainClass": "ScanFormString",
+            "projectName": "dark-but-spark_13c2f3b4"
+        },
+        {
+            "type": "java",
             "name": "mul99",
             "request": "launch",
             "mainClass": "mul99",
