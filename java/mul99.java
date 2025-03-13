@@ -24,6 +24,7 @@ class mul99{
             }else{
                 System.out.println("Your number is not in [1,9]");
             }      
-        } while (true);
+        } while (true); in.close();
     }
+   
 }

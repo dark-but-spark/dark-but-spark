@@ -3,6 +3,7 @@ using namespace std;
 int main()
 {  
     map<char,int> m;
+    printf("%d\n",(1>2)+(2==2));
     m['s']=1;
     printf("%d",m['s']);
     char* c="aef";
