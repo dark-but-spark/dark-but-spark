@@ -19,5 +19,11 @@ public class Array {
         System.out.println(Arrays.deepToString(arr4));
         System.out.println(Arrays.deepToString(arr5));
         System.out.println(Arrays.deepToString(arr6));
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                System.out.printf("%3d",arr4[i][j]);
+            }
+            System.out.println();
+        }
     }
 }

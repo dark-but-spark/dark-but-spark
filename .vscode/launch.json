@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Matrixtest",
+            "request": "launch",
+            "mainClass": "Matrixtest",
+            "projectName": "dark-but-spark_13c2f3b4"
+        },
+        {
+            "type": "java",
+            "name": "Array",
+            "request": "launch",
+            "mainClass": "Array",
+            "projectName": "dark-but-spark_13c2f3b4"
+        },
+        {
+            "type": "java",
             "name": "ScanString",
             "request": "launch",
             "mainClass": "ScanString",
