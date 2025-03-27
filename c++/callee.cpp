@@ -2,11 +2,10 @@
 using namespace std;
 int main()
 {
-    char x[110];
-    while(1)
+    char x;12
+    while(cin.get(x))
     {
-    scanf("%s",&x);
-    printf("%s\n",x);
+    printf("%c %d\n",x,x);
     }
     return 0;
     
