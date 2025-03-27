@@ -14,5 +14,9 @@ int main()
     if(c+2 =="f")
         puts("nb !!!!");
     printf("hello");
+    char x=3;
+    printf("%c\n",x);
+
+    printf("hello");
     return 0;
 }
