@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArraylistText",
+            "request": "launch",
+            "mainClass": "ArraylistText",
+            "projectName": "dark-but-spark_13c2f3b4"
+        },
+        {
+            "type": "java",
             "name": "Matrixtest",
             "request": "launch",
             "mainClass": "Matrixtest",
