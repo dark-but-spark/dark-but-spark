@@ -14,7 +14,7 @@ bool check()
         mn[i]=min(mn[i+1],sum[i]);
     }
     int s=0;
-    for(int i=1;i<=n;i++)
+    for(int i=1;i+2<=n;i++)
     {
         s+=a[i];
         if(s<0) continue;
@@ -29,23 +29,25 @@ int mian()
     {
         int x;
         scanf("%d",&x);
-        a[i]=x<=k?1:-1;
-        sum[i]=sum[i-1]+a[i];
+        a[i]= x<=k ?1:-1;
     }
-    int x=n+1,y=-1;
+    int x=n+1,y=0,s=0;
     for(int i=1;i<=n;i++)
     {
-        if(sum[i]>=0)
+        s+=a[i];
+        if(s>=0)
         {
-          x=i;  
-        break;
-        } 
+            x=i;
+            break;
+        }
     }
-    for(int j=n;j>=1;j--)
+    s=0;
+    for(int i=n;i>=1;i--)
     {
-
-        if(sum[n]-sum[j-1]>=0){
-            y=j;
+        s+=a[i];
+        if(s<=0)
+        {
+            y=i;
             break;
         }
     }
@@ -59,20 +61,19 @@ int mian()
         puts("YES");
         return 0;
     }
-    for(int i=1;i<=n;i++)
+    for(int i=1;i<=n-i+1;i++)
     {
         int t=a[i];
         a[i]=a[n-i+1];
         a[n-i+1]=t;
     }
-        if(check())
+    if(check())
     {
         puts("YES");
         return 0;
     }
     puts("NO");
     return 0;
-    
 }
 int main()
 {
