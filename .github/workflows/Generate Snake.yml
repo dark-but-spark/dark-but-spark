@@ -27,7 +27,7 @@ jobs:
             ./assets/github-contribution-grid-snake-dark.gif?palette=github-dark
 
       - name: Push to GitHub
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses:  crazy-max/ghaction-github-pages@v3.1.0
         with:
           commit_message: 'Generate Contribution Snake'
           branch: main
