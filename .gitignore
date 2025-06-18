@@ -2,3 +2,5 @@
 .vscode/
 exe/
 out/
+_site/
+.jekyll-cache/

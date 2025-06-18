@@ -1,3 +1,9 @@
+
+---
+layout: default
+title: 首页
+---
+
 ## Hi there 👋
 
 - 🔭 I’m currently working on nothing
