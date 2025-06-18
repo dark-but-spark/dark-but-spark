@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: 首页
@@ -7,8 +6,8 @@ title: 首页
 ## Hi there 👋
 
 - 🔭 I’m currently working on nothing
-- 🌱 I’m currently learning Java,ComputerOrganzation,OS 
-- 👯 I’m looking to collaborate on my java project 2048（not javaA class projrect）
+- 🌱 I’m currently learning Java,ComputerOrganization,OS
+- 👯 I’m looking to collaborate on my java project 2048（not javaA class project）
 
 本人是一名大一的通识专业学生，平时喜欢折腾一些小项目，最近在学习Java和计算机组成原理。希望能在这里结识更多志同道合的朋友，一起交流学习。
 - 目前正在学习Java和计算机组成原理
@@ -22,7 +21,7 @@ title: 首页
 这个项目是我在学习过程中，自己写的一些散装代码。希望能对你有所帮助，也希望能得到你的反馈和建议。
 
 
-<div style="margin-bottom:1px aligment:CENTER"><img src="../resources/bkg.jpg"></div>
+<div style="margin-bottom:1px aligment:CENTER"><img src="./imgs/bkg.jpg"></div>
 <div style="margin-bottom: 20px;">
 <center style="font-size:12px;color:#C0C0C0;padding=2px">刻晴老婆 好看捏</center>
 </div>

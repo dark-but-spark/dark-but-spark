@@ -1,8 +1,8 @@
 ## Hi there 👋
 
 - 🔭 I’m currently working on nothing
-- 🌱 I’m currently learning Java,ComputerOrganzation,OS 
-- 👯 I’m looking to collaborate on my java project 2048（not javaA class projrect）
+- 🌱 I’m currently learning Java,ComputerOrganization,OS
+- 👯 I’m looking to collaborate on my java project 2048（not javaA class project）
 
 本人是一名大一的通识专业学生，平时喜欢折腾一些小项目，最近在学习Java和计算机组成原理。希望能在这里结识更多志同道合的朋友，一起交流学习。
 - 目前正在学习Java和计算机组成原理
