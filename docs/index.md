@@ -22,7 +22,7 @@ title: 首页
 这个项目是我在学习过程中，自己写的一些散装代码。希望能对你有所帮助，也希望能得到你的反馈和建议。
 
 
-<div style="margin-bottom:1px aligment:CENTER"><img src="./resources/bkg.jpg"></div>
+<div style="margin-bottom:1px aligment:CENTER"><img src="../resources/bkg.jpg"></div>
 <div style="margin-bottom: 20px;">
 <center style="font-size:12px;color:#C0C0C0;padding=2px">刻晴老婆 好看捏</center>
 </div>
