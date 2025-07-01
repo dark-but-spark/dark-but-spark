@@ -107,10 +107,9 @@ public:
         // return result;
     }
     inline void print() const {
-        printf("Matrix:\n");
         for (int i = 0; i < 2; ++i) {
             for (int j = 0; j < 2; ++j) {
-                printf("%8.2f%+8.2fi ", data[i][j].real(), data[i][j].imag());
+                printf("data[%d][%d] = std::complex<double>(%f, %f); ", i, j, data[i][j].real(), data[i][j].imag());
             }
             printf("\n");
         }
@@ -122,61 +121,71 @@ private:
 };
 int main(int argc, char const *argv[])
 {
-    printf("X*X");
+    printf("if(a=='X'){\n");
+    printf("    if(b=='X'){\n");
     (Matrix('X')*Matrix('X')).print();
-    printf("X*Y");
+    printf("    }else if(b=='Y'){\n");
     (Matrix('X')*Matrix('Y')).print();
-    printf("X*Z");
+    printf("    }else if(b=='Z'){\n");
     (Matrix('X')*Matrix('Z')).print();
-    printf("X*S");
+    printf("    }else if(b=='S'){\n");
     (Matrix('X')*Matrix('S')).print();
-    printf("X*H");
+    printf("    }else if(b=='H'){\n");
     (Matrix('X')*Matrix('H')).print();
-    puts("-------------------");
-    printf("Y*X");
-    (Matrix('Y')*Matrix('X')).print(); 
-    printf("Y*Y");
+    printf("    }\n");
+    printf("}\n");
+
+    printf("else if(a=='Y'){\n");
+    printf("    if(b=='X'){\n");
+    (Matrix('Y')*Matrix('X')).print();
+    printf("    }else if(b=='Y'){\n");
     (Matrix('Y')*Matrix('Y')).print();
-    printf("Y*Z");
+    printf("    }else if(b=='Z'){\n");
     (Matrix('Y')*Matrix('Z')).print();
-    printf("Y*S");
+    printf("    }else if(b=='S'){\n");
     (Matrix('Y')*Matrix('S')).print();
-    printf("Y*H");
+    printf("    }else if(b=='H'){\n");
     (Matrix('Y')*Matrix('H')).print();
-    puts("-------------------");
-    printf("Z*X");
+    printf("    }\n");
+    printf("}\n");
+    printf("else if(a=='Z'){\n");
+    printf("    if(b=='X'){\n");
     (Matrix('Z')*Matrix('X')).print();
-    printf("Z*Y");
+    printf("    }else if(b=='Y'){\n");
     (Matrix('Z')*Matrix('Y')).print();
-    printf("Z*Z");
+    printf("    }else if(b=='Z'){\n");
     (Matrix('Z')*Matrix('Z')).print();
-    printf("Z*S");
+    printf("    }else if(b=='S'){\n");
     (Matrix('Z')*Matrix('S')).print();
-    printf("Z*H");
+    printf("    }else if(b=='H'){\n");
     (Matrix('Z')*Matrix('H')).print();
-    puts("-------------------");
-    printf("S*X");
+    printf("    }\n");
+    printf("}\n");
+    printf("else if(a=='S'){\n");
+    printf("    if(b=='X'){\n");
     (Matrix('S')*Matrix('X')).print();
-    printf("S*Y");
+    printf("    }else if(b=='Y'){\n");
     (Matrix('S')*Matrix('Y')).print();
-    printf("S*Z");
+    printf("    }else if(b=='Z'){\n");
     (Matrix('S')*Matrix('Z')).print();
-    printf("S*S");
+    printf("    }else if(b=='S'){\n");
     (Matrix('S')*Matrix('S')).print();
-    printf("S*H");
+    printf("    }else if(b=='H'){\n");
     (Matrix('S')*Matrix('H')).print();
-    puts("-------------------");
-    printf("H*X");
+    printf("    }\n");
+    printf("}\n");
+    printf("else if(a=='H'){\n");
+    printf("    if(b=='X'){\n");
     (Matrix('H')*Matrix('X')).print();
-    printf("H*Y");
+    printf("    }else if(b=='Y'){\n");
     (Matrix('H')*Matrix('Y')).print();
-    printf("H*Z");
+    printf("    }else if(b=='Z'){\n");
     (Matrix('H')*Matrix('Z')).print();
-    printf("H*S");
+    printf("    }else if(b=='S'){\n");
     (Matrix('H')*Matrix('S')).print();
-    printf("H*H");
+    printf("    }else if(b=='H'){\n");
     (Matrix('H')*Matrix('H')).print();
-    puts("-------------------");
-    
+    printf("    }\n");
+    printf("}\n");
     return 0;
 }
