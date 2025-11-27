@@ -63,3 +63,8 @@ $
 \{a_n\} \forall n \gets \to a_n\le a_{n+1}，\\
 \forall \epsilon >0 \exist n>N \Leftrightarrow
 $
+
+$q \land p$
+$q \lor p$
+$\neg p$
+$p \to q$
