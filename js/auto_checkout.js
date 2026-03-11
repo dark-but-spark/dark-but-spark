@@ -46,6 +46,124 @@
     }
   };
 
+  // 人为延迟：在动作前等待一个随机时间以模拟人工操作
+  const humanDelay = (min = 150, max = 700) => {
+    // 兼容调用：humanDelay('click') 或 humanDelay(100,300)
+    if (typeof min === 'string') {
+      const tone = min;
+      switch (tone) {
+        case 'fast': return new Promise(res => setTimeout(res, 50 + Math.floor(Math.random()*80)));
+        case 'type': return new Promise(res => setTimeout(res, 40 + Math.floor(Math.random()*140)));
+        case 'click': return new Promise(res => setTimeout(res, 80 + Math.floor(Math.random()*220)));
+        case 'think': return new Promise(res => setTimeout(res, 300 + Math.floor(Math.random()*700)));
+        default: return new Promise(res => setTimeout(res, 120 + Math.floor(Math.random()*500)));
+      }
+    }
+    const ms = Math.floor(Math.random() * (max - min + 1)) + min;
+    return new Promise(res => setTimeout(res, Math.max(0, Math.floor(ms * (window.__autoCheckoutConfig?.delayMultiplier || 1)))));
+  };
+
+  // 运行时配置（可由 UI 修改）
+  window.__autoCheckoutConfig = window.__autoCheckoutConfig || {
+    delayMultiplier: 1.0,
+    quantity: '99',
+    enableAggressive: true,
+    enableAutoSubmit: true
+  };
+
+  // 创建可移动的设置面板
+  const createSettingsPanel = () => {
+    try {
+      if (document.getElementById('autoCheckoutSettings')) return;
+      const panel = document.createElement('div');
+      panel.id = 'autoCheckoutSettings';
+      panel.style.cssText = 'position:fixed;right:12px;top:12px;z-index:2147483647;background:#111;color:#eee;padding:10px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.5);font-family:Arial, Helvetica, sans-serif;font-size:12px;min-width:180px;opacity:0.92';
+
+      panel.innerHTML = `
+        <div id="acs-header" style="cursor:move;margin-bottom:6px;font-weight:600">自动结账设置</div>
+        <label style="display:block;margin:6px 0">数量: <input id="acs-quantity" style="width:64px;margin-left:6px"/></label>
+        <label style="display:block;margin:6px 0">延迟倍率: <input id="acs-mult" style="width:48px;margin-left:6px"/></label>
+        <label style="display:block;margin:6px 0"><input type="checkbox" id="acs-aggressive"/> 启用 aggressive</label>
+        <label style="display:block;margin:6px 0"><input type="checkbox" id="acs-autosubmit"/> 自动提交</label>
+        <div style="text-align:right;margin-top:8px"><button id="acs-save" style="padding:4px 8px;margin-right:6px">保存</button><button id="acs-close" style="padding:4px 8px">关闭</button></div>
+      `;
+
+      document.documentElement.appendChild(panel);
+
+      // 初始化值
+      const qEl = panel.querySelector('#acs-quantity');
+      const mEl = panel.querySelector('#acs-mult');
+      const aEl = panel.querySelector('#acs-aggressive');
+      const sEl = panel.querySelector('#acs-autosubmit');
+      qEl.value = window.__autoCheckoutConfig.quantity;
+      mEl.value = window.__autoCheckoutConfig.delayMultiplier;
+      aEl.checked = !!window.__autoCheckoutConfig.enableAggressive;
+      sEl.checked = !!window.__autoCheckoutConfig.enableAutoSubmit;
+
+      panel.querySelector('#acs-save').addEventListener('click', () => {
+        window.__autoCheckoutConfig.quantity = String(qEl.value || '99');
+        const mul = parseFloat(mEl.value);
+        window.__autoCheckoutConfig.delayMultiplier = isNaN(mul) ? 1 : Math.max(0.1, mul);
+        window.__autoCheckoutConfig.enableAggressive = !!aEl.checked;
+        window.__autoCheckoutConfig.enableAutoSubmit = !!sEl.checked;
+        panel.style.outline = '2px solid rgba(0,200,80,0.25)';
+        setTimeout(() => panel.style.outline = 'none', 600);
+      });
+
+      panel.querySelector('#acs-close').addEventListener('click', () => { panel.style.display = 'none'; });
+
+      // 拖拽（仅在标题上开始，避免阻止输入获取焦点）
+      let dragging = false, startX = 0, startY = 0, startLeft = 0, startTop = 0;
+      const headerEl = panel.querySelector('#acs-header');
+      if (headerEl) {
+        headerEl.addEventListener('mousedown', (ev) => {
+          dragging = true;
+          startX = ev.clientX; startY = ev.clientY;
+          const r = panel.getBoundingClientRect();
+          startLeft = r.left; startTop = r.top;
+          // allow focus on inputs when clicking them, so don't preventDefault here
+        });
+      }
+      window.addEventListener('mousemove', (ev) => {
+        if (!dragging) return;
+        const dx = ev.clientX - startX, dy = ev.clientY - startY;
+        panel.style.left = Math.max(6, startLeft + dx) + 'px';
+        panel.style.top = Math.max(6, startTop + dy) + 'px';
+        panel.style.right = 'auto';
+      });
+      window.addEventListener('mouseup', () => { dragging = false; });
+    } catch (e) { console.warn('createSettingsPanel error', e); }
+  };
+
+  // 延迟一会儿再创建面板，避免阻塞脚本初始化
+  setTimeout(() => { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', createSettingsPanel); } else createSettingsPanel(); }, 800);
+
+  // 更拟人化的点击：在点击前制造若干 mousemove/mouseover/mousedown 事件并引入小延迟
+  const humanClick = async (el) => {
+    if (!el) return false;
+    try {
+      await humanDelay('click');
+      const rect = el.getBoundingClientRect ? el.getBoundingClientRect() : { left: 0, top: 0, width: 0, height: 0 };
+      const steps = 2 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < steps; i++) {
+        const x = Math.floor(rect.left + (rect.width || 10) * Math.random());
+        const y = Math.floor(rect.top + (rect.height || 10) * Math.random());
+        el.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: x, clientY: y }));
+        await humanDelay(20, 120);
+      }
+      const cx = Math.floor(rect.left + (rect.width || 10) / 2);
+      const cy = Math.floor(rect.top + (rect.height || 10) / 2);
+      el.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, clientX: cx, clientY: cy }));
+      el.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, clientX: cx, clientY: cy }));
+      await humanDelay(20, 120);
+      const res = clickElement(el);
+      el.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, clientX: cx, clientY: cy }));
+      return res;
+    } catch (e) {
+      try { el.click(); return true; } catch (e) { return false; }
+    }
+  };
+
   // 更积极的“继续” modal 检测：MutationObserver + 轮询，带去重与日志
   (function aggressiveContinueDetector() {
     const clicked = new WeakSet();
@@ -57,22 +175,22 @@
       } catch (e) { return false; }
     };
 
-    function tryDetect() {
+    async function tryDetect() {
       try {
         // 1) 找到可能包含“继续购买”文字的容器
         const containers = Array.from(document.querySelectorAll('div')).filter(d => (d.innerText||'').includes('继续购买') || (d.innerText||'').includes('继续'));
-        for (const c of containers) {
+          for (const c of containers) {
           if (clicked.has(c)) continue;
           // 在容器内查找按钮文本包含“继续”的可见按钮
           const btns = Array.from(c.querySelectorAll('button'));
           for (const b of btns) {
             const txt = (b.innerText||'').trim();
             if (/继续/.test(txt) && isVisible(b)) {
-              console.log('aggressiveDetector: 找到继续按钮，尝试点击，文本=', txt);
-              if (clickElement(b)) {
-                clicked.add(c);
-                return true;
-              }
+                console.log('aggressiveDetector: 找到继续按钮，尝试点击，文本=', txt);
+                if (await humanClick(b)) {
+                  clicked.add(c);
+                  return true;
+                }
             }
           }
         }
@@ -85,7 +203,7 @@
             const p = b.closest('div') || b;
             if (clicked.has(p)) continue;
             console.log('aggressiveDetector: 全局找到继续按钮，尝试点击');
-            if (clickElement(b)) { clicked.add(p); return true; }
+            if (await humanClick(b)) { clicked.add(p); return true; }
           }
         }
       } catch (e) {
@@ -98,8 +216,8 @@
     const obs = new MutationObserver((mutations) => {
       for (const m of mutations) {
         if (m.addedNodes && m.addedNodes.length) {
-          // 尝试立即检测
-          if (tryDetect()) return;
+          // 尝试立即检测（异步，不阻塞 observer）
+          tryDetect();
         }
       }
     });
@@ -121,7 +239,7 @@
       const qtyBtn = triggerBtn || await waitFor(targetSelector, 10000);
 
       // 确保 modal 打开 — 重试点击最多 3 次
-      clickElement(qtyBtn);
+      await humanClick(qtyBtn);
       let modalOpen = false;
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
@@ -130,8 +248,9 @@
           break;
         } catch (e) {
           console.warn('modal 未出现，重试点击量选择器', attempt+1);
-          clickElement(qtyBtn);
-          await new Promise(r => setTimeout(r, 500));
+          await humanDelay(120, 400);
+          await humanClick(qtyBtn);
+          await humanDelay(300, 600);
         }
       }
       if (!modalOpen) console.warn('未检测到弹窗；后续将尝试在全局查找输入框');
@@ -156,6 +275,7 @@
       }
       // 回退到全局查找
       if (!qtyInput) qtyInput = await waitFor('#adjustQuantity, input[name="adjustQuantity"]', 10000);
+      await humanDelay(80, 250);
       qtyInput.focus();
       // 使用原生 setter 更新值（React / 框架友好），并派发 input 事件
       const setNativeValue = (el, value) => {
@@ -179,15 +299,17 @@
         console.warn('原生 setter 无效，使用逐字符输入回退');
         qtyInput.value = '';
         const chars = String('99').split('');
+        await humanDelay(60, 160);
         for (const ch of chars) {
           qtyInput.dispatchEvent(new KeyboardEvent('keydown', { key: ch, bubbles: true }));
           qtyInput.value = qtyInput.value + ch;
           qtyInput.dispatchEvent(new Event('input', { bubbles: true }));
           qtyInput.dispatchEvent(new KeyboardEvent('keyup', { key: ch, bubbles: true }));
-          await new Promise(r => setTimeout(r, 80));
+          await humanDelay('type');
         }
         qtyInput.dispatchEvent(new Event('change', { bubbles: true }));
       }
+      await humanDelay(60, 220);
       qtyInput.blur();
       console.log('已尝试设置输入值；applied=', applied, 'current=', qtyInput.value);
 
@@ -199,7 +321,7 @@
         updateBtn = document.querySelector('.AdjustQuantityFooter-btn[type="submit"], .AdjustQuantityFooter button[type="submit"]');
       }
       if (!updateBtn) throw new Error('未找到“更新”按钮');
-      updateBtn.click();
+      if (!await humanClick(updateBtn)) throw new Error('点击“更新”失败');
 
       // 等待数量真实生效：等待输入框消失或值变为 '99'，或数量按钮文本反映 99
       function waitUntil(predicate, timeout = 10000, interval = 200) {
@@ -225,7 +347,7 @@
       }, 10000).catch(() => console.warn('等待数量更新超时，继续下一步'));
 
       // 小幅延迟，保证 UI 完全更新
-      await new Promise(r => setTimeout(r, 500));
+      await humanDelay('think');
 
       // 4) 等待并点击“支付 / 提交”按钮（确认可见且未被禁用）
       async function waitForVisible(selector, timeout = 15000) {
@@ -242,7 +364,7 @@
 
       const submitBtn = await waitForVisible('button[data-testid="hosted-payment-submit-button"], .SubmitButton.SubmitButton--complete, .ConfirmPaymentButton--SubmitButton button[type="submit"]', 15000).catch(() => null);
       if (!submitBtn) throw new Error('未找到或不可见的提交按钮');
-      submitBtn.click();
+      if (!await humanClick(submitBtn)) throw new Error('点击提交按钮失败');
 
       console.log('已点击提交，检查是否需要选择支付方式或处理错误');
 
@@ -260,13 +382,13 @@
       if (errMsg) console.warn('支付错误提示:', errMsg.innerText.trim());
 
       // 尝试选择卡片（查找包含 4242 或 •••• 4242 的文本）
-      const findCardAndSelect = () => {
+      const findCardAndSelect = async () => {
         const items = Array.from(document.querySelectorAll('.PickerItem, .PickerItem-container, .LinkRedactedCardNumber'));
         for (const it of items) {
           try {
             const text = it.innerText || '';
             if (/4242/.test(text) || /••••\s*4242/.test(text)) {
-              clickElement(it);
+              await humanClick(it);
               console.log('已选择支付卡：', text.trim());
               return true;
             }
@@ -278,10 +400,10 @@
       let cardSelected = false;
       try {
         // 等待 picker 出现并尝试选择
-        await waitFor('.Picker, .PickerItem, .LinkRedactedCardNumber', 4000).then(() => {
-          cardSelected = findCardAndSelect();
-        }).catch(() => {
-          cardSelected = findCardAndSelect();
+        await waitFor('.Picker, .PickerItem, .LinkRedactedCardNumber', 4000).then(async () => {
+          cardSelected = await findCardAndSelect();
+        }).catch(async () => {
+          cardSelected = await findCardAndSelect();
         });
       } catch (e) { cardSelected = false; }
 
@@ -289,7 +411,8 @@
         // 等待重新出现提交按钮并可见后点击
         try {
           const submitAgain = await waitForVisible('button[data-testid="hosted-payment-submit-button"], .SubmitButton.SubmitButton--complete, .ConfirmPaymentButton--SubmitButton button[type="submit"]', 10000);
-          submitAgain.click();
+          await humanDelay('click');
+          if (!await humanClick(submitAgain)) console.warn('再次点击提交失败');
           console.log('已选择卡并再次点击提交');
         } catch (e) {
           console.warn('未能在选择卡后找到提交按钮进行重试', e);
@@ -316,12 +439,12 @@
           } catch (e) { return false; }
         };
 
-        const tryClickContinue = () => {
+        const tryClickContinue = async () => {
           // 1) 优先通过已知选择器寻找按钮
           for (const sel of buttonSelectors) {
             const btn = document.querySelector(sel);
             if (btn && isVisible(btn)) {
-              try { clickElement(btn); console.log('已自动点击外部支付 modal 的继续按钮 (selector)', sel); return true; } catch (e) { console.warn('点击 continue 按钮失败', e); }
+              try { if (await humanClick(btn)) { console.log('已自动点击外部支付 modal 的继续按钮 (selector)', sel); return true; } } catch (e) { console.warn('点击 continue 按钮失败', e); }
             }
           }
 
@@ -332,7 +455,7 @@
             for (const b of buttons) {
               const txt = (b.innerText || '').trim();
               if (/继续/.test(txt) && isVisible(b)) {
-                try { clickElement(b); console.log('已自动点击外部支付 modal 的继续按钮 (text)', txt); return true; } catch (e) { console.warn('点击 continue 文本按钮失败', e); }
+                try { if (await humanClick(b)) { console.log('已自动点击外部支付 modal 的继续按钮 (text)', txt); return true; } } catch (e) { console.warn('点击 continue 文本按钮失败', e); }
               }
             }
           }
@@ -342,7 +465,7 @@
           for (const b of globalBtns) {
             const txt = (b.innerText || '').trim();
             if (/^继续$/.test(txt) && isVisible(b)) {
-              try { clickElement(b); console.log('已在全局找到并点击继续按钮'); return true; } catch (e) { console.warn('全局点击 continue 失败', e); }
+              try { if (await humanClick(b)) { console.log('已在全局找到并点击继续按钮'); return true; } } catch (e) { console.warn('全局点击 continue 失败', e); }
             }
           }
 
@@ -352,14 +475,13 @@
         // 先快速尝试
         try {
           await waitFor(continueSelectors.join(','), 2000);
-          if (tryClickContinue()) return;
+          if (await tryClickContinue()) return;
         } catch (e) {}
 
         // 安装短期 observer，监听 15s
         const obs = new MutationObserver((mutations, observer) => {
-          if (tryClickContinue()) {
-            observer.disconnect();
-          }
+          // 异步尝试点击，不阻塞 mutation callback
+          tryClickContinue().then(clicked => { if (clicked) observer.disconnect(); }).catch(() => {});
         });
         obs.observe(document.documentElement || document.body, { childList: true, subtree: true });
         // 自动断开 observer，避免长期运行
