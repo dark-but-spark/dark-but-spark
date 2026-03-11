@@ -12,45 +12,145 @@
 
 (function() {
     'use strict';
+    console.log('%c[抓包器] 已启动，正在监听所有 WebSocket 发送/接收包...', 'color: #00ff00; font-weight: bold;');
 
-    console.log('%c[抓包器] 已启动，正在监听 new_character_action...', 'color: #00ff00; font-weight: bold;');
+    const OriginalWebSocket = window.WebSocket;
 
-    // 保存原生 send 方法
-    const originalSend = WebSocket.prototype.send;
-
-    // Hook send 方法
-    WebSocket.prototype.send = function(data) {
-        // 先执行原生发送，保证游戏正常运行
-        const result = originalSend.apply(this, arguments);
-
+    // 简单解码器（字符串 / ArrayBuffer / Blob）
+    function tryDecode(data) {
         try {
-            // 尝试解析数据
-            let parsed = data;
-            if (typeof data === 'string') {
-                parsed = JSON.parse(data);
+            if (typeof data === 'string') return data;
+            if (data instanceof ArrayBuffer) return new TextDecoder().decode(new Uint8Array(data));
+            if (data instanceof Blob) {
+                // Blob 需要异步读取，先返回占位文本并在 Promise 完成后再 log 完整内容
+                data.text().then(t => console.log('%c[Blob 解码 - async]', 'color:#aaf', t));
+                return '[Blob] - decoding asynchronously';
             }
-
-            // 【核心过滤】只处理 type 为 new_character_action 的包
-            if (parsed && typeof parsed === 'object' && parsed.type === 'new_character_action') {
-                console.group('%c[捕获] new_character_action', 'color: #ff9900; font-weight: bold; background: #222; padding: 4px;');
-                console.log('📡 目标 URL:', this.url);
-                console.log('📦 完整 Payload:', parsed);
-                
-                // 提取关键信息方便查看
-                const info = parsed.newCharacterActionData || {};
-                console.log('🔑 关键参数:', {
-                    动作: info.actionHrid,
-                    主物品: info.primaryItemHash,
-                    副物品: info.secondaryItemHash,
-                    最大等级: info.enhancingMaxLevel,
-                    次数: info.maxCount
-                });
-                console.groupEnd();
-            }
+            return data;
         } catch (e) {
-            // 忽略非 JSON 数据或解析错误
+            return `[decode error] ${e && e.message}`;
         }
+    }
 
-        return result;
-    };
+    // 替换全局 WebSocket 构造函数，拦截每个实例的 send 与 message
+    function ProxyWebSocket(url, protocols) {
+        const ws = protocols ? new OriginalWebSocket(url, protocols) : new OriginalWebSocket(url);
+
+        // 拦截 send（发出 -> 服务器）
+        const originalSend = ws.send.bind(ws);
+        ws.send = function(data) {
+            try {
+                const decoded = tryDecode(data);
+                console.group('%c[WS SEND]', 'color:#00aaff; font-weight:bold; background:#111; padding:4px;');
+                console.log('📡 URL:', url);
+                console.log('🔸 Raw (outgoing):', data);
+                console.log('🔍 Decoded:', decoded);
+                console.groupEnd();
+            } catch (e) {
+                console.error('[WS SEND] decode error', e);
+            }
+            return originalSend(data);
+        };
+
+        // 拦截 addEventListener，包装 message 回调（服务器 -> 我）
+        const origAddEventListener = ws.addEventListener.bind(ws);
+        ws.addEventListener = function(type, listener, options) {
+            if (type === 'message') {
+                const wrapped = function(event) {
+                    try {
+                        const d = event.data;
+                        if (typeof d === 'string') {
+                            console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                            console.log('📡 URL:', url);
+                            console.log('🔸 Raw (incoming string):', d);
+                            console.groupEnd();
+                        } else if (d instanceof ArrayBuffer) {
+                            const dec = new TextDecoder().decode(new Uint8Array(d));
+                            console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                            console.log('📡 URL:', url);
+                            console.log('🔸 Raw (ArrayBuffer):', d);
+                            console.log('🔍 Decoded:', dec);
+                            console.groupEnd();
+                        } else if (d instanceof Blob) {
+                            console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                            console.log('📡 URL:', url);
+                            console.log('🔸 Raw (Blob):', d);
+                            d.text().then(t => console.log('🔍 Blob Decoded (async):', t));
+                            console.groupEnd();
+                        } else {
+                            console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                            console.log('📡 URL:', url);
+                            console.log('🔸 Raw (unknown):', d);
+                            console.groupEnd();
+                        }
+                    } catch (e) {
+                        console.error('[WS RECV] decode error', e);
+                    }
+                    return listener.apply(this, arguments);
+                };
+                return origAddEventListener(type, wrapped, options);
+            }
+            return origAddEventListener(type, listener, options);
+        };
+
+        // 支持设置 onmessage（常见用法），通过定义实例属性来包装回调
+        Object.defineProperty(ws, 'onmessage', {
+            get() { return this._onmessage || null; },
+            set(fn) {
+                if (this._onmessage_wrapped) {
+                    this.removeEventListener('message', this._onmessage_wrapped);
+                    this._onmessage_wrapped = null;
+                }
+                this._onmessage = fn;
+                if (typeof fn === 'function') {
+                    const wrapped = function(event) {
+                        try {
+                            const d = event.data;
+                            if (typeof d === 'string') {
+                                console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                                console.log('📡 URL:', url);
+                                console.log('🔸 Raw (incoming string):', d);
+                                console.groupEnd();
+                            } else if (d instanceof ArrayBuffer) {
+                                const dec = new TextDecoder().decode(new Uint8Array(d));
+                                console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                                console.log('📡 URL:', url);
+                                console.log('🔸 Raw (ArrayBuffer):', d);
+                                console.log('🔍 Decoded:', dec);
+                                console.groupEnd();
+                            } else if (d instanceof Blob) {
+                                console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                                console.log('📡 URL:', url);
+                                console.log('🔸 Raw (Blob):', d);
+                                d.text().then(t => console.log('🔍 Blob Decoded (async):', t));
+                                console.groupEnd();
+                            } else {
+                                console.group('%c[WS RECV]', 'color:#00ff66; font-weight:bold; background:#111; padding:4px;');
+                                console.log('📡 URL:', url);
+                                console.log('🔸 Raw (unknown):', d);
+                                console.groupEnd();
+                            }
+                        } catch (e) {
+                            console.error('[WS RECV] decode error', e);
+                        }
+                        return fn.apply(this, arguments);
+                    };
+                    this._onmessage_wrapped = wrapped;
+                    this.addEventListener('message', wrapped);
+                }
+            },
+            configurable: true
+        });
+
+        return ws;
+    }
+
+    // 保持原生静态属性
+    ProxyWebSocket.prototype = OriginalWebSocket.prototype;
+    ProxyWebSocket.CONNECTING = OriginalWebSocket.CONNECTING;
+    ProxyWebSocket.OPEN = OriginalWebSocket.OPEN;
+    ProxyWebSocket.CLOSING = OriginalWebSocket.CLOSING;
+    ProxyWebSocket.CLOSED = OriginalWebSocket.CLOSED;
+
+    window.WebSocket = ProxyWebSocket;
 })();
