@@ -1,14 +1,4 @@
-// ==UserScript==
-// @name         MWI 专包抓取器 - new_character_action
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  仅拦截并打印 type 为 "new_character_action" 的 WebSocket 发送包
-// @author       You
-// @match        https://test.milkywayidle.com/*
-// @match        https://test.milkywayidlecn.com/*
-// @grant        none
-// @run-at       document-start
-// ==/UserScript==
+
 
 (function() {
     'use strict';

@@ -1,17 +1,3 @@
-// ==UserScript==
-// @name         testMWI 装备强化 - 批量随机强化
-// @version      1.0.2
-// @namespace    http://tampermonkey.net/
-// @description  salal强化法
-// @author       dark-but-spark
-// @match        https://test.milkywayidle.com/*
-// @match        https://test.milkywayidlecn.com/*
-// @grant        none
-// @run-at       document-body
-// @license      MIT
-// @downloadURL https://update.greasyfork.org/scripts/569143/testMWI%20%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%20-%20%E6%89%B9%E9%87%8F%E9%9A%8F%E6%9C%BA%E5%BC%BA%E5%8C%96.user.js
-// @updateURL https://update.greasyfork.org/scripts/569143/testMWI%20%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%20-%20%E6%89%B9%E9%87%8F%E9%9A%8F%E6%9C%BA%E5%BC%BA%E5%8C%96.meta.js
-// ==/UserScript==
 
 (function() {
     'use strict';

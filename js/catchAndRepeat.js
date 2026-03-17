@@ -1,15 +1,4 @@
-// ==UserScript==
-// @name         MWI 抓包并重复 new_character_action
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  捕获发送的 new_character_action 包并允许在界面输入重复次数后重发
-// @author       dark-but-spark
-// @match        https://test.milkywayidle.com/*
-// @match        https://test.milkywayidlecn.com/*
-// @grant        none
-// @license MIT
-// @run-at       document-start
-// ==/UserScript==
+
  
 (function() {
     'use strict';

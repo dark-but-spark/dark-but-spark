@@ -1,23 +1,3 @@
-// ==UserScript==
-// @name         [银河奶牛]装备强化轻松+20（测试服专用）
-// @version      2.3.4
-// @namespace    http://tampermonkey.net/
-// @description  1.选择强化物品和基底等级对，根据库存物品强化等级及数量自动计算+20所需基底数量并批量添加强化任务；2.根据库存物品强化等级计算合成+20的强化任务序列，批量添加使用贤者之镜的强化任务。
-// @author       sunrishe
-// @website      https://greasyfork.org/zh-CN/scripts/567954
-// @website      https://gf.qytechs.cn/zh-CN/scripts/567954
-// @match        https://test.milkywayidle.com/*
-// @match        https://test.milkywayidlecn.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=milkywayidle.com
-// @grant        GM_addStyle
-// @require      https://cdn.jsdelivr.net/npm/sweetalert2@11
-// @run-at       document-body
-// @license      MIT
-// @reference    脚本设计思路参考 https://greasyfork.org/zh-CN/scripts/560117
-// @reference    部分工具方法参考 https://greasyfork.org/zh-CN/scripts/538797
-// @downloadURL https://updategf.qytechs.cn/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.user.js
-// @updateURL https://updategf.qytechs.cn/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.meta.js
-// ==/UserScript==
 
 (function () {
     'use strict';

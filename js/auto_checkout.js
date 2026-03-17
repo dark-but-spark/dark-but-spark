@@ -1,17 +1,4 @@
-// ==UserScript==
-// @name           MWI 自动倾家荡产
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  自动完成结账流程
-// @author       dark-but-spark
-// @match        https://test.milkywayidle.com/*
-// @match        https://test.milkywayidlecn.com/*
-// @match        https://checkout.stripe.com/c/pay/cs_test*
-// @grant        none
-// @license MIT
-// @run-at       document-start
-// ==/UserScript==
- 
+
 // 自动化结账脚本 — 在结账页面的控制台中粘贴运行
 (async function(){
   function waitFor(selector, timeout = 15000) {
