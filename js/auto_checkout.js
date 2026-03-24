@@ -55,7 +55,8 @@
     delayMultiplier: 1.0,
     quantity: '99',
     enableAggressive: true,
-    enableAutoSubmit: true
+    enableAutoSubmit: true,
+    enableAutoOtp: true  // 新增：自动 OTP 填充开关
   };
 
   // 创建可移动的设置面板
@@ -68,10 +69,11 @@
 
       panel.innerHTML = `
         <div id="acs-header" style="cursor:move;margin-bottom:6px;font-weight:600">自动结账设置</div>
-        <label style="display:block;margin:6px 0">数量: <input id="acs-quantity" style="width:64px;margin-left:6px"/></label>
-        <label style="display:block;margin:6px 0">延迟倍率: <input id="acs-mult" style="width:48px;margin-left:6px"/></label>
+        <label style="display:block;margin:6px 0">数量：<input id="acs-quantity" style="width:64px;margin-left:6px"/></label>
+        <label style="display:block;margin:6px 0">延迟倍率：<input id="acs-mult" style="width:48px;margin-left:6px"/></label>
         <label style="display:block;margin:6px 0"><input type="checkbox" id="acs-aggressive"/> 启用 aggressive</label>
         <label style="display:block;margin:6px 0"><input type="checkbox" id="acs-autosubmit"/> 自动提交</label>
+        <label style="display:block;margin:6px 0"><input type="checkbox" id="acs-autootp"/> 自动验证码</label>
         <div style="text-align:right;margin-top:8px"><button id="acs-save" style="padding:4px 8px;margin-right:6px">保存</button><button id="acs-close" style="padding:4px 8px">关闭</button></div>
       `;
 
@@ -82,10 +84,12 @@
       const mEl = panel.querySelector('#acs-mult');
       const aEl = panel.querySelector('#acs-aggressive');
       const sEl = panel.querySelector('#acs-autosubmit');
+      const otpEl = panel.querySelector('#acs-autootp');
       qEl.value = window.__autoCheckoutConfig.quantity;
       mEl.value = window.__autoCheckoutConfig.delayMultiplier;
       aEl.checked = !!window.__autoCheckoutConfig.enableAggressive;
       sEl.checked = !!window.__autoCheckoutConfig.enableAutoSubmit;
+      otpEl.checked = !!window.__autoCheckoutConfig.enableAutoOtp;
 
       panel.querySelector('#acs-save').addEventListener('click', () => {
         window.__autoCheckoutConfig.quantity = String(qEl.value || '99');
@@ -93,6 +97,7 @@
         window.__autoCheckoutConfig.delayMultiplier = isNaN(mul) ? 1 : Math.max(0.1, mul);
         window.__autoCheckoutConfig.enableAggressive = !!aEl.checked;
         window.__autoCheckoutConfig.enableAutoSubmit = !!sEl.checked;
+        window.__autoCheckoutConfig.enableAutoOtp = !!otpEl.checked;
         panel.style.outline = '2px solid rgba(0,200,80,0.25)';
         setTimeout(() => panel.style.outline = 'none', 600);
       });
@@ -150,6 +155,203 @@
       try { el.click(); return true; } catch (e) { return false; }
     }
   };
+
+  // 新增：自动 OTP 验证码检测与填充（支持测试模式 000000）
+  const autoFillOtp = async () => {
+    if (!window.__autoCheckoutConfig.enableAutoOtp) return false;
+
+    console.log('OTP 检测器：开始检测验证码输入框');
+
+    try {
+      // 检测 OTP 输入容器 - 多种选择器
+      const otpSelectors = [
+        '[data-testid="sms-code-input-0"]',
+        'input[data-testid="sms-code-input-0"]',
+        '.OtpInput input[type="text"]',
+        'input[autocomplete="one-time-code"]',
+        'input[name="one-time-code"]',
+        '#one-time-code'
+      ];
+
+      let otpInput = null;
+      for (const selector of otpSelectors) {
+        otpInput = document.querySelector(selector);
+        if (otpInput) {
+          console.log('OTP 检测器：找到验证码输入框，选择器=', selector);
+          break;
+        }
+      }
+
+      if (!otpInput) {
+        console.log('OTP 检测器：未找到验证码输入框');
+        return false;
+      }
+
+      // 检查是否是测试模式（查找提示文本 "您当前正在测试" 或 "输入 000000"）
+      const pageText = document.body.innerText;
+      const isTestMode = /您当前正在测试|输入\s*000000|test mode/i.test(pageText);
+      
+      let otpCode = '';
+      if (isTestMode) {
+        otpCode = '000000';
+        console.log('OTP 检测器：检测到测试模式，使用验证码 000000');
+      } else {
+        // 非测试模式下，等待用户手动输入或超时
+        console.log('OTP 检测器：检测到正式模式，等待用户手动输入验证码...');
+        // 这里可以选择等待或返回 false 让用户手动处理
+        return false;
+      }
+
+      // 找到所有 OTP 输入框（6 个独立的 input）
+      const allOtpInputs = Array.from(document.querySelectorAll('.OtpInput input[type="text"]'));
+      
+      if (allOtpInputs.length === 6) {
+        // 逐个填充每个输入框
+        console.log('OTP 检测器：找到 6 个独立输入框，开始逐位填充');
+        
+        for (let i = 0; i < 6 && i < otpCode.length; i++) {
+          const input = allOtpInputs[i];
+          const digit = otpCode[i];
+          
+          // 聚焦到当前输入框
+          input.focus();
+          await humanDelay('type');
+          
+          // 使用原生 setter 设置值
+          const setNativeValue = (el, value) => {
+            const proto = Object.getPrototypeOf(el);
+            const valueSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set || 
+                               Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+            if (valueSetter) {
+              valueSetter.call(el, value);
+              el.dispatchEvent(new Event('input', { bubbles: true }));
+              el.dispatchEvent(new Event('change', { bubbles: true }));
+              return true;
+            }
+            return false;
+          };
+          
+          setNativeValue(input, digit);
+          
+          // 模拟键盘输入事件
+          input.dispatchEvent(new KeyboardEvent('keydown', { key: digit, bubbles: true }));
+          input.value = digit;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+          input.dispatchEvent(new KeyboardEvent('keyup', { key: digit, bubbles: true }));
+          
+          await humanDelay('type');
+          
+          // 自动跳转到下一个输入框
+          if (i < 5) {
+            allOtpInputs[i + 1].focus();
+          }
+        }
+        
+        console.log('OTP 检测器：验证码填充完成');
+        
+        // 等待片刻后尝试自动提交（如果有提交按钮）
+        await humanDelay('think');
+        
+        // 查找并提交按钮
+        const submitSelectors = [
+          'button[type="submit"]',
+          '.LinkVerificationBody-statusAndButtonsContainer button',
+          'button.LinkActionButton',
+          '[type="submit"]'
+        ];
+        
+        for (const selector of submitSelectors) {
+          const submitBtn = document.querySelector(selector);
+          if (submitBtn && submitBtn.offsetParent !== null) {
+            console.log('OTP 检测器：找到提交按钮，尝试自动提交');
+            await humanClick(submitBtn);
+            return true;
+          }
+        }
+        
+        return true;
+      } else if (otpInput) {
+        // 单个输入框模式（较少见）
+        console.log('OTP 检测器：使用单个输入框模式');
+        
+        otpInput.focus();
+        await humanDelay('type');
+        
+        const setNativeValue = (el, value) => {
+          const proto = Object.getPrototypeOf(el);
+          const valueSetter = Object.getOwnPropertyDescriptor(proto, 'value')?.set || 
+                             Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
+          if (valueSetter) {
+            valueSetter.call(el, value);
+            el.dispatchEvent(new Event('input', { bubbles: true }));
+            el.dispatchEvent(new Event('change', { bubbles: true }));
+            return true;
+          }
+          return false;
+        };
+        
+        setNativeValue(otpInput, otpCode);
+        otpInput.dispatchEvent(new Event('input', { bubbles: true }));
+        otpInput.dispatchEvent(new Event('change', { bubbles: true }));
+        
+        console.log('OTP 检测器：单个输入框填充完成');
+        
+        // 查找并提交按钮
+        await humanDelay('think');
+        const submitBtn = document.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          await humanClick(submitBtn);
+        }
+        
+        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      console.error('OTP 检测器：发生错误', error);
+      return false;
+    }
+  };
+
+  // OTP 自动检测 Observer - 持续监控验证码页面
+  (function startOtpObserver() {
+    if (!window.__autoCheckoutConfig.enableAutoOtp) return;
+    
+    console.log('OTP Observer：启动验证码自动检测');
+    
+    const otpObserver = new MutationObserver(async (mutations) => {
+      // 当页面内容变化时，尝试检测并填充 OTP
+      for (const mutation of mutations) {
+        if (mutation.addedNodes && mutation.addedNodes.length > 0) {
+          // 快速检测是否包含 OTP 相关特征
+          const hasOtpFeatures = Array.from(mutation.addedNodes).some(node => {
+            if (node.nodeType !== 1) return false; // 只检查元素节点
+            const html = node.outerHTML || '';
+            return /sms-code-input|one-time-code|OtpInput|verification/i.test(html);
+          });
+          
+          if (hasOtpFeatures || document.querySelector('[data-testid="sms-code-input-0"]')) {
+            console.log('OTP Observer：检测到验证码页面特征');
+            await autoFillOtp();
+            break; // 成功检测后停止本次处理
+          }
+        }
+      }
+    });
+    
+    otpObserver.observe(document.documentElement || document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    // 初始检查一次
+    setTimeout(() => {
+      if (document.querySelector('[data-testid="sms-code-input-0"]')) {
+        console.log('OTP Observer：初始检测发现验证码页面');
+        autoFillOtp();
+      }
+    }, 1000);
+  })();
 
   // 更积极的“继续” modal 检测：MutationObserver + 轮询，带去重与日志
   (function aggressiveContinueDetector() {

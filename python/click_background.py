@@ -23,9 +23,10 @@ class HumanLikeClickSimulator:
         self.click_log = []  # 记录点击历史
         self.last_run_file = os.path.expanduser("~/last_run_linux.txt")  # Linux 主目录下存储
         
+        
         # 内存监控相关
         self.enable_memory_check = True  # 是否启用内存检测
-        self.memory_threshold_mb = 500  # 剩余内存阈值（MB），低于此值暂停点击
+        self.memory_threshold_mb = 1000  # 剩余内存阈值（MB），低于此值暂停点击
         self.current_free_memory = 0  # 当前可用内存（MB）
         self.memory_monitor_thread = None
         self.paused_by_memory = False  # 是否因内存不足而暂停
@@ -123,12 +124,15 @@ class HumanLikeClickSimulator:
                             print(f"\n⚠️ 警告：剩余内存不足 ({self.current_free_memory:.0f}MB < {self.memory_threshold_mb}MB)")
                             print("⏸️  已自动暂停点击以释放系统资源")
                             self.paused_by_memory = True
-                    else:
+                    elif self.paused_by_memory:
+                        if self.current_free_memory>= self.memory_threshold_mb*2:
                         # 内存恢复到安全水平
-                        if self.paused_by_memory:
-                            print(f"\n✅ 内存已恢复 ({self.current_free_memory:.0f}MB >= {self.memory_threshold_mb}MB)")
+                            print(f"\n✅ 内存已恢复 ({self.current_free_memory:.0f}MB >= {self.memory_threshold_mb*2}MB)")
                             print("▶️  继续执行点击任务")
                             self.paused_by_memory = False
+                        else:
+                            print("\n ⏸️ 内存仍不足，继续暂停点击...({:.0f}MB < {}MB)".format(self.current_free_memory, self.memory_threshold_mb*2))
+                        
                             
                 # 每秒检查一次内存
                 time.sleep(1)
