@@ -44,11 +44,25 @@ class HumanLikeClickSimulator:
                         self.interval_variance = float(lines[2].strip())
                         self.position_variance = float(lines[3].strip())
                         
+                        # 读取可选的内存配置（第 6 行开始）
+                        if len(lines) >= 6:
+                            try:
+                                self.memory_threshold_mb = float(lines[5].strip())
+                            except:
+                                pass
+                        if len(lines) >= 7:
+                            try:
+                                self.enable_memory_check = lines[6].strip() == 'True'
+                            except:
+                                pass
+                        
                         print("✅ 已加载上次运行的配置:")
                         print(f"   - 点击位置：{self.click_position}")
                         print(f"   - 基础间隔：{self.base_interval}s")
                         print(f"   - 间隔偏差：±{self.interval_variance}s")
                         print(f"   - 位置偏差：±{self.position_variance}px")
+                        print(f"   - 内存阈值：{self.memory_threshold_mb}MB")
+                        print(f"   - 内存检测：{'✅ 启用' if self.enable_memory_check else '❌ 禁用'}")
                         return True
             except Exception as e:
                 print(f"⚠️ 加载上次运行配置失败：{e}")
@@ -65,6 +79,9 @@ class HumanLikeClickSimulator:
                 f.write(f"{self.interval_variance}\n")
                 f.write(f"{self.position_variance}\n")
                 f.write(f"Last saved: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                # 保存内存相关配置
+                f.write(f"{self.memory_threshold_mb}\n")
+                f.write(f"{self.enable_memory_check}\n")
         except Exception as e:
             print(f"⚠️ 保存配置失败：{e}")
     
@@ -100,12 +117,24 @@ class HumanLikeClickSimulator:
             total_mb = mem_total / 1024
             available_mb = mem_available / 1024
             
-            return {
+            result = {
                 'total': total_mb,
                 'available': available_mb,
                 'used': total_mb - available_mb,
                 'percent': ((total_mb - available_mb) / total_mb * 100) if total_mb > 0 else 0
             }
+            
+            # 调试输出：首次调用时打印详细信息
+            if not hasattr(self, '_mem_debug_shown'):
+                self._mem_debug_shown = True
+                print(f"\n📊 内存监控初始化:")
+                print(f"   总内存：{total_mb:.0f}MB")
+                print(f"   MemTotal: {mem_info.get('MemTotal', 0)} KB")
+                print(f"   MemAvailable: {mem_info.get('MemAvailable', 'N/A')} KB")
+                print(f"   MemFree: {mem_info.get('MemFree', 'N/A')} KB")
+                print(f"   阈值设置：{self.memory_threshold_mb}MB\n")
+            
+            return result
         except Exception as e:
             print(f"⚠️ 获取内存信息失败：{e}")
             return None
@@ -125,15 +154,15 @@ class HumanLikeClickSimulator:
                             print("⏸️  已自动暂停点击以释放系统资源")
                             self.paused_by_memory = True
                     elif self.paused_by_memory:
-                        if self.current_free_memory>= self.memory_threshold_mb*2:
-                        # 内存恢复到安全水平
-                            print(f"\n✅ 内存已恢复 ({self.current_free_memory:.0f}MB >= {self.memory_threshold_mb*2}MB)")
+                        # 内存恢复到安全水平（使用 1.5 倍系数避免频繁切换）
+                        recovery_threshold = self.memory_threshold_mb * 1.5
+                        if self.current_free_memory >= recovery_threshold:
+                            print(f"\n✅ 内存已恢复 ({self.current_free_memory:.0f}MB >= {recovery_threshold:.0f}MB)")
                             print("▶️  继续执行点击任务")
                             self.paused_by_memory = False
                         else:
-                            print("\n ⏸️ 内存仍不足，继续暂停点击...({:.0f}MB < {}MB)".format(self.current_free_memory, self.memory_threshold_mb*2))
+                            print(f"\n⏸️  内存仍不足，继续暂停... ({self.current_free_memory:.0f}MB < {recovery_threshold:.0f}MB)")
                         
-                            
                 # 每秒检查一次内存
                 time.sleep(1)
             except Exception as e:
@@ -206,10 +235,17 @@ class HumanLikeClickSimulator:
         
     def _click_loop(self):
         """后台点击循环"""
+        # 记录上次内存状态，用于检测变化
+        last_memory_check = 0
+        
         while self.is_running:
             try:
                 # 检查是否因内存不足而暂停
                 if self.paused_by_memory:
+                    # 即使暂停也每 5 秒打印一次状态
+                    if time.time() - last_memory_check > 5:
+                        print(f"⏸️  暂停中... 当前内存：{self.current_free_memory:.0f}MB, 阈值：{self.memory_threshold_mb}MB")
+                        last_memory_check = time.time()
                     time.sleep(1)
                     continue
                 
@@ -256,7 +292,7 @@ class HumanLikeClickSimulator:
                 if len(self.click_log) > 100:
                     self.click_log.pop(0)
                 
-                print(f"✅ 点击：({target_x}, {target_y}) @ {time.strftime('%H:%M:%S')}")
+                print(f"✅ 点击：({target_x}, {target_y}) @ {time.strftime('%H:%M:%S')} | 内存：{self.current_free_memory:.0f}MB")
                 
                 # 计算带偏差的等待时间
                 actual_wait_time = max(0.5, self.base_interval + random.uniform(-self.interval_variance, self.interval_variance))
@@ -267,6 +303,10 @@ class HumanLikeClickSimulator:
                 while elapsed < actual_wait_time and self.is_running:
                     time.sleep(sleep_step)
                     elapsed += sleep_step
+                    # 每 5 秒检查并打印一次内存状态
+                    if time.time() - last_memory_check > 5:
+                        print(f"📊 运行中内存状态：{self.current_free_memory:.0f}MB / 阈值：{self.memory_threshold_mb}MB")
+                        last_memory_check = time.time()
                 
             except Exception as e:
                 print(f"❌ 点击出错：{e}")
