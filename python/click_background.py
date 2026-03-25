@@ -26,7 +26,7 @@ class HumanLikeClickSimulator:
         
         # 内存监控相关
         self.enable_memory_check = True  # 是否启用内存检测
-        self.memory_threshold_mb = 1000  # 剩余内存阈值（MB），低于此值暂停点击
+        self.memory_threshold_mb = 1500  # 剩余内存阈值（MB），低于此值暂停点击
         self.current_free_memory = 0  # 当前可用内存（MB）
         self.memory_monitor_thread = None
         self.paused_by_memory = False  # 是否因内存不足而暂停
@@ -370,16 +370,16 @@ def on_press(key):
         elif key == keyboard.Key.f8:
             simulator.set_click_position()
         elif key == keyboard.Key.f7:
-            new_interval = simulator.base_interval + 5
+            new_interval = simulator.base_interval + 1
             simulator.set_base_interval(new_interval)
         elif key == keyboard.Key.f6:
-            new_interval = max(1, simulator.base_interval - 5)
+            new_interval = max(1, simulator.base_interval - 1)
             simulator.set_base_interval(new_interval)
         elif key == keyboard.Key.f5:
-            new_variance = simulator.position_variance + 5
+            new_variance = simulator.position_variance + 1
             simulator.set_position_variance(new_variance)
         elif key == keyboard.Key.f4:
-            new_variance = max(0, simulator.position_variance - 5)
+            new_variance = max(0, simulator.position_variance - 1)
             simulator.set_position_variance(new_variance)
         elif key == keyboard.Key.f3:
             simulator.show_click_history()
