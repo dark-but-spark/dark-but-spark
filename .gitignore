@@ -5,3 +5,4 @@ out/
 _site/
 .jekyll-cache/
 *.exe
+browser_profile/
