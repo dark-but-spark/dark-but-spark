@@ -5,17 +5,23 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-import time
-import random
-import re
+import requests
+from urllib.parse import urlparse
 import os
 import json
+import time
+import random
 import logging
+import re
+import threading
+from datetime import datetime
 
 
 def setup_logging():
@@ -41,14 +47,16 @@ def human_delay(min_seconds=0.5, max_seconds=2.5):
 
 
 class SeleniumLabyrinthAutomation:
-    def __init__(self, url="https://test.milkywayidle.com/game?characterId=27496", profile_dir=None, headless=False):
+    def __init__(self, url="https://test.milkywayidle.com/game?characterId=25055", profile_dir=None, headless=False):
         """初始化浏览器自动化程序"""
         self.url = url
         self.driver = None
         self.wait = None
         self.running = False
         self.in_labyrinth = False
-        self.ticket_count = {"current": 0, "max": 0}
+        self.ticket_count = {"current": 0, "max": 5}  # 默认最大门票数为5
+        self.initial_ticket_count = {"current": 0, "max": 0}  # 初始门票数
+        self.has_entered_current_round = False  # 标记是否在当前轮次中进入了迷宫
         self.profile_dir = profile_dir or os.path.join(os.getcwd(), "browser_profile")
         self.cookies_file = os.path.join(self.profile_dir, "cookies.json")
         self.headless = headless  # 添加无头模式选项
@@ -57,10 +65,11 @@ class SeleniumLabyrinthAutomation:
         # 延迟设置参数（秒）
         self.button_click_delay_min = 1.5
         self.button_click_delay_max = 3.0
-        self.status_check_interval_min = 20
-        self.status_check_interval_max = 30
+        self.status_check_interval_min = 20*60
+        self.status_check_interval_max = 30*60
         self.between_cycles_delay_min = 15
         self.between_cycles_delay_max = 20
+        self.max_labyrinth_duration_hours = 3  # 最大迷宫持续时间（小时）
         
         # 确保配置文件目录存在
         os.makedirs(self.profile_dir, exist_ok=True)
@@ -703,17 +712,22 @@ class SeleniumLabyrinthAutomation:
                     
                     # 等待一段时间后重新检测门票数量
                     human_delay(self.button_click_delay_min, self.button_click_delay_max)
+                    
+                    # 返回迷宫界面
+                    self.navigate_to_labyrinth()
+                    
+                    # 等待一下，让界面稳定
+                    human_delay(self.button_click_delay_min, self.button_click_delay_max)
+                    
+                    # 重新检测门票数量以确认补充成功
                     current, max_tickets = self.detect_ticket_count()
                     
                     if current > 0:
                         logging.info(f"门票补充成功，当前数量: {current}/{max_tickets}")
-                        # 返回迷宫界面
-                        self.navigate_to_labyrinth()
+                        self.ticket_count = {"current": current, "max": max_tickets}
                         return True
                     else:
                         logging.error("门票补充失败")
-                        # 返回迷宫界面
-                        self.navigate_to_labyrinth()
                         return False
                 else:
                     logging.error("未找到可点击的补充门票按钮")
@@ -785,6 +799,18 @@ class SeleniumLabyrinthAutomation:
                             logging.info(f"找到开始按钮，准备点击")
                             start_btn.click()
                             logging.info("已点击开始按钮")
+                            
+                            # 设置标志，标记当前轮次已进入迷宫
+                            self.has_entered_current_round = True
+                            
+                            # 每次进入迷宫后自动减少门票数
+                            self.decrement_ticket_count()
+                            logging.info(f"门票数量已减少，当前: {self.ticket_count['current']}/{self.ticket_count['max']}")
+                            
+                            # 等待迷宫真正开始运行
+                            logging.info("等待迷宫开始运行...")
+                            time.sleep(5)  # 等待5秒让迷宫真正开始
+                            
                             break
                     except:
                         continue
@@ -797,52 +823,120 @@ class SeleniumLabyrinthAutomation:
             logging.error(f"进入迷宫失败: {str(e)}")
             return False
 
+    def decrement_ticket_count(self):
+        """减少门票数量"""
+        if self.ticket_count["current"] > 0:
+            self.ticket_count["current"] -= 1
+
     def escape_labyrinth(self):
-        """逃离迷宫"""
+        """退出迷宫"""
         try:
-            # 先尝试关闭可能存在的弹窗
-            self.close_offline_progress_modal()
+            # 检查是否在这轮循环中进入了迷宫
+            if not self.has_entered_current_round:
+                logging.info("本轮未进入迷宫，无需退出")
+                return True  # 返回True表示不需要退出
             
-            logging.info("尝试逃离迷宫...")
+            logging.info("正在退出迷宫...")
             
-            # 查找结束迷宫按钮
-            logging.info("查找结束迷宫按钮...")
-            exit_btn = self.driver.find_elements(By.XPATH, "//button[contains(text(), '结束迷宫') and not(contains(@class, 'Button_disabled__wCyIq'))]")
+            # 点击结束迷宫按钮
+            exit_button = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '结束迷宫')]"))
+            )
             
-            if exit_btn and len(exit_btn) > 0:
-                logging.info("找到可点击的结束迷宫按钮，准备点击")
-                exit_btn[0].click()
-                
-                # 使用按钮点击延迟
-                human_delay(self.button_click_delay_min, self.button_click_delay_max)
-                
-                # 处理确认弹窗
-                # 第一个确认弹窗
-                first_confirm = self.driver.find_elements(By.XPATH, "//button[contains(text(), '确定')]")
-                if first_confirm:
-                    logging.info("找到第一个确认按钮，准备点击")
-                    first_confirm[0].click()
-                    
-                    # 使用按钮点击延迟
-                    human_delay(self.button_click_delay_min, self.button_click_delay_max)
-                    
-                    # 第二个确认弹窗
-                    second_confirm = self.driver.find_elements(By.XPATH, "//button[contains(text(), '确定')]")
-                    if second_confirm:
-                        logging.info("找到第二个确认按钮，准备点击")
-                        second_confirm[0].click()
-                    
-                    logging.info("迷宫已结束")
-                    return True
-                else:
-                    logging.error("未找到确认按钮")
-                    return False
-            else:
-                logging.error("未找到可点击的结束迷宫按钮")
-                return False
+            # 尝试普通点击，如果失败则使用强制点击
+            try:
+                exit_button.click()
+            except Exception:
+                # 使用JavaScript强制点击
+                self.driver.execute_script("arguments[0].click();", exit_button)
+            
+            logging.info("已点击结束迷宫按钮")
+            
+            # 等待并处理第一个确认弹窗
+            self.handle_confirmation_modal("//button[contains(text(), '确定')]", max_attempts=2)
+            
+            # 重置进入标志
+            self.has_entered_current_round = False
+            
+            return True
+        except TimeoutException:
+            logging.warning("未找到退出迷宫的相关按钮，可能已自动退出")
+            # 重置进入标志
+            self.has_entered_current_round = False
+            return True
         except Exception as e:
-            logging.error(f"逃离迷宫失败: {str(e)}")
+            logging.error(f"退出迷宫时出现错误: {str(e)}")
+            # 重置进入标志
+            self.has_entered_current_round = False
             return False
+
+    def force_escape_labyrinth(self):
+        """强制退出迷宫，不管是否在当前轮次中进入"""
+        try:
+            logging.info("正在强制退出迷宫...")
+            
+            # 点击结束迷宫按钮
+            exit_button = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '结束迷宫')]"))
+            )
+            
+            # 尝试普通点击，如果失败则使用强制点击
+            try:
+                exit_button.click()
+            except Exception:
+                # 使用JavaScript强制点击
+                self.driver.execute_script("arguments[0].click();", exit_button)
+            
+            logging.info("已点击结束迷宫按钮")
+            
+            # 等待并处理第一个确认弹窗
+            self.handle_confirmation_modal("//button[contains(text(), '确定')]", max_attempts=2)
+            
+            return True
+        except TimeoutException:
+            logging.warning("未找到退出迷宫的相关按钮，可能已自动退出")
+            return True
+        except Exception as e:
+            logging.error(f"强制退出迷宫时出现错误: {str(e)}")
+            return False
+
+    def handle_confirmation_modal(self, confirm_button_selector, max_attempts=2):
+        """处理确认弹窗，最多处理max_attempts个弹窗"""
+        attempts = 0
+        while attempts < max_attempts:
+            try:
+                # 等待确认弹窗出现
+                confirm_button = WebDriverWait(self.driver, 5).until(
+                    EC.element_to_be_clickable((By.XPATH, confirm_button_selector))
+                )
+                
+                # 尝试普通点击，如果失败则使用强制点击
+                try:
+                    confirm_button.click()
+                except Exception:
+                    # 使用JavaScript强制点击
+                    self.driver.execute_script("arguments[0].click();", confirm_button)
+                
+                logging.info(f"已点击确认按钮 (弹窗 #{attempts + 1})")
+                
+                # 等待当前弹窗消失，下一个弹窗出现，或者页面恢复正常
+                time.sleep(1)
+                
+                # 检查是否还有更多确认按钮
+                remaining_confirm_buttons = self.driver.find_elements(By.XPATH, confirm_button_selector)
+                if not remaining_confirm_buttons:
+                    logging.info(f"确认弹窗处理完毕，共处理了 {attempts + 1} 个弹窗")
+                    break
+                else:
+                    attempts += 1
+                    time.sleep(1)  # 短暂等待，让下一个弹窗完全加载
+                    
+            except TimeoutException:
+                logging.info("没有更多确认弹窗，退出处理循环")
+                break
+            except Exception as e:
+                logging.error(f"处理确认弹窗时出现错误: {str(e)}")
+                break
 
     def close_offline_progress_modal(self):
         """关闭离线进度弹窗"""
@@ -899,11 +993,35 @@ class SeleniumLabyrinthAutomation:
             
             logging.info("开始检测迷宫状态...")
             
-            # 检查是否存在"结束迷宫"按钮，这表示正在迷宫中
+            # 检查是否存在"结束迷宫"按钮，这表示正在迷宫中或至少已开始
             exit_btn_elements = self.driver.find_elements(By.XPATH, "//button[contains(text(), '结束迷宫') and not(contains(@class, 'Button_disabled__wCyIq'))]")
             if exit_btn_elements:
-                logging.info("检测到结束迷宫按钮，正在迷宫中")
-                return True
+                logging.info("检测到结束迷宫按钮，正在迷宫中或已开始")
+                
+                # 进一步检查是否显示迷宫内的"停止"按钮，这表明迷宫正在运行
+                # 重要：这里要特别指定是迷宫中的停止按钮，而不是强化界面的停止按钮
+                # 迷宫中的停止按钮应该在迷宫特定的上下文中
+                stop_btn_elements = self.driver.find_elements(By.XPATH, "//button[contains(text(), '停止') and contains(@class, 'Button_warning__1-AMI') and contains(@class, 'Button_small__3fqC7') and ancestor::div[contains(@class, 'LabyrinthPanel')]]")
+                
+                # 如果上面的选择器没找到，尝试更通用的迷宫停止按钮检测
+                if not stop_btn_elements:
+                    stop_btn_elements = self.driver.find_elements(By.XPATH, "//button[contains(text(), '停止') and contains(@class, 'Button_warning__1-AMI') and not(ancestor::div[contains(@class, 'Header_myActions')])]")
+
+                if stop_btn_elements:
+                    logging.info("检测到迷宫中的'停止'按钮，迷宫正在运行中")
+                    return True
+                else:
+                    logging.info("没有检测到迷宫中的'停止'按钮（可能已完成），迷宫可能已完成或即将开始")
+                    # 检查是否有"立即开始"按钮，这可能意味着迷宫还未真正开始
+                    start_btn = self.driver.find_elements(By.XPATH, "//button[contains(text(), '立即开始')]")
+                    if start_btn:
+                        logging.info("检测到'立即开始'按钮，迷宫尚未开始运行")
+                        return False
+                    else:
+                        logging.info("迷宫可能已完成，等待结算")
+                        # 这种情况下，虽然有"结束迷宫"按钮，但如果没有迷宫内的"停止"按钮，
+                        # 通常意味着迷宫已经完成或几乎完成，我们可以认为迷宫已结束
+                        return False
             
             # 检查是否存在"进入迷宫"按钮，这表示在迷宫主页
             enter_btn_elements = self.driver.find_elements(By.XPATH, "//button[contains(text(), '进入迷宫')]")
@@ -935,7 +1053,7 @@ class SeleniumLabyrinthAutomation:
                     logging.info("迷宫中有房间活动，正在迷宫中")
                     return True
             
-            # 检查迷宫主面板是否存在
+            # 检查迷宫主面板是否存在，且是否显示迷宫活动状态
             labyrinth_panel = self.driver.find_elements(By.CLASS_NAME, "LabyrinthPanel_labyrinthPanel__20JNz")
             if labyrinth_panel:
                 # 检查是否显示的是迷宫入口界面
@@ -944,6 +1062,18 @@ class SeleniumLabyrinthAutomation:
                     logging.info("在迷宫入口界面，尚未进入迷宫")
                     return False
                 else:
+                    # 检查是否有"立即开始"按钮（在迷宫内部）
+                    start_btn = self.driver.find_elements(By.XPATH, "//button[contains(text(), '立即开始')]")
+                    if start_btn:
+                        logging.info("检测到'立即开始'按钮，正在迷宫中")
+                        return True
+                        
+                    # 检查是否有迷宫网格（在迷宫内部）
+                    grid_container = self.driver.find_elements(By.CLASS_NAME, "LabyrinthPanel_gridContainer__2Gohm")
+                    if grid_container:
+                        logging.info("检测到迷宫网格，正在迷宫中")
+                        return True
+                        
                     logging.info("在迷宫面板中，但不在入口界面，可能正在迷宫中")
                     return True
             
@@ -952,7 +1082,124 @@ class SeleniumLabyrinthAutomation:
         except Exception as e:
             logging.error(f"检测迷宫状态时出现错误: {str(e)}")
             return False
-    
+
+    def run_cycle(self):
+        """执行一个完整的自动化循环"""
+        cycle_start_time = time.time()
+        logging.info(f"开始第 {self.cycle_count} 个循环")
+        
+        # 重置当前轮次的进入标志
+        self.has_entered_current_round = False
+        
+        # 检测当前是否在迷宫中
+        in_labyrinth = self.detect_labyrinth_status()
+        if in_labyrinth:
+            logging.info("当前已在迷宫中，准备等待迷宫结束...")
+            
+            # 点击"立即开始"按钮（如果存在）
+            try:
+                start_button = WebDriverWait(self.driver, 5).until(
+                    EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), '立即开始') and contains(@class, 'Button_success__6d6kU')]"))
+                )
+                start_button.click()
+                logging.info("已点击'立即开始'按钮")
+                
+                # 设置当前轮次已进入迷宫
+                self.has_entered_current_round = True
+                
+                # 等待迷宫真正开始运行
+                logging.info("等待迷宫开始运行...")
+                time.sleep(5)  # 等待5秒让迷宫真正开始
+            except TimeoutException:
+                logging.info("'立即开始'按钮不存在，等待迷宫自然结束...")
+                
+                # 即使没有点击立即开始，也可能是在迷宫中，继续等待迷宫结束
+                self.has_entered_current_round = True
+            
+            # 持续等待直到迷宫结束，而不是固定等待30秒
+            logging.info("等待迷宫自然结束...")
+            self.wait_for_labyrinth_end()
+        
+        else:
+            logging.info("当前不在迷宫中，开始执行迷宫循环...")
+            
+            # 检查门票数量
+            logging.info("开始检测门票数量...")
+            tickets = self.get_ticket_count()
+            if tickets is None:
+                logging.warning("获取门票数量失败，跳过本次循环")
+                time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
+                return
+            
+            logging.info(f"当前门票: {tickets['current']}/{tickets['max']}")
+            
+            # 更新门票计数
+            self.ticket_count = tickets
+            
+            # 补充门票
+            if self.ticket_count['current'] <= 0:  # 如果门票少于等于0张，则补充
+                logging.info("门票不足，尝试补充...")
+                if not self.replenish_tickets():
+                    logging.error("补充门票失败，跳过本次循环")
+                    time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
+                    return
+            else:
+                logging.info("门票充足，无需补充")
+            
+            # 进入迷宫
+            logging.info("准备进入迷宫...")
+            if not self.enter_labyrinth():
+                logging.error("进入迷宫失败，跳过本次循环")
+                time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
+                return
+            
+            # 持续等待直到迷宫结束，而不是固定等待30秒
+            logging.info("等待迷宫运行...")
+            self.wait_for_labyrinth_end()
+        
+        # 尝试退出迷宫
+        logging.info("尝试退出迷宫...")
+        if not self.escape_labyrinth():
+            logging.error("退出迷宫失败，跳过本次循环")
+            time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
+            return
+        
+        # 循环结束后等待一段时间
+        delay = random.uniform(self.between_cycles_delay_min, self.between_cycles_delay_max)
+        logging.info(f"循环完成，等待 {delay:.2f} 秒后开始下一个循环...")
+        time.sleep(delay)
+        
+        # 增加循环计数
+        self.cycle_count += 1
+
+    def wait_for_labyrinth_end(self):
+        """等待迷宫结束"""
+        start_time = time.time()
+        # 使用status_check_interval_min和status_check_interval_max之间的随机值作为检查间隔
+        check_interval = random.uniform(self.status_check_interval_min, self.status_check_interval_max)
+        logging.info(f"迷宫状态检查间隔设置为: {check_interval/60:.2f} 分钟")
+        
+        while True:
+            # 检测迷宫状态
+            in_labyrinth = self.detect_labyrinth_status()
+            
+            if not in_labyrinth:
+                # 迷宫已结束
+                elapsed_time = time.time() - start_time
+                logging.info(f"迷宫已结束，耗时 {elapsed_time/60:.2f} 分钟")
+                break
+            else:
+                # 迷宫仍在进行中，等待后再检查
+                logging.info("迷宫仍在进行中，继续等待...")
+                time.sleep(check_interval)
+                
+                # 检查是否超时（根据max_labyrinth_duration_hours设置）
+                elapsed_time = time.time() - start_time
+                max_duration = self.max_labyrinth_duration_hours * 3600  # 转换为秒
+                if elapsed_time > max_duration:
+                    logging.warning(f"迷宫运行时间超过 {self.max_labyrinth_duration_hours} 小时，强制退出...")
+                    break
+
     def start(self):
         """开始自动化"""
         logging.info("开始自动化进程...")
@@ -979,6 +1226,8 @@ class SeleniumLabyrinthAutomation:
             # 保存cookies
             self.save_cookies()
             logging.info("登录信息已保存")
+        # 只在程序刚开始运行时检查离线进度弹窗
+
         
         # 确保导航到迷宫页面
         logging.info("导航到迷宫页面...")
@@ -986,6 +1235,20 @@ class SeleniumLabyrinthAutomation:
             logging.error("无法导航到迷宫页面，请检查网络连接或页面结构变化")
             self.stop()
             return
+
+        # 获取初始门票数量
+        
+        logging.info("检查初始离线进度弹窗...")
+        self.close_offline_progress_modal()
+        
+        logging.info("获取初始门票数量...")
+        initial_tickets = self.get_ticket_count()
+        if initial_tickets:
+            self.initial_ticket_count = initial_tickets
+            self.ticket_count = initial_tickets.copy()
+            logging.info(f"初始门票数量: {self.initial_ticket_count['current']}/{self.initial_ticket_count['max']}")
+        else:
+            logging.error("获取初始门票数量失败")
 
         # 开始自动化循环
         self.running = True
@@ -1003,63 +1266,6 @@ class SeleniumLabyrinthAutomation:
         
         # 停止自动化
         self.stop()
-    
-    def run_cycle(self):
-        """执行一个完整的自动化循环"""
-        cycle_start_time = time.time()
-        logging.info(f"开始第 {self.cycle_count} 个循环")
-        
-        # 只在程序刚开始运行时检查离线进度弹窗
-        if self.cycle_count == 1:
-            logging.info("检查初始离线进度弹窗...")
-            self.close_offline_progress_modal()
-        
-        logging.info("开始执行迷宫循环...")
-        
-        # 检查门票数量
-        logging.info("开始检测门票数量...")
-        tickets = self.get_ticket_count()
-        if tickets is None:
-            logging.warning("获取门票数量失败，跳过本次循环")
-            time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
-            return
-        
-        logging.info(f"当前门票: {tickets['current']}/{tickets['max']}")
-        
-        # 补充门票
-        if tickets['current'] <= 2:  # 如果门票少于等于2张，则补充
-            logging.info("门票不足，尝试补充...")
-            if not self.replenish_tickets():
-                logging.error("补充门票失败，跳过本次循环")
-                time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
-                return
-        else:
-            logging.info("门票充足，无需补充")
-        
-        # 进入迷宫
-        logging.info("准备进入迷宫...")
-        if not self.enter_labyrinth():
-            logging.error("进入迷宫失败，跳过本次循环")
-            time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
-            return
-        
-        # 等待一段时间，让迷宫运行
-        time.sleep(30)  # 等待30秒再检查
-        
-        # 尝试退出迷宫
-        logging.info("尝试退出迷宫...")
-        if not self.escape_labyrinth():
-            logging.error("退出迷宫失败，跳过本次循环")
-            time.sleep(random.uniform(self.status_check_interval_min, self.status_check_interval_max))
-            return
-        
-        # 循环结束后等待一段时间
-        delay = random.uniform(self.between_cycles_delay_min, self.between_cycles_delay_max)
-        logging.info(f"循环完成，等待 {delay:.2f} 秒后开始下一个循环...")
-        time.sleep(delay)
-        
-        # 增加循环计数
-        self.cycle_count += 1
     
     def stop(self):
         """停止自动化"""

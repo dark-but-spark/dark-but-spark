@@ -1313,6 +1313,10 @@
             this.autoRunning = false;
             this.stopRequested = false;
             this.enableAuto = CONFIG.enableAuto;
+            
+            // 初始化时检查门票数量
+            this.initialTicketCount = this.gameData.getTicketCount().current;
+            console.log(`[迷宫自动化] 🎫 程序启动时门票数量：${this.initialTicketCount}`);
         }
 
         /**
@@ -1343,6 +1347,14 @@
             console.log('[迷宫自动化] ⏹️ 停止自动化...');
             this.stopRequested = true;
             this.enableAuto = false;
+        }
+
+        /**
+         * 门票数量减1（每次成功进入迷宫后调用）
+         */
+        decrementTicketCount() {
+            this.initialTicketCount = Math.max(0, this.initialTicketCount - 1);
+            console.log(`[迷宫自动化] 🎫 门票数量已减1，当前剩余：${this.initialTicketCount}`);
         }
 
         /**
@@ -1392,6 +1404,15 @@
                                 }
                                 
                                 console.log('[迷宫自动化] ✅ 门票补充成功');
+                                
+                                // 补充成功后返回迷宫页面并重新检查门票数量
+                                await ensureInLabyrinthPanel();
+                                await this.sleep(1000);
+                                
+                                // 重新检查门票数量
+                                this.gameData.syncFromDom();
+                                const updatedTickets = this.gameData.getTicketCount();
+                                console.log(`[迷宫自动化] 🎫 补充后门票数量：${updatedTickets.current}/${updatedTickets.max}`);
                             } else {
                                 // 门票不足但非 0，也尝试补充
                                 let success = false;
@@ -1410,6 +1431,15 @@
                                     await this.sleep(CONFIG.ticketCheckInterval);
                                     continue;
                                 }
+                                
+                                // 补充成功后返回迷宫页面并重新检查门票数量
+                                await ensureInLabyrinthPanel();
+                                await this.sleep(1000);
+                                
+                                // 重新检查门票数量
+                                this.gameData.syncFromDom();
+                                const updatedTickets = this.gameData.getTicketCount();
+                                console.log(`[迷宫自动化] 🎫 补充后门票数量：${updatedTickets.current}/${updatedTickets.max}`);
                             }
                             
                             // 重新获取门票数量
@@ -1430,6 +1460,8 @@
                         
                         if (success) {
                             console.log('[迷宫自动化] ✅ 成功开始迷宫');
+                            // 成功进入迷宫后，门票数量减1
+                            this.decrementTicketCount();
                         }
                         
                         await this.sleep(5000); // 等待行动开始

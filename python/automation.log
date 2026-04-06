@@ -1,0 +1,45 @@
+2026-04-06 12:20:26,575 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 12:20:26,576 [INFO] 开始自动化进程...
+2026-04-06 12:20:26,576 [INFO] 开始自动化进程...
+2026-04-06 12:20:26,576 [INFO] 初始化浏览器...
+2026-04-06 12:20:26,577 [INFO] 开始设置浏览器驱动...
+2026-04-06 12:20:26,577 [INFO] ====== WebDriver manager ======
+2026-04-06 12:20:27,413 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:20:27,620 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:20:27,771 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 12:20:28,497 [INFO] 浏览器驱动设置完成
+2026-04-06 12:20:28,498 [INFO] 尝试加载cookies...
+2026-04-06 12:20:28,498 [WARNING] Cookies文件不存在: E:\dark-but-spark\python\browser_profile\cookies.json
+2026-04-06 12:20:28,499 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 12:20:46,563 [ERROR] 验证登录状态失败: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.178)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x76cdf3+10b03]
+	chromedriver!GetHandleVerifier [0x76cf24+10c34]
+	chromedriver!(No symbol) [0x552120]
+	chromedriver!(No symbol) [0x530c53]
+	chromedriver!(No symbol) [0x5c431b]
+	chromedriver!(No symbol) [0x5da309]
+	chromedriver!(No symbol) [0x5bd8a6]
+	chromedriver!(No symbol) [0x590229]
+	chromedriver!(No symbol) [0x590fe4]
+	chromedriver!GetHandleVerifier [0x9d48b9+2785c9]
+	chromedriver!GetHandleVerifier [0x9cfeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x9ee06b+291d7b]
+	chromedriver!GetHandleVerifier [0x785cc8+299d8]
+	chromedriver!GetHandleVerifier [0x78d9fd+3170d]
+	chromedriver!GetHandleVerifier [0x7758c8+195d8]
+	chromedriver!GetHandleVerifier [0x775a92+197a2]
+	chromedriver!GetHandleVerifier [0x75ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-06 12:20:46,563 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 12:20:46,564 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 12:20:52,954 [INFO] 
+程序被用户中断
+2026-04-06 12:20:52,954 [INFO] 停止迷宫自动化...
+2026-04-06 12:20:52,957 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/bf86caf2128866f770c6c6d110856bdc/cookie
+2026-04-06 12:20:55,004 [INFO] 程序结束

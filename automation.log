@@ -1998,3 +1998,2465 @@ Stacktrace:
 2026-04-05 19:24:59,797 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=58489): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/e2ae7749acb1730f40ce5715dcb7b863
 2026-04-05 19:25:03,891 [INFO] 浏览器已关闭
 2026-04-05 19:25:03,892 [INFO] 程序结束
+2026-04-05 22:05:22,860 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:05:22,863 [INFO] 开始自动化进程...
+2026-04-05 22:05:22,863 [INFO] 开始自动化进程...
+2026-04-05 22:05:22,863 [INFO] 初始化浏览器...
+2026-04-05 22:05:22,863 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:05:22,863 [INFO] ====== WebDriver manager ======
+2026-04-05 22:05:24,071 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:05:24,318 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:05:24,471 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:05:25,247 [INFO] 浏览器驱动设置完成
+2026-04-05 22:05:25,248 [INFO] 尝试加载cookies...
+2026-04-05 22:06:02,804 [INFO] 成功加载cookies
+2026-04-05 22:06:02,804 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:06:04,423 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:06:04,423 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:06:13,218 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:06:13,218 [INFO] 登录信息已保存
+2026-04-05 22:06:13,218 [INFO] 导航到迷宫页面...
+2026-04-05 22:06:13,218 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:06:18,913 [INFO] 找到 23 个导航项
+2026-04-05 22:06:18,913 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:06:18,975 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:06:19,181 [INFO] 已点击迷宫导航项
+2026-04-05 22:06:22,178 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:06:22,179 [INFO] 开始自动化循环...
+2026-04-05 22:06:22,179 [INFO] 开始第 1 个循环
+2026-04-05 22:06:22,179 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:06:32,189 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:06:32,189 [INFO] 开始执行迷宫循环...
+2026-04-05 22:06:32,190 [INFO] 开始检测门票数量...
+2026-04-05 22:06:42,199 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:06:42,199 [INFO] 开始检测门票数量...
+2026-04-05 22:06:42,234 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-05 22:06:42,235 [INFO] 检测到门票数量: 1/5
+2026-04-05 22:06:42,235 [INFO] 当前门票: 1/5
+2026-04-05 22:06:42,235 [INFO] 门票不足，尝试补充...
+2026-04-05 22:06:52,249 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:06:52,249 [INFO] 尝试补充门票...
+2026-04-05 22:06:52,250 [INFO] 查找设置导航...
+2026-04-05 22:06:52,329 [INFO] 找到设置导航项（通过aria-label），准备点击
+2026-04-05 22:06:52,511 [INFO] 已点击设置导航项
+2026-04-05 22:06:54,200 [INFO] 查找补充门票按钮...
+2026-04-05 22:06:54,251 [INFO] 使用选择器 '//button[contains(text(), '补充入场券') and not(contains(@class, 'Button_disabled__wCyIq'))]' 找到补充门票按钮
+2026-04-05 22:06:54,251 [INFO] 找到补充门票按钮，准备点击
+2026-04-05 22:06:54,336 [INFO] 已点击补充门票按钮
+2026-04-05 22:07:06,623 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:07:06,623 [INFO] 开始检测门票数量...
+2026-04-05 22:07:16,699 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:07:16,700 [INFO] 停止迷宫自动化...
+2026-04-05 22:07:16,713 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/ff596f447feff61ca8825c3e6d7a1431/cookie
+2026-04-05 22:07:20,797 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ff596f447feff61ca8825c3e6d7a1431/cookie
+2026-04-05 22:07:24,904 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ff596f447feff61ca8825c3e6d7a1431/cookie
+2026-04-05 22:07:28,999 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=62456): Max retries exceeded with url: /session/ff596f447feff61ca8825c3e6d7a1431/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 22:07:33,086 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ff596f447feff61ca8825c3e6d7a1431
+2026-04-05 22:07:37,170 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ff596f447feff61ca8825c3e6d7a1431
+2026-04-05 22:07:41,244 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62456): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ff596f447feff61ca8825c3e6d7a1431
+2026-04-05 22:07:45,336 [INFO] 浏览器已关闭
+2026-04-05 22:07:45,337 [INFO] 程序结束
+2026-04-05 22:14:06,950 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:14:06,951 [INFO] 开始自动化进程...
+2026-04-05 22:14:06,951 [INFO] 开始自动化进程...
+2026-04-05 22:14:06,952 [INFO] 初始化浏览器...
+2026-04-05 22:14:06,952 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:14:06,952 [INFO] ====== WebDriver manager ======
+2026-04-05 22:14:08,139 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:14:08,388 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:14:08,619 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:14:09,283 [INFO] 浏览器驱动设置完成
+2026-04-05 22:14:09,284 [INFO] 尝试加载cookies...
+2026-04-05 22:14:13,945 [INFO] 成功加载cookies
+2026-04-05 22:14:13,946 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:14:14,629 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:14:14,630 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:14:19,352 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:14:19,353 [INFO] 登录信息已保存
+2026-04-05 22:14:19,353 [INFO] 导航到迷宫页面...
+2026-04-05 22:14:19,353 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:14:25,223 [INFO] 找到 23 个导航项
+2026-04-05 22:14:25,223 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:14:25,304 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:14:25,453 [INFO] 已点击迷宫导航项
+2026-04-05 22:14:27,263 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:14:27,263 [INFO] 获取初始门票数量...
+2026-04-05 22:14:37,307 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:14:37,307 [INFO] 开始检测门票数量...
+2026-04-05 22:14:37,327 [INFO] 门票文本: '入场券: 5 / 5'
+2026-04-05 22:14:37,328 [INFO] 检测到门票数量: 5/5
+2026-04-05 22:14:37,328 [INFO] 初始门票数量: 5/5
+2026-04-05 22:14:37,328 [INFO] 开始自动化循环...
+2026-04-05 22:14:37,328 [INFO] 开始第 1 个循环
+2026-04-05 22:14:37,328 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:14:47,334 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:14:47,334 [INFO] 开始执行迷宫循环...
+2026-04-05 22:14:47,334 [INFO] 开始检测门票数量...
+2026-04-05 22:14:57,388 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:14:57,388 [INFO] 开始检测门票数量...
+2026-04-05 22:14:57,400 [INFO] 门票文本: '入场券: 5 / 5'
+2026-04-05 22:14:57,400 [INFO] 检测到门票数量: 5/5
+2026-04-05 22:14:57,401 [INFO] 当前门票: 5/5
+2026-04-05 22:14:57,401 [INFO] 门票充足，无需补充
+2026-04-05 22:14:57,401 [INFO] 准备进入迷宫...
+2026-04-05 22:15:07,425 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:15:07,425 [INFO] 尝试进入迷宫...
+2026-04-05 22:15:07,426 [INFO] 查找进入迷宫按钮...
+2026-04-05 22:15:07,453 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-05 22:15:07,453 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-05 22:15:07,563 [INFO] 已点击进入迷宫按钮
+2026-04-05 22:15:10,156 [INFO] 找到开始按钮，准备点击
+2026-04-05 22:15:10,210 [INFO] 已点击开始按钮
+2026-04-05 22:15:10,210 [INFO] 门票数量已减少，当前: 4/5
+2026-04-05 22:15:40,211 [INFO] 尝试退出迷宫...
+2026-04-05 22:15:50,240 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:15:50,240 [INFO] 尝试逃离迷宫...
+2026-04-05 22:15:50,240 [INFO] 查找结束迷宫按钮...
+2026-04-05 22:16:00,269 [ERROR] 未找到可点击的结束迷宫按钮
+2026-04-05 22:16:00,269 [ERROR] 退出迷宫失败，跳过本次循环
+2026-04-05 22:16:29,695 [INFO] 开始第 1 个循环
+2026-04-05 22:16:29,695 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:16:39,758 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:16:39,759 [INFO] 开始执行迷宫循环...
+2026-04-05 22:16:39,759 [INFO] 开始检测门票数量...
+2026-04-05 22:16:43,203 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xb61649]
+	chromedriver!(No symbol) [0xb615c6]
+	chromedriver!(No symbol) [0xb60123]
+	chromedriver!(No symbol) [0xb60b46]
+	chromedriver!(No symbol) [0xb76dfe]
+	chromedriver!(No symbol) [0xb775e5]
+	chromedriver!(No symbol) [0xb7b02a]
+	chromedriver!(No symbol) [0xb7b0b8]
+	chromedriver!(No symbol) [0xbba640]
+	chromedriver!(No symbol) [0xbbae6b]
+	chromedriver!(No symbol) [0xbfd0ec]
+	chromedriver!(No symbol) [0xbddb54]
+	chromedriver!(No symbol) [0xbfa9a5]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:16:43,204 [INFO] 开始检测门票数量...
+2026-04-05 22:16:43,205 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:16:43,206 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 22:16:45,252 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:16:45,252 [INFO] 停止迷宫自动化...
+2026-04-05 22:16:45,255 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/ebfcd7bc05e1ca0c845773cc176e676a/cookie
+2026-04-05 22:16:49,343 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ebfcd7bc05e1ca0c845773cc176e676a/cookie
+2026-04-05 22:16:53,435 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ebfcd7bc05e1ca0c845773cc176e676a/cookie
+2026-04-05 22:16:57,521 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=57680): Max retries exceeded with url: /session/ebfcd7bc05e1ca0c845773cc176e676a/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 22:17:01,580 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ebfcd7bc05e1ca0c845773cc176e676a
+2026-04-05 22:17:05,666 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ebfcd7bc05e1ca0c845773cc176e676a
+2026-04-05 22:17:09,750 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=57680): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ebfcd7bc05e1ca0c845773cc176e676a
+2026-04-05 22:17:13,847 [INFO] 浏览器已关闭
+2026-04-05 22:17:13,847 [INFO] 程序结束
+2026-04-05 22:18:09,070 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:18:09,071 [INFO] 开始自动化进程...
+2026-04-05 22:18:09,071 [INFO] 开始自动化进程...
+2026-04-05 22:18:09,071 [INFO] 初始化浏览器...
+2026-04-05 22:18:09,071 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:18:09,071 [INFO] ====== WebDriver manager ======
+2026-04-05 22:18:10,191 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:18:10,403 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:18:10,606 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:18:11,266 [INFO] 浏览器驱动设置完成
+2026-04-05 22:18:11,266 [INFO] 尝试加载cookies...
+2026-04-05 22:18:15,812 [INFO] 成功加载cookies
+2026-04-05 22:18:15,813 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:18:16,479 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:18:16,479 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:18:19,865 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:18:19,865 [INFO] 登录信息已保存
+2026-04-05 22:18:19,865 [INFO] 导航到迷宫页面...
+2026-04-05 22:18:19,865 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:18:25,254 [INFO] 找到 23 个导航项
+2026-04-05 22:18:25,255 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:18:25,291 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:18:25,406 [INFO] 已点击迷宫导航项
+2026-04-05 22:18:27,803 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:18:27,803 [INFO] 获取初始门票数量...
+2026-04-05 22:18:37,863 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:18:37,864 [INFO] 开始检测门票数量...
+2026-04-05 22:18:37,893 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:18:37,894 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:18:37,894 [INFO] 初始门票数量: 4/5
+2026-04-05 22:18:37,894 [INFO] 开始自动化循环...
+2026-04-05 22:18:37,895 [INFO] 开始第 1 个循环
+2026-04-05 22:18:37,895 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:18:47,938 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:18:47,938 [INFO] 开始执行迷宫循环...
+2026-04-05 22:18:47,938 [INFO] 开始检测门票数量...
+2026-04-05 22:18:57,974 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:18:57,974 [INFO] 开始检测门票数量...
+2026-04-05 22:18:57,985 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:18:57,986 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:18:57,986 [INFO] 当前门票: 4/5
+2026-04-05 22:18:57,986 [INFO] 门票充足，无需补充
+2026-04-05 22:18:57,987 [INFO] 准备进入迷宫...
+2026-04-05 22:19:08,041 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:19:08,043 [INFO] 尝试进入迷宫...
+2026-04-05 22:19:08,043 [INFO] 查找进入迷宫按钮...
+2026-04-05 22:19:41,856 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/element
+2026-04-05 22:19:45,959 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/element
+2026-04-05 22:19:50,070 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/element
+2026-04-05 22:19:54,171 [ERROR] 未找到进入迷宫按钮
+2026-04-05 22:19:54,171 [ERROR] 进入迷宫失败，跳过本次循环
+2026-04-05 22:20:22,129 [INFO] 开始第 1 个循环
+2026-04-05 22:20:22,129 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:20:26,220 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/elements
+2026-04-05 22:20:30,273 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/elements
+2026-04-05 22:20:32,313 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:20:32,313 [INFO] 停止迷宫自动化...
+2026-04-05 22:20:34,368 [INFO] 
+程序被用户中断
+2026-04-05 22:20:34,368 [INFO] 停止迷宫自动化...
+2026-04-05 22:20:38,463 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/cookie
+2026-04-05 22:20:42,565 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/cookie
+2026-04-05 22:20:46,672 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d/cookie
+2026-04-05 22:20:50,785 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=51894): Max retries exceeded with url: /session/60e693ddf36b178cfea4a6438f2e124d/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 22:20:54,887 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d
+2026-04-05 22:20:58,974 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d
+2026-04-05 22:21:03,058 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=51894): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/60e693ddf36b178cfea4a6438f2e124d
+2026-04-05 22:21:07,155 [INFO] 浏览器已关闭
+2026-04-05 22:21:07,155 [INFO] 程序结束
+2026-04-05 22:23:50,006 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:23:50,007 [INFO] 开始自动化进程...
+2026-04-05 22:23:50,007 [INFO] 开始自动化进程...
+2026-04-05 22:23:50,007 [INFO] 初始化浏览器...
+2026-04-05 22:23:50,007 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:23:50,007 [INFO] ====== WebDriver manager ======
+2026-04-05 22:23:51,181 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:23:51,395 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:23:51,628 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:23:54,037 [ERROR] 浏览器驱动设置失败: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xba74ab]
+	chromedriver!(No symbol) [0xba2690]
+	chromedriver!(No symbol) [0xbe9cbf]
+	chromedriver!(No symbol) [0xbe94d7]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:23:54,038 [ERROR] 浏览器初始化失败
+2026-04-05 22:23:54,038 [INFO] 程序结束
+2026-04-05 22:28:14,887 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:28:14,888 [INFO] 开始自动化进程...
+2026-04-05 22:28:14,888 [INFO] 开始自动化进程...
+2026-04-05 22:28:14,888 [INFO] 初始化浏览器...
+2026-04-05 22:28:14,889 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:28:14,889 [INFO] ====== WebDriver manager ======
+2026-04-05 22:28:16,021 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:28:16,256 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:28:16,479 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:28:17,156 [INFO] 浏览器驱动设置完成
+2026-04-05 22:28:17,157 [INFO] 尝试加载cookies...
+2026-04-05 22:28:21,952 [INFO] 成功加载cookies
+2026-04-05 22:28:21,952 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:28:22,601 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:28:22,601 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:28:41,545 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:28:41,545 [INFO] 登录信息已保存
+2026-04-05 22:28:41,545 [INFO] 导航到迷宫页面...
+2026-04-05 22:28:41,545 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:28:47,194 [INFO] 找到 23 个导航项
+2026-04-05 22:28:47,194 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:28:47,241 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:28:47,358 [INFO] 已点击迷宫导航项
+2026-04-05 22:28:49,175 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:28:49,175 [INFO] 获取初始门票数量...
+2026-04-05 22:28:59,229 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:28:59,229 [INFO] 开始检测门票数量...
+2026-04-05 22:28:59,253 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:28:59,255 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:28:59,255 [INFO] 初始门票数量: 4/5
+2026-04-05 22:28:59,255 [INFO] 开始自动化循环...
+2026-04-05 22:28:59,255 [INFO] 开始第 1 个循环
+2026-04-05 22:28:59,255 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:29:09,301 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:29:19,354 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:29:19,354 [INFO] 开始检测迷宫状态...
+2026-04-05 22:29:19,371 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:29:19,371 [INFO] 当前已在迷宫中，准备退出...
+2026-04-05 22:29:19,371 [INFO] 本轮未进入迷宫，无需退出
+2026-04-05 22:29:19,371 [INFO] 尝试退出迷宫...
+2026-04-05 22:29:19,372 [INFO] 本轮未进入迷宫，无需退出
+2026-04-05 22:29:19,372 [INFO] 循环完成，等待 19.46 秒后开始下一个循环...
+2026-04-05 22:29:38,831 [INFO] 开始第 2 个循环
+2026-04-05 22:29:48,857 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:29:48,858 [INFO] 开始检测迷宫状态...
+2026-04-05 22:29:48,868 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:29:48,869 [INFO] 当前已在迷宫中，准备退出...
+2026-04-05 22:29:48,869 [INFO] 本轮未进入迷宫，无需退出
+2026-04-05 22:29:48,869 [INFO] 尝试退出迷宫...
+2026-04-05 22:29:48,870 [INFO] 本轮未进入迷宫，无需退出
+2026-04-05 22:29:48,870 [INFO] 循环完成，等待 17.38 秒后开始下一个循环...
+2026-04-05 22:29:50,573 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:29:50,573 [INFO] 停止迷宫自动化...
+2026-04-05 22:29:50,577 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/d4edfe4d8dadaefa879fb2b8189a7800/cookie
+2026-04-05 22:29:54,692 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/d4edfe4d8dadaefa879fb2b8189a7800/cookie
+2026-04-05 22:29:58,781 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/d4edfe4d8dadaefa879fb2b8189a7800/cookie
+2026-04-05 22:30:02,893 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=62043): Max retries exceeded with url: /session/d4edfe4d8dadaefa879fb2b8189a7800/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 22:30:06,978 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/d4edfe4d8dadaefa879fb2b8189a7800
+2026-04-05 22:30:11,083 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/d4edfe4d8dadaefa879fb2b8189a7800
+2026-04-05 22:30:15,155 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=62043): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/d4edfe4d8dadaefa879fb2b8189a7800
+2026-04-05 22:30:19,259 [INFO] 浏览器已关闭
+2026-04-05 22:30:19,259 [INFO] 程序结束
+2026-04-05 22:40:07,298 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:40:07,299 [INFO] 开始自动化进程...
+2026-04-05 22:40:07,299 [INFO] 开始自动化进程...
+2026-04-05 22:40:07,299 [INFO] 初始化浏览器...
+2026-04-05 22:40:07,299 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:40:07,299 [INFO] ====== WebDriver manager ======
+2026-04-05 22:40:08,404 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:40:08,622 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:40:08,833 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:40:09,515 [INFO] 浏览器驱动设置完成
+2026-04-05 22:40:09,515 [INFO] 尝试加载cookies...
+2026-04-05 22:40:14,490 [INFO] 成功加载cookies
+2026-04-05 22:40:14,491 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:40:15,141 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:40:15,141 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:40:18,581 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:40:18,581 [INFO] 登录信息已保存
+2026-04-05 22:40:18,581 [INFO] 导航到迷宫页面...
+2026-04-05 22:40:18,581 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:40:23,884 [INFO] 找到 23 个导航项
+2026-04-05 22:40:23,884 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:40:23,939 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:40:24,135 [INFO] 已点击迷宫导航项
+2026-04-05 22:40:25,772 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:40:25,774 [INFO] 获取初始门票数量...
+2026-04-05 22:40:35,830 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:40:35,831 [INFO] 开始检测门票数量...
+2026-04-05 22:40:35,859 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:40:35,860 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:40:35,860 [INFO] 初始门票数量: 4/5
+2026-04-05 22:40:35,860 [INFO] 开始自动化循环...
+2026-04-05 22:40:35,860 [INFO] 开始第 1 个循环
+2026-04-05 22:40:35,860 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:40:45,894 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:40:55,922 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:40:55,923 [INFO] 开始检测迷宫状态...
+2026-04-05 22:40:55,943 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:40:55,943 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 22:40:56,062 [INFO] 已点击'立即开始'按钮
+2026-04-05 22:41:26,064 [INFO] 尝试退出迷宫...
+2026-04-05 22:41:26,064 [INFO] 正在退出迷宫...
+2026-04-05 22:41:26,220 [INFO] 已点击结束迷宫按钮
+2026-04-05 22:41:46,795 [ERROR] 执行循环时发生错误: name 'TimeoutException' is not defined
+2026-04-05 22:41:46,796 [INFO] 停止迷宫自动化...
+2026-04-05 22:41:46,805 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:41:49,172 [INFO] 浏览器已关闭
+2026-04-05 22:41:49,172 [INFO] 程序结束
+2026-04-05 22:45:04,126 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:45:04,127 [INFO] 开始自动化进程...
+2026-04-05 22:45:04,127 [INFO] 开始自动化进程...
+2026-04-05 22:45:04,127 [INFO] 初始化浏览器...
+2026-04-05 22:45:04,127 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:45:04,127 [ERROR] 浏览器驱动设置失败: name 'Service' is not defined
+2026-04-05 22:45:04,128 [ERROR] 浏览器初始化失败
+2026-04-05 22:45:04,128 [INFO] 程序结束
+2026-04-05 22:45:09,808 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:45:09,809 [INFO] 开始自动化进程...
+2026-04-05 22:45:09,809 [INFO] 开始自动化进程...
+2026-04-05 22:45:09,809 [INFO] 初始化浏览器...
+2026-04-05 22:45:09,810 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:45:09,810 [ERROR] 浏览器驱动设置失败: name 'Service' is not defined
+2026-04-05 22:45:09,810 [ERROR] 浏览器初始化失败
+2026-04-05 22:45:09,810 [INFO] 程序结束
+2026-04-05 22:45:46,339 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:45:46,339 [INFO] 开始自动化进程...
+2026-04-05 22:45:46,339 [INFO] 开始自动化进程...
+2026-04-05 22:45:46,339 [INFO] 初始化浏览器...
+2026-04-05 22:45:46,339 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:45:46,340 [ERROR] 浏览器驱动设置失败: name 'ChromeDriverManager' is not defined
+2026-04-05 22:45:46,340 [ERROR] 浏览器初始化失败
+2026-04-05 22:45:46,340 [INFO] 程序结束
+2026-04-05 22:46:22,427 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:46:22,428 [INFO] 开始自动化进程...
+2026-04-05 22:46:22,428 [INFO] 开始自动化进程...
+2026-04-05 22:46:22,429 [INFO] 初始化浏览器...
+2026-04-05 22:46:22,429 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:46:22,429 [INFO] ====== WebDriver manager ======
+2026-04-05 22:46:23,549 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:46:23,789 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:46:24,166 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:46:24,806 [INFO] 浏览器驱动设置完成
+2026-04-05 22:46:24,807 [INFO] 尝试加载cookies...
+2026-04-05 22:46:29,606 [INFO] 成功加载cookies
+2026-04-05 22:46:29,607 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:46:30,213 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:46:30,213 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:46:34,374 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:46:34,375 [INFO] 登录信息已保存
+2026-04-05 22:46:34,375 [INFO] 导航到迷宫页面...
+2026-04-05 22:46:34,375 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:46:40,005 [INFO] 找到 23 个导航项
+2026-04-05 22:46:40,005 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:46:40,038 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:46:40,138 [INFO] 已点击迷宫导航项
+2026-04-05 22:46:42,449 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:46:42,450 [INFO] 获取初始门票数量...
+2026-04-05 22:46:52,503 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:46:52,504 [INFO] 开始检测门票数量...
+2026-04-05 22:46:52,522 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:46:52,522 [ERROR] 检测门票数量失败: name 're' is not defined
+2026-04-05 22:46:52,522 [ERROR] 获取初始门票数量失败
+2026-04-05 22:46:52,523 [INFO] 开始自动化循环...
+2026-04-05 22:46:52,523 [INFO] 开始第 1 个循环
+2026-04-05 22:46:52,523 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:47:02,584 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:47:12,611 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:47:12,612 [INFO] 开始检测迷宫状态...
+2026-04-05 22:47:12,633 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:47:12,633 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 22:47:12,756 [INFO] 已点击'立即开始'按钮
+2026-04-05 22:47:42,759 [INFO] 尝试退出迷宫...
+2026-04-05 22:47:42,759 [INFO] 正在退出迷宫...
+2026-04-05 22:47:44,491 [ERROR] 退出迷宫时出现错误: Message: element click intercepted: Element <button class="Button_button__1Fe9z Button_warning__1-AMI">...</button> is not clickable at point (603, 362). Other element would receive the click: <div>...</div>
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xbc12b8]
+	chromedriver!(No symbol) [0xbbf4c9]
+	chromedriver!(No symbol) [0xbbce82]
+	chromedriver!(No symbol) [0xbbc094]
+	chromedriver!(No symbol) [0xbb1ca8]
+	chromedriver!(No symbol) [0xbddb0c]
+	chromedriver!(No symbol) [0xbb16e4]
+	chromedriver!(No symbol) [0xbddcd4]
+	chromedriver!(No symbol) [0xbfa9a5]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:47:44,491 [ERROR] 退出迷宫失败，跳过本次循环
+2026-04-05 22:48:11,882 [INFO] 开始第 1 个循环
+2026-04-05 22:48:11,882 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:48:21,935 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:48:24,485 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:48:24,485 [INFO] 停止迷宫自动化...
+2026-04-05 22:48:28,546 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52497): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/7a30b1a7e43341920384ba78dbc3cd5b/cookie
+2026-04-05 22:48:30,580 [INFO] 
+程序被用户中断
+2026-04-05 22:48:30,581 [INFO] 停止迷宫自动化...
+2026-04-05 22:48:34,670 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52497): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/7a30b1a7e43341920384ba78dbc3cd5b/cookie
+2026-04-05 22:48:38,764 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52497): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/7a30b1a7e43341920384ba78dbc3cd5b/cookie
+2026-04-05 22:48:42,856 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52497): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/7a30b1a7e43341920384ba78dbc3cd5b/cookie
+2026-04-05 22:48:46,920 [INFO] 程序结束
+2026-04-05 22:48:48,893 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:48:48,893 [INFO] 开始自动化进程...
+2026-04-05 22:48:48,893 [INFO] 开始自动化进程...
+2026-04-05 22:48:48,893 [INFO] 初始化浏览器...
+2026-04-05 22:48:48,894 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:48:48,894 [INFO] ====== WebDriver manager ======
+2026-04-05 22:48:50,131 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:48:50,344 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:48:50,566 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:48:51,391 [INFO] 浏览器驱动设置完成
+2026-04-05 22:48:51,391 [INFO] 尝试加载cookies...
+2026-04-05 22:48:56,949 [INFO] 成功加载cookies
+2026-04-05 22:48:56,949 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:48:57,643 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:48:57,643 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:50:04,739 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:50:04,740 [INFO] 登录信息已保存
+2026-04-05 22:50:04,740 [INFO] 导航到迷宫页面...
+2026-04-05 22:50:04,740 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:50:10,503 [INFO] 找到 23 个导航项
+2026-04-05 22:50:10,504 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:50:10,551 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:50:10,663 [INFO] 已点击迷宫导航项
+2026-04-05 22:50:13,100 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:50:13,100 [INFO] 获取初始门票数量...
+2026-04-05 22:50:23,139 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:50:23,139 [INFO] 开始检测门票数量...
+2026-04-05 22:50:23,168 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:50:23,169 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:50:23,169 [INFO] 初始门票数量: 4/5
+2026-04-05 22:50:23,169 [INFO] 开始自动化循环...
+2026-04-05 22:50:23,169 [INFO] 开始第 1 个循环
+2026-04-05 22:50:23,170 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:50:33,200 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:50:43,233 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:50:43,233 [INFO] 开始检测迷宫状态...
+2026-04-05 22:50:43,249 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:50:43,249 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 22:50:43,347 [INFO] 已点击'立即开始'按钮
+2026-04-05 22:51:13,349 [INFO] 尝试退出迷宫...
+2026-04-05 22:51:13,349 [INFO] 正在退出迷宫...
+2026-04-05 22:51:14,035 [INFO] 已点击结束迷宫按钮
+2026-04-05 22:51:24,258 [WARNING] 未找到退出迷宫的相关按钮，可能已自动退出
+2026-04-05 22:51:24,258 [INFO] 循环完成，等待 17.48 秒后开始下一个循环...
+2026-04-05 22:51:41,742 [INFO] 开始第 2 个循环
+2026-04-05 22:51:51,794 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:51:51,794 [INFO] 开始检测迷宫状态...
+2026-04-05 22:51:51,811 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:51:51,812 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 22:51:52,913 [ERROR] 执行循环时发生错误: Message: element click intercepted: Element <button class="Button_button__1Fe9z Button_success__6d6kU">...</button> is not clickable at point (1048, 590). Other element would receive the click: <div class="MuiDialog-container MuiDialog-scrollPaper css-ekeie0" role="presentation" tabindex="-1" style="opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1);">...</div>
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xbc12b8]
+	chromedriver!(No symbol) [0xbbf4c9]
+	chromedriver!(No symbol) [0xbbce82]
+	chromedriver!(No symbol) [0xbbc094]
+	chromedriver!(No symbol) [0xbb1ca8]
+	chromedriver!(No symbol) [0xbddb0c]
+	chromedriver!(No symbol) [0xbb16e4]
+	chromedriver!(No symbol) [0xbddcd4]
+	chromedriver!(No symbol) [0xbfa9a5]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:51:52,913 [INFO] 停止迷宫自动化...
+2026-04-05 22:51:52,920 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:51:55,184 [INFO] 浏览器已关闭
+2026-04-05 22:51:55,184 [INFO] 程序结束
+2026-04-05 22:53:52,433 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:53:52,433 [INFO] 开始自动化进程...
+2026-04-05 22:53:52,433 [INFO] 开始自动化进程...
+2026-04-05 22:53:52,434 [INFO] 初始化浏览器...
+2026-04-05 22:53:52,434 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:53:52,434 [INFO] ====== WebDriver manager ======
+2026-04-05 22:53:53,724 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:53:53,943 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:53:54,166 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:53:54,924 [INFO] 浏览器驱动设置完成
+2026-04-05 22:53:54,924 [INFO] 尝试加载cookies...
+2026-04-05 22:53:59,975 [INFO] 成功加载cookies
+2026-04-05 22:53:59,975 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:54:00,616 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 22:54:00,616 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 22:54:07,738 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 22:54:07,739 [INFO] 登录信息已保存
+2026-04-05 22:54:07,739 [INFO] 导航到迷宫页面...
+2026-04-05 22:54:07,739 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 22:54:13,340 [INFO] 找到 23 个导航项
+2026-04-05 22:54:13,340 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 22:54:13,395 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 22:54:13,571 [INFO] 已点击迷宫导航项
+2026-04-05 22:54:15,770 [INFO] 已成功导航到迷宫页面
+2026-04-05 22:54:15,770 [INFO] 获取初始门票数量...
+2026-04-05 22:54:15,782 [INFO] 检测到离线进度弹窗，准备关闭
+2026-04-05 22:54:15,800 [INFO] 找到关闭按钮，使用选择器: .OfflineProgressModal_closeButton__3g3Y2
+2026-04-05 22:54:15,876 [INFO] 已点击关闭按钮
+2026-04-05 22:54:25,907 [INFO] 离线进度弹窗已关闭
+2026-04-05 22:54:25,907 [INFO] 开始检测门票数量...
+2026-04-05 22:54:25,930 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 22:54:25,930 [INFO] 检测到门票数量: 4/5
+2026-04-05 22:54:25,931 [INFO] 初始门票数量: 4/5
+2026-04-05 22:54:25,931 [INFO] 开始自动化循环...
+2026-04-05 22:54:25,931 [INFO] 开始第 1 个循环
+2026-04-05 22:54:25,931 [INFO] 检查初始离线进度弹窗...
+2026-04-05 22:54:35,961 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:54:46,010 [INFO] 未检测到离线进度弹窗
+2026-04-05 22:54:46,010 [INFO] 开始检测迷宫状态...
+2026-04-05 22:54:46,030 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 22:54:46,030 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 22:54:46,154 [INFO] 已点击'立即开始'按钮
+2026-04-05 22:55:16,156 [INFO] 尝试退出迷宫...
+2026-04-05 22:55:16,156 [INFO] 正在退出迷宫...
+2026-04-05 22:55:17,814 [INFO] 已点击结束迷宫按钮
+2026-04-05 22:55:27,883 [WARNING] 未找到退出迷宫的相关按钮，可能已自动退出
+2026-04-05 22:55:27,884 [INFO] 循环完成，等待 15.08 秒后开始下一个循环...
+2026-04-05 22:55:42,961 [INFO] 开始第 2 个循环
+2026-04-05 22:55:47,942 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xb61649]
+	chromedriver!(No symbol) [0xb615c6]
+	chromedriver!(No symbol) [0xb60123]
+	chromedriver!(No symbol) [0xb60b46]
+	chromedriver!(No symbol) [0xb76dfe]
+	chromedriver!(No symbol) [0xb775e5]
+	chromedriver!(No symbol) [0xb7b02a]
+	chromedriver!(No symbol) [0xb7b0b8]
+	chromedriver!(No symbol) [0xbba640]
+	chromedriver!(No symbol) [0xbbae6b]
+	chromedriver!(No symbol) [0xbfd0ec]
+	chromedriver!(No symbol) [0xbddb54]
+	chromedriver!(No symbol) [0xbfa9a5]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:55:47,942 [INFO] 开始检测迷宫状态...
+2026-04-05 22:55:47,945 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:55:47,945 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 22:55:47,945 [INFO] 开始检测门票数量...
+2026-04-05 22:55:47,947 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:55:47,947 [INFO] 开始检测门票数量...
+2026-04-05 22:55:47,949 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 22:55:47,950 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 22:55:49,415 [INFO] 
+用户中断，停止自动化...
+2026-04-05 22:55:49,415 [INFO] 停止迷宫自动化...
+2026-04-05 22:55:49,418 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/def02d710ba62df0602607e9ec6ea701/cookie
+2026-04-05 22:55:53,519 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/def02d710ba62df0602607e9ec6ea701/cookie
+2026-04-05 22:55:57,636 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/def02d710ba62df0602607e9ec6ea701/cookie
+2026-04-05 22:56:01,714 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=64623): Max retries exceeded with url: /session/def02d710ba62df0602607e9ec6ea701/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 22:56:05,800 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/def02d710ba62df0602607e9ec6ea701
+2026-04-05 22:56:09,906 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/def02d710ba62df0602607e9ec6ea701
+2026-04-05 22:56:14,023 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=64623): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/def02d710ba62df0602607e9ec6ea701
+2026-04-05 22:56:18,123 [INFO] 浏览器已关闭
+2026-04-05 22:56:18,123 [INFO] 程序结束
+2026-04-05 22:59:54,885 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 22:59:54,886 [INFO] 开始自动化进程...
+2026-04-05 22:59:54,886 [INFO] 开始自动化进程...
+2026-04-05 22:59:54,886 [INFO] 初始化浏览器...
+2026-04-05 22:59:54,886 [INFO] 开始设置浏览器驱动...
+2026-04-05 22:59:54,887 [INFO] ====== WebDriver manager ======
+2026-04-05 22:59:56,327 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:59:56,669 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 22:59:56,951 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 22:59:57,744 [INFO] 浏览器驱动设置完成
+2026-04-05 22:59:57,745 [INFO] 尝试加载cookies...
+2026-04-05 23:00:01,532 [INFO] 成功加载cookies
+2026-04-05 23:00:01,532 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:00:02,185 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 23:00:02,185 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 23:00:36,366 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 23:00:36,367 [INFO] 登录信息已保存
+2026-04-05 23:00:36,367 [INFO] 导航到迷宫页面...
+2026-04-05 23:00:36,367 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:00:42,541 [INFO] 找到 23 个导航项
+2026-04-05 23:00:42,542 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 23:00:42,595 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 23:00:42,739 [INFO] 已点击迷宫导航项
+2026-04-05 23:00:45,108 [INFO] 已成功导航到迷宫页面
+2026-04-05 23:00:45,108 [INFO] 获取初始门票数量...
+2026-04-05 23:00:55,121 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:00:55,122 [INFO] 开始检测门票数量...
+2026-04-05 23:00:55,144 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 23:00:55,145 [INFO] 检测到门票数量: 4/5
+2026-04-05 23:00:55,145 [INFO] 初始门票数量: 4/5
+2026-04-05 23:00:55,145 [INFO] 开始自动化循环...
+2026-04-05 23:00:55,145 [INFO] 开始第 1 个循环
+2026-04-05 23:00:55,145 [INFO] 检查初始离线进度弹窗...
+2026-04-05 23:01:05,174 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:01:15,236 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:01:15,236 [INFO] 开始检测迷宫状态...
+2026-04-05 23:01:15,254 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-05 23:01:15,254 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 23:01:15,355 [INFO] 已点击'立即开始'按钮
+2026-04-05 23:01:45,356 [INFO] 尝试退出迷宫...
+2026-04-05 23:01:45,356 [INFO] 正在退出迷宫...
+2026-04-05 23:01:47,330 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:01:47,464 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-05 23:01:49,580 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-05 23:02:00,631 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-05 23:02:00,631 [INFO] 循环完成，等待 19.46 秒后开始下一个循环...
+2026-04-05 23:02:20,093 [INFO] 开始第 2 个循环
+2026-04-05 23:02:30,146 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:02:30,146 [INFO] 开始检测迷宫状态...
+2026-04-05 23:02:40,174 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-05 23:02:40,175 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:02:40,175 [INFO] 开始检测门票数量...
+2026-04-05 23:02:50,192 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:02:50,193 [INFO] 开始检测门票数量...
+2026-04-05 23:02:50,213 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-05 23:02:50,213 [INFO] 检测到门票数量: 4/5
+2026-04-05 23:02:50,213 [INFO] 当前门票: 4/5
+2026-04-05 23:02:50,214 [INFO] 门票充足，无需补充
+2026-04-05 23:02:50,214 [INFO] 准备进入迷宫...
+2026-04-05 23:03:00,221 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:03:00,221 [INFO] 尝试进入迷宫...
+2026-04-05 23:03:00,221 [INFO] 查找进入迷宫按钮...
+2026-04-05 23:03:00,253 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-05 23:03:00,254 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-05 23:03:00,328 [INFO] 已点击进入迷宫按钮
+2026-04-05 23:03:02,659 [INFO] 找到开始按钮，准备点击
+2026-04-05 23:03:02,703 [INFO] 已点击开始按钮
+2026-04-05 23:03:02,704 [INFO] 门票数量已减少，当前: 3/5
+2026-04-05 23:03:02,704 [INFO] 尝试退出迷宫...
+2026-04-05 23:03:02,704 [INFO] 正在退出迷宫...
+2026-04-05 23:03:02,859 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:03:02,941 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-05 23:03:05,984 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-05 23:03:17,034 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-05 23:03:17,034 [INFO] 循环完成，等待 18.99 秒后开始下一个循环...
+2026-04-05 23:03:36,029 [INFO] 开始第 3 个循环
+2026-04-05 23:03:36,030 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xb6108e]
+	chromedriver!(No symbol) [0xb7fbe9]
+	chromedriver!(No symbol) [0xbe450c]
+	chromedriver!(No symbol) [0xbfa309]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:03:36,031 [INFO] 开始检测迷宫状态...
+2026-04-05 23:03:36,032 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:03:36,032 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:03:36,032 [INFO] 开始检测门票数量...
+2026-04-05 23:03:36,033 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:03:36,033 [INFO] 开始检测门票数量...
+2026-04-05 23:03:36,034 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:03:36,034 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 23:04:04,049 [INFO] 开始第 3 个循环
+2026-04-05 23:04:04,050 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:04,051 [INFO] 开始检测迷宫状态...
+2026-04-05 23:04:04,052 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:04,052 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:04:04,053 [INFO] 开始检测门票数量...
+2026-04-05 23:04:04,054 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:04,054 [INFO] 开始检测门票数量...
+2026-04-05 23:04:04,055 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:04,055 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 23:04:34,057 [INFO] 开始第 3 个循环
+2026-04-05 23:04:34,057 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:34,059 [INFO] 开始检测迷宫状态...
+2026-04-05 23:04:34,060 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:34,060 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:04:34,060 [INFO] 开始检测门票数量...
+2026-04-05 23:04:34,061 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:34,062 [INFO] 开始检测门票数量...
+2026-04-05 23:04:34,063 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:34,063 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 23:04:58,758 [INFO] 开始第 3 个循环
+2026-04-05 23:04:58,759 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:58,760 [INFO] 开始检测迷宫状态...
+2026-04-05 23:04:58,761 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:58,761 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:04:58,761 [INFO] 开始检测门票数量...
+2026-04-05 23:04:58,762 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:58,762 [INFO] 开始检测门票数量...
+2026-04-05 23:04:58,763 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:04:58,764 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 23:05:22,884 [INFO] 开始第 3 个循环
+2026-04-05 23:05:22,886 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:05:22,886 [INFO] 开始检测迷宫状态...
+2026-04-05 23:05:22,888 [ERROR] 检测迷宫状态时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:05:22,888 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:05:22,888 [INFO] 开始检测门票数量...
+2026-04-05 23:05:22,890 [ERROR] 关闭离线进度弹窗时出现错误: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:05:22,890 [INFO] 开始检测门票数量...
+2026-04-05 23:05:22,892 [ERROR] 检测门票数量失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb71f5e]
+	chromedriver!(No symbol) [0xbaf4b7]
+	chromedriver!(No symbol) [0xbdd9c6]
+	chromedriver!(No symbol) [0xbd8e42]
+	chromedriver!(No symbol) [0xbd8462]
+	chromedriver!(No symbol) [0xb4534e]
+	chromedriver!(No symbol) [0xb458ee]
+	chromedriver!(No symbol) [0xb45dcd]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!(No symbol) [0xb44ee9]
+	chromedriver!(No symbol) [0xb44530]
+	chromedriver!GetHandleVerifier [0x1142e9f+3c6baf]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:05:22,892 [WARNING] 获取门票数量失败，跳过本次循环
+2026-04-05 23:05:27,422 [INFO] 
+用户中断，停止自动化...
+2026-04-05 23:05:27,422 [INFO] 停止迷宫自动化...
+2026-04-05 23:05:27,426 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/85423b9f35ab1feab829a00d1ebdf2c7/cookie
+2026-04-05 23:05:31,525 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/85423b9f35ab1feab829a00d1ebdf2c7/cookie
+2026-04-05 23:05:35,649 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/85423b9f35ab1feab829a00d1ebdf2c7/cookie
+2026-04-05 23:05:39,751 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=59931): Max retries exceeded with url: /session/85423b9f35ab1feab829a00d1ebdf2c7/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 23:05:43,847 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/85423b9f35ab1feab829a00d1ebdf2c7
+2026-04-05 23:05:47,936 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/85423b9f35ab1feab829a00d1ebdf2c7
+2026-04-05 23:05:52,042 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=59931): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/85423b9f35ab1feab829a00d1ebdf2c7
+2026-04-05 23:05:56,130 [INFO] 浏览器已关闭
+2026-04-05 23:05:56,130 [INFO] 程序结束
+2026-04-05 23:06:35,405 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 23:06:35,407 [INFO] 开始自动化进程...
+2026-04-05 23:06:35,407 [INFO] 开始自动化进程...
+2026-04-05 23:06:35,407 [INFO] 初始化浏览器...
+2026-04-05 23:06:35,407 [INFO] 开始设置浏览器驱动...
+2026-04-05 23:06:35,407 [INFO] ====== WebDriver manager ======
+2026-04-05 23:06:36,781 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:06:37,034 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:06:37,256 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 23:06:37,986 [INFO] 浏览器驱动设置完成
+2026-04-05 23:06:37,986 [INFO] 尝试加载cookies...
+2026-04-05 23:06:43,297 [INFO] 成功加载cookies
+2026-04-05 23:06:43,298 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:06:43,930 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 23:06:43,930 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 23:06:48,398 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 23:06:48,398 [INFO] 登录信息已保存
+2026-04-05 23:06:48,399 [INFO] 导航到迷宫页面...
+2026-04-05 23:06:48,399 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:06:55,573 [INFO] 找到 23 个导航项
+2026-04-05 23:06:55,573 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 23:06:55,639 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 23:06:55,843 [INFO] 已点击迷宫导航项
+2026-04-05 23:06:57,795 [INFO] 已成功导航到迷宫页面
+2026-04-05 23:06:57,796 [INFO] 获取初始门票数量...
+2026-04-05 23:07:07,821 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:07:07,822 [INFO] 开始检测门票数量...
+2026-04-05 23:07:07,848 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-05 23:07:07,849 [INFO] 检测到门票数量: 3/5
+2026-04-05 23:07:07,849 [INFO] 初始门票数量: 3/5
+2026-04-05 23:07:07,850 [INFO] 开始自动化循环...
+2026-04-05 23:07:07,850 [INFO] 开始第 1 个循环
+2026-04-05 23:07:07,850 [INFO] 检查初始离线进度弹窗...
+2026-04-05 23:07:17,860 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:07:27,985 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:07:27,988 [INFO] 开始检测迷宫状态...
+2026-04-05 23:07:38,016 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-05 23:07:38,016 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:07:38,017 [INFO] 开始检测门票数量...
+2026-04-05 23:07:48,043 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:07:48,043 [INFO] 开始检测门票数量...
+2026-04-05 23:07:48,070 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-05 23:07:48,070 [INFO] 检测到门票数量: 3/5
+2026-04-05 23:07:48,070 [INFO] 当前门票: 3/5
+2026-04-05 23:07:48,071 [INFO] 门票充足，无需补充
+2026-04-05 23:07:48,071 [INFO] 准备进入迷宫...
+2026-04-05 23:07:58,081 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:07:58,081 [INFO] 尝试进入迷宫...
+2026-04-05 23:07:58,081 [INFO] 查找进入迷宫按钮...
+2026-04-05 23:07:58,121 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-05 23:07:58,122 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-05 23:07:58,216 [INFO] 已点击进入迷宫按钮
+2026-04-05 23:07:59,905 [INFO] 找到开始按钮，准备点击
+2026-04-05 23:07:59,974 [INFO] 已点击开始按钮
+2026-04-05 23:07:59,974 [INFO] 门票数量已减少，当前: 2/5
+2026-04-05 23:07:59,975 [INFO] 尝试退出迷宫...
+2026-04-05 23:07:59,975 [INFO] 正在退出迷宫...
+2026-04-05 23:08:00,096 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:08:00,201 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-05 23:08:04,688 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-05 23:08:08,624 [INFO] 
+用户中断，停止自动化...
+2026-04-05 23:08:08,624 [INFO] 停止迷宫自动化...
+2026-04-05 23:08:12,729 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:16,816 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:20,936 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:22,988 [INFO] 
+程序被用户中断
+2026-04-05 23:08:22,989 [INFO] 停止迷宫自动化...
+2026-04-05 23:08:27,077 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:31,154 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:35,263 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie
+2026-04-05 23:08:39,358 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=49164): Max retries exceeded with url: /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 23:08:43,457 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76
+2026-04-05 23:08:47,556 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76
+2026-04-05 23:08:51,641 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=49164): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/c1c5e5b7c66b8d3bd9be1fd7bc195b76
+2026-04-05 23:08:55,738 [INFO] 浏览器已关闭
+2026-04-05 23:08:55,739 [INFO] 程序结束
+2026-04-05 23:12:38,569 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 23:12:38,570 [INFO] 开始自动化进程...
+2026-04-05 23:12:38,570 [INFO] 开始自动化进程...
+2026-04-05 23:12:38,570 [INFO] 初始化浏览器...
+2026-04-05 23:12:38,570 [INFO] 开始设置浏览器驱动...
+2026-04-05 23:12:38,571 [INFO] ====== WebDriver manager ======
+2026-04-05 23:12:39,826 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:12:40,023 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:12:40,246 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 23:12:40,943 [INFO] 浏览器驱动设置完成
+2026-04-05 23:12:40,943 [INFO] 尝试加载cookies...
+2026-04-05 23:12:44,244 [INFO] 成功加载cookies
+2026-04-05 23:12:44,244 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:12:44,927 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 23:12:44,927 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 23:12:53,756 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 23:12:53,756 [INFO] 登录信息已保存
+2026-04-05 23:12:53,757 [INFO] 导航到迷宫页面...
+2026-04-05 23:12:53,757 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:12:59,649 [INFO] 找到 23 个导航项
+2026-04-05 23:12:59,649 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 23:12:59,722 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 23:12:59,924 [INFO] 已点击迷宫导航项
+2026-04-05 23:13:02,879 [INFO] 已成功导航到迷宫页面
+2026-04-05 23:13:02,879 [INFO] 获取初始门票数量...
+2026-04-05 23:13:12,896 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:13:12,898 [INFO] 开始检测门票数量...
+2026-04-05 23:13:12,928 [INFO] 门票文本: '入场券: 2 / 5'
+2026-04-05 23:13:12,928 [INFO] 检测到门票数量: 2/5
+2026-04-05 23:13:12,929 [INFO] 初始门票数量: 2/5
+2026-04-05 23:13:12,929 [INFO] 开始自动化循环...
+2026-04-05 23:13:12,929 [INFO] 开始第 1 个循环
+2026-04-05 23:13:12,929 [INFO] 检查初始离线进度弹窗...
+2026-04-05 23:13:22,981 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:13:33,033 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:13:33,034 [INFO] 开始检测迷宫状态...
+2026-04-05 23:13:43,077 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-05 23:13:43,078 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:13:43,078 [INFO] 开始检测门票数量...
+2026-04-05 23:13:53,133 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:13:53,133 [INFO] 开始检测门票数量...
+2026-04-05 23:13:53,160 [INFO] 门票文本: '入场券: 2 / 5'
+2026-04-05 23:13:53,160 [INFO] 检测到门票数量: 2/5
+2026-04-05 23:13:53,161 [INFO] 当前门票: 2/5
+2026-04-05 23:13:53,161 [INFO] 门票充足，无需补充
+2026-04-05 23:13:53,161 [INFO] 准备进入迷宫...
+2026-04-05 23:14:03,200 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:14:03,200 [INFO] 尝试进入迷宫...
+2026-04-05 23:14:03,202 [INFO] 查找进入迷宫按钮...
+2026-04-05 23:14:03,246 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-05 23:14:03,246 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-05 23:14:03,324 [INFO] 已点击进入迷宫按钮
+2026-04-05 23:14:05,231 [INFO] 找到开始按钮，准备点击
+2026-04-05 23:14:05,306 [INFO] 已点击开始按钮
+2026-04-05 23:14:05,307 [INFO] 门票数量已减少，当前: 1/5
+2026-04-05 23:14:05,307 [INFO] 等待迷宫开始运行...
+2026-04-05 23:14:10,309 [INFO] 尝试退出迷宫...
+2026-04-05 23:14:10,309 [INFO] 正在退出迷宫...
+2026-04-05 23:14:11,463 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:14:21,540 [INFO] 没有更多确认弹窗，退出处理循环
+2026-04-05 23:14:21,540 [INFO] 循环完成，等待 19.77 秒后开始下一个循环...
+2026-04-05 23:14:41,309 [INFO] 开始第 2 个循环
+2026-04-05 23:14:51,334 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:14:51,334 [INFO] 开始检测迷宫状态...
+2026-04-05 23:15:31,512 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-05 23:15:31,513 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-05 23:15:36,342 [INFO] 已点击'立即开始'按钮
+2026-04-05 23:16:06,343 [INFO] 尝试退出迷宫...
+2026-04-05 23:16:06,343 [INFO] 正在退出迷宫...
+2026-04-05 23:16:07,615 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:16:07,810 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-05 23:16:09,946 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-05 23:16:21,004 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-05 23:16:21,005 [INFO] 循环完成，等待 17.09 秒后开始下一个循环...
+2026-04-05 23:16:38,096 [INFO] 开始第 3 个循环
+2026-04-05 23:16:39,448 [INFO] 
+用户中断，停止自动化...
+2026-04-05 23:16:39,448 [INFO] 停止迷宫自动化...
+2026-04-05 23:16:43,530 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640/cookie
+2026-04-05 23:16:47,627 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640/cookie
+2026-04-05 23:16:51,723 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640/cookie
+2026-04-05 23:16:55,805 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=53617): Max retries exceeded with url: /session/a5d7a63c93c89b313dc51d8d8fac9640/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-05 23:16:59,888 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640
+2026-04-05 23:17:03,972 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640
+2026-04-05 23:17:08,080 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=53617): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/a5d7a63c93c89b313dc51d8d8fac9640
+2026-04-05 23:17:12,186 [INFO] 浏览器已关闭
+2026-04-05 23:17:12,187 [INFO] 程序结束
+2026-04-05 23:17:16,857 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 23:17:16,858 [INFO] 开始自动化进程...
+2026-04-05 23:17:16,858 [INFO] 开始自动化进程...
+2026-04-05 23:17:16,858 [INFO] 初始化浏览器...
+2026-04-05 23:17:16,858 [INFO] 开始设置浏览器驱动...
+2026-04-05 23:17:16,858 [INFO] ====== WebDriver manager ======
+2026-04-05 23:17:18,192 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:17:18,418 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:17:18,652 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 23:17:21,121 [ERROR] 浏览器驱动设置失败: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xba74ab]
+	chromedriver!(No symbol) [0xba2690]
+	chromedriver!(No symbol) [0xbe9cbf]
+	chromedriver!(No symbol) [0xbe94d7]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:17:21,122 [ERROR] 浏览器初始化失败
+2026-04-05 23:17:21,122 [INFO] 程序结束
+2026-04-05 23:17:28,974 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 23:17:28,975 [INFO] 开始自动化进程...
+2026-04-05 23:17:28,975 [INFO] 开始自动化进程...
+2026-04-05 23:17:28,975 [INFO] 初始化浏览器...
+2026-04-05 23:17:28,975 [INFO] 开始设置浏览器驱动...
+2026-04-05 23:17:28,975 [INFO] ====== WebDriver manager ======
+2026-04-05 23:17:30,139 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:17:30,373 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:17:30,588 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 23:17:31,281 [INFO] 浏览器驱动设置完成
+2026-04-05 23:17:31,281 [INFO] 尝试加载cookies...
+2026-04-05 23:17:36,119 [INFO] 成功加载cookies
+2026-04-05 23:17:36,120 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:17:36,771 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 23:17:36,772 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 23:17:47,233 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 23:17:47,234 [INFO] 登录信息已保存
+2026-04-05 23:17:47,234 [INFO] 导航到迷宫页面...
+2026-04-05 23:17:47,234 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:17:52,875 [INFO] 找到 23 个导航项
+2026-04-05 23:17:52,877 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 23:17:52,921 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 23:17:53,193 [INFO] 已点击迷宫导航项
+2026-04-05 23:17:55,917 [INFO] 已成功导航到迷宫页面
+2026-04-05 23:17:55,917 [INFO] 获取初始门票数量...
+2026-04-05 23:18:05,950 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:18:05,951 [INFO] 开始检测门票数量...
+2026-04-05 23:18:05,982 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-05 23:18:05,983 [INFO] 检测到门票数量: 1/5
+2026-04-05 23:18:05,983 [INFO] 初始门票数量: 1/5
+2026-04-05 23:18:05,983 [INFO] 开始自动化循环...
+2026-04-05 23:18:05,984 [INFO] 开始第 1 个循环
+2026-04-05 23:18:05,984 [INFO] 检查初始离线进度弹窗...
+2026-04-05 23:18:16,039 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:18:26,048 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:18:26,049 [INFO] 开始检测迷宫状态...
+2026-04-05 23:18:36,085 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-05 23:18:36,085 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:18:36,085 [INFO] 开始检测门票数量...
+2026-04-05 23:18:46,113 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:18:46,113 [INFO] 开始检测门票数量...
+2026-04-05 23:18:46,143 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-05 23:18:46,144 [INFO] 检测到门票数量: 1/5
+2026-04-05 23:18:46,144 [INFO] 当前门票: 1/5
+2026-04-05 23:18:46,144 [INFO] 门票不足，尝试补充...
+2026-04-05 23:18:56,159 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:18:56,159 [INFO] 尝试补充门票...
+2026-04-05 23:18:56,159 [INFO] 查找设置导航...
+2026-04-05 23:18:56,187 [INFO] 找到设置导航项（通过aria-label），准备点击
+2026-04-05 23:18:56,330 [INFO] 已点击设置导航项
+2026-04-05 23:18:58,088 [INFO] 查找补充门票按钮...
+2026-04-05 23:19:27,676 [INFO] 未找到补充门票按钮，尝试滚动页面...
+2026-04-05 23:19:27,680 [ERROR] 补充门票失败: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-04-05 23:19:27,680 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:19:31,788 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63610): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/f7702b6039d53409d426f23c49cab839/url
+2026-04-05 23:19:35,888 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63610): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/f7702b6039d53409d426f23c49cab839/url
+2026-04-05 23:19:39,999 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63610): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/f7702b6039d53409d426f23c49cab839/url
+2026-04-05 23:19:42,029 [INFO] 
+用户中断，停止自动化...
+2026-04-05 23:19:42,029 [INFO] 停止迷宫自动化...
+2026-04-05 23:19:46,097 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=63610): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/f7702b6039d53409d426f23c49cab839/cookie
+2026-04-05 23:19:48,139 [INFO] 
+程序被用户中断
+2026-04-05 23:19:48,139 [INFO] 停止迷宫自动化...
+2026-04-05 23:19:50,195 [INFO] 程序结束
+2026-04-05 23:19:52,060 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-05 23:19:52,060 [INFO] 开始自动化进程...
+2026-04-05 23:19:52,060 [INFO] 开始自动化进程...
+2026-04-05 23:19:52,060 [INFO] 初始化浏览器...
+2026-04-05 23:19:52,060 [INFO] 开始设置浏览器驱动...
+2026-04-05 23:19:52,062 [INFO] ====== WebDriver manager ======
+2026-04-05 23:19:53,359 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:19:53,580 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-05 23:19:53,801 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-05 23:19:54,437 [INFO] 浏览器驱动设置完成
+2026-04-05 23:19:54,438 [INFO] 尝试加载cookies...
+2026-04-05 23:19:59,898 [INFO] 成功加载cookies
+2026-04-05 23:19:59,899 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:20:00,532 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-05 23:20:00,533 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-05 23:20:13,275 [INFO] 成功保存 2 个cookies到文件
+2026-04-05 23:20:13,275 [INFO] 登录信息已保存
+2026-04-05 23:20:13,275 [INFO] 导航到迷宫页面...
+2026-04-05 23:20:13,275 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-05 23:20:19,109 [INFO] 找到 23 个导航项
+2026-04-05 23:20:19,109 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-05 23:20:19,152 [INFO] 找到迷宫导航项，准备点击
+2026-04-05 23:20:19,300 [INFO] 已点击迷宫导航项
+2026-04-05 23:20:21,204 [INFO] 已成功导航到迷宫页面
+2026-04-05 23:20:21,205 [INFO] 获取初始门票数量...
+2026-04-05 23:20:31,215 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:20:31,215 [INFO] 开始检测门票数量...
+2026-04-05 23:20:31,238 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-05 23:20:31,239 [INFO] 检测到门票数量: 1/5
+2026-04-05 23:20:31,239 [INFO] 初始门票数量: 1/5
+2026-04-05 23:20:31,239 [INFO] 开始自动化循环...
+2026-04-05 23:20:31,239 [INFO] 开始第 1 个循环
+2026-04-05 23:20:31,239 [INFO] 检查初始离线进度弹窗...
+2026-04-05 23:20:41,257 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:20:51,267 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:20:51,268 [INFO] 开始检测迷宫状态...
+2026-04-05 23:21:01,340 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-05 23:21:01,340 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-05 23:21:01,340 [INFO] 开始检测门票数量...
+2026-04-05 23:21:11,368 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:21:11,369 [INFO] 开始检测门票数量...
+2026-04-05 23:21:11,389 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-05 23:21:11,389 [INFO] 检测到门票数量: 1/5
+2026-04-05 23:21:11,389 [INFO] 当前门票: 1/5
+2026-04-05 23:21:11,389 [INFO] 门票充足，无需补充
+2026-04-05 23:21:11,390 [INFO] 准备进入迷宫...
+2026-04-05 23:21:21,439 [INFO] 未检测到离线进度弹窗
+2026-04-05 23:21:21,439 [INFO] 尝试进入迷宫...
+2026-04-05 23:21:21,440 [INFO] 查找进入迷宫按钮...
+2026-04-05 23:21:21,472 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-05 23:21:21,472 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-05 23:21:21,536 [INFO] 已点击进入迷宫按钮
+2026-04-05 23:21:24,420 [INFO] 找到开始按钮，准备点击
+2026-04-05 23:21:24,471 [INFO] 已点击开始按钮
+2026-04-05 23:21:24,472 [INFO] 门票数量已减少，当前: 0/5
+2026-04-05 23:21:24,472 [INFO] 等待迷宫开始运行...
+2026-04-05 23:21:29,473 [INFO] 等待迷宫运行...
+2026-04-05 23:21:59,474 [INFO] 尝试退出迷宫...
+2026-04-05 23:21:59,474 [INFO] 正在退出迷宫...
+2026-04-05 23:22:00,620 [INFO] 已点击结束迷宫按钮
+2026-04-05 23:22:10,376 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-05 23:22:12,485 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-05 23:22:22,748 [ERROR] 处理确认弹窗时出现错误: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xd8cdf3+10b03]
+	chromedriver!GetHandleVerifier [0xd8cf24+10c34]
+	chromedriver!(No symbol) [0xb72120]
+	chromedriver!(No symbol) [0xb61649]
+	chromedriver!(No symbol) [0xb615c6]
+	chromedriver!(No symbol) [0xb60123]
+	chromedriver!(No symbol) [0xb60b46]
+	chromedriver!(No symbol) [0xb76dfe]
+	chromedriver!(No symbol) [0xb775e5]
+	chromedriver!(No symbol) [0xb7b02a]
+	chromedriver!(No symbol) [0xb7b0b8]
+	chromedriver!(No symbol) [0xbba640]
+	chromedriver!(No symbol) [0xbbae6b]
+	chromedriver!(No symbol) [0xbfd0ec]
+	chromedriver!(No symbol) [0xbddb54]
+	chromedriver!(No symbol) [0xbfa9a5]
+	chromedriver!(No symbol) [0xbdd8a6]
+	chromedriver!(No symbol) [0xbb0229]
+	chromedriver!(No symbol) [0xbb0fe4]
+	chromedriver!GetHandleVerifier [0xff48b9+2785c9]
+	chromedriver!GetHandleVerifier [0xfefeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x100e06b+291d7b]
+	chromedriver!GetHandleVerifier [0xda5cc8+299d8]
+	chromedriver!GetHandleVerifier [0xdad9fd+3170d]
+	chromedriver!GetHandleVerifier [0xd958c8+195d8]
+	chromedriver!GetHandleVerifier [0xd95a92+197a2]
+	chromedriver!GetHandleVerifier [0xd7ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-05 23:22:22,748 [INFO] 循环完成，等待 18.41 秒后开始下一个循环...
+2026-04-05 23:22:23,832 [INFO] 
+用户中断，停止自动化...
+2026-04-05 23:22:23,832 [INFO] 停止迷宫自动化...
+2026-04-05 23:22:23,836 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/36f8c7ad348dd177824c88758ac10eec/cookie
+2026-04-05 23:22:25,883 [INFO] 
+程序被用户中断
+2026-04-05 23:22:25,883 [INFO] 停止迷宫自动化...
+2026-04-05 23:22:27,939 [INFO] 程序结束
+2026-04-06 00:27:19,248 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 00:27:19,249 [INFO] 开始自动化进程...
+2026-04-06 00:27:19,249 [INFO] 开始自动化进程...
+2026-04-06 00:27:19,250 [INFO] 初始化浏览器...
+2026-04-06 00:27:19,250 [INFO] 开始设置浏览器驱动...
+2026-04-06 00:27:19,250 [INFO] ====== WebDriver manager ======
+2026-04-06 00:27:20,888 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 00:27:21,106 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 00:27:21,332 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 00:27:21,975 [INFO] WebDriver version 146.0.7680.165 selected
+2026-04-06 00:27:21,983 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-04-06 00:27:21,984 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-04-06 00:27:22,130 [INFO] Driver downloading response is 200
+2026-04-06 00:27:26,760 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 00:27:27,138 [INFO] Driver has been saved in cache [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165]
+2026-04-06 00:27:28,140 [INFO] 浏览器驱动设置完成
+2026-04-06 00:27:28,140 [INFO] 尝试加载cookies...
+2026-04-06 00:27:33,514 [INFO] 成功加载cookies
+2026-04-06 00:27:33,514 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-06 00:27:34,167 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 00:27:34,168 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 00:27:41,826 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 00:27:41,827 [INFO] 登录信息已保存
+2026-04-06 00:27:41,827 [INFO] 导航到迷宫页面...
+2026-04-06 00:27:41,827 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-06 00:27:47,691 [INFO] 找到 23 个导航项
+2026-04-06 00:27:47,693 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 00:27:47,763 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 00:27:47,997 [INFO] 已点击迷宫导航项
+2026-04-06 00:27:49,784 [INFO] 已成功导航到迷宫页面
+2026-04-06 00:27:49,784 [INFO] 获取初始门票数量...
+2026-04-06 00:27:59,828 [INFO] 未检测到离线进度弹窗
+2026-04-06 00:27:59,829 [INFO] 开始检测门票数量...
+2026-04-06 00:27:59,859 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 00:27:59,860 [INFO] 检测到门票数量: 0/5
+2026-04-06 00:27:59,860 [INFO] 初始门票数量: 0/5
+2026-04-06 00:27:59,860 [INFO] 开始自动化循环...
+2026-04-06 00:27:59,861 [INFO] 开始第 1 个循环
+2026-04-06 00:27:59,861 [INFO] 检查初始离线进度弹窗...
+2026-04-06 00:28:09,919 [INFO] 未检测到离线进度弹窗
+2026-04-06 00:28:19,971 [INFO] 未检测到离线进度弹窗
+2026-04-06 00:28:19,971 [INFO] 开始检测迷宫状态...
+2026-04-06 00:28:29,996 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 00:28:29,997 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 00:28:29,997 [INFO] 开始检测门票数量...
+2026-04-06 00:28:40,016 [INFO] 未检测到离线进度弹窗
+2026-04-06 00:28:40,016 [INFO] 开始检测门票数量...
+2026-04-06 00:28:40,038 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 00:28:40,038 [INFO] 检测到门票数量: 0/5
+2026-04-06 00:28:40,038 [INFO] 当前门票: 0/5
+2026-04-06 00:28:40,039 [INFO] 门票不足，尝试补充...
+2026-04-06 00:28:50,100 [INFO] 未检测到离线进度弹窗
+2026-04-06 00:28:50,100 [INFO] 尝试补充门票...
+2026-04-06 00:28:50,101 [INFO] 查找设置导航...
+2026-04-06 00:28:50,164 [INFO] 找到设置导航项（通过aria-label），准备点击
+2026-04-06 00:28:50,290 [INFO] 已点击设置导航项
+2026-04-06 00:28:51,965 [INFO] 查找补充门票按钮...
+2026-04-06 00:29:10,592 [INFO] 未找到补充门票按钮，尝试滚动页面...
+2026-04-06 00:29:12,624 [INFO] 
+用户中断，停止自动化...
+2026-04-06 00:29:12,624 [INFO] 停止迷宫自动化...
+2026-04-06 00:29:14,675 [INFO] 
+程序被用户中断
+2026-04-06 00:29:14,676 [INFO] 停止迷宫自动化...
+2026-04-06 01:32:08,065 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 01:32:08,066 [INFO] 开始自动化进程...
+2026-04-06 01:32:08,066 [INFO] 开始自动化进程...
+2026-04-06 01:32:08,066 [INFO] 初始化浏览器...
+2026-04-06 01:32:08,066 [INFO] 开始设置浏览器驱动...
+2026-04-06 01:32:08,066 [INFO] ====== WebDriver manager ======
+2026-04-06 01:32:09,240 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 01:32:09,529 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 01:32:09,766 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 01:32:10,562 [INFO] 浏览器驱动设置完成
+2026-04-06 01:32:10,562 [INFO] 尝试加载cookies...
+2026-04-06 01:32:16,080 [INFO] 成功加载cookies
+2026-04-06 01:32:16,080 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-06 01:32:16,755 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 01:32:16,755 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 01:32:29,847 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 01:32:29,848 [INFO] 登录信息已保存
+2026-04-06 01:32:29,848 [INFO] 导航到迷宫页面...
+2026-04-06 01:32:29,848 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-06 01:32:35,531 [INFO] 找到 23 个导航项
+2026-04-06 01:32:35,532 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 01:32:35,576 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 01:32:35,739 [INFO] 已点击迷宫导航项
+2026-04-06 01:32:38,683 [INFO] 已成功导航到迷宫页面
+2026-04-06 01:32:38,684 [INFO] 获取初始门票数量...
+2026-04-06 01:32:48,688 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:32:48,688 [INFO] 开始检测门票数量...
+2026-04-06 01:32:48,715 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 01:32:48,715 [INFO] 检测到门票数量: 0/5
+2026-04-06 01:32:48,716 [INFO] 初始门票数量: 0/5
+2026-04-06 01:32:48,716 [INFO] 开始自动化循环...
+2026-04-06 01:32:48,716 [INFO] 开始第 1 个循环
+2026-04-06 01:32:48,717 [INFO] 检查初始离线进度弹窗...
+2026-04-06 01:32:58,733 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:33:08,769 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:33:08,769 [INFO] 开始检测迷宫状态...
+2026-04-06 01:33:18,838 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 01:33:18,838 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 01:33:18,838 [INFO] 开始检测门票数量...
+2026-04-06 01:33:28,869 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:33:28,869 [INFO] 开始检测门票数量...
+2026-04-06 01:33:28,892 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 01:33:28,892 [INFO] 检测到门票数量: 0/5
+2026-04-06 01:33:28,892 [INFO] 当前门票: 0/5
+2026-04-06 01:33:28,892 [INFO] 门票不足，尝试补充...
+2026-04-06 01:33:38,904 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:33:38,904 [INFO] 尝试补充门票...
+2026-04-06 01:33:38,904 [INFO] 查找设置导航...
+2026-04-06 01:33:38,926 [INFO] 找到设置导航项（通过aria-label），准备点击
+2026-04-06 01:33:39,038 [INFO] 已点击设置导航项
+2026-04-06 01:33:41,770 [INFO] 查找补充门票按钮...
+2026-04-06 01:33:41,824 [INFO] 使用选择器 '//button[contains(text(), '补充入场券') and not(contains(@class, 'Button_disabled__wCyIq'))]' 找到补充门票按钮
+2026-04-06 01:33:41,824 [INFO] 找到补充门票按钮，准备点击
+2026-04-06 01:33:41,918 [INFO] 已点击补充门票按钮
+2026-04-06 01:33:44,463 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=27496
+2026-04-06 01:33:50,156 [INFO] 找到 23 个导航项
+2026-04-06 01:33:50,156 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 01:33:50,190 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 01:33:50,307 [INFO] 已点击迷宫导航项
+2026-04-06 01:33:53,259 [INFO] 已成功导航到迷宫页面
+2026-04-06 01:34:05,742 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:34:05,742 [INFO] 开始检测门票数量...
+2026-04-06 01:34:05,773 [INFO] 门票文本: '入场券: 5 / 5'
+2026-04-06 01:34:05,773 [INFO] 检测到门票数量: 5/5
+2026-04-06 01:34:05,773 [INFO] 门票补充成功，当前数量: 5/5
+2026-04-06 01:34:05,773 [INFO] 准备进入迷宫...
+2026-04-06 01:34:15,796 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:34:15,797 [INFO] 尝试进入迷宫...
+2026-04-06 01:34:15,797 [INFO] 查找进入迷宫按钮...
+2026-04-06 01:34:15,820 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-06 01:34:15,820 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-06 01:34:15,870 [INFO] 已点击进入迷宫按钮
+2026-04-06 01:34:17,958 [INFO] 找到开始按钮，准备点击
+2026-04-06 01:34:18,012 [INFO] 已点击开始按钮
+2026-04-06 01:34:18,013 [INFO] 门票数量已减少，当前: 4/5
+2026-04-06 01:34:18,013 [INFO] 等待迷宫开始运行...
+2026-04-06 01:34:23,014 [INFO] 等待迷宫运行...
+2026-04-06 01:34:53,015 [INFO] 尝试退出迷宫...
+2026-04-06 01:34:53,015 [INFO] 正在退出迷宫...
+2026-04-06 01:34:54,117 [INFO] 已点击结束迷宫按钮
+2026-04-06 01:35:04,150 [INFO] 没有更多确认弹窗，退出处理循环
+2026-04-06 01:35:04,150 [INFO] 循环完成，等待 18.83 秒后开始下一个循环...
+2026-04-06 01:35:22,985 [INFO] 开始第 2 个循环
+2026-04-06 01:35:33,013 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:35:33,013 [INFO] 开始检测迷宫状态...
+2026-04-06 01:36:13,189 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 01:36:13,189 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-06 01:36:13,303 [INFO] 已点击'立即开始'按钮
+2026-04-06 01:36:13,304 [INFO] 等待迷宫开始运行...
+2026-04-06 01:36:18,305 [INFO] 等待迷宫运行...
+2026-04-06 01:36:48,306 [INFO] 尝试退出迷宫...
+2026-04-06 01:36:48,306 [INFO] 正在退出迷宫...
+2026-04-06 01:36:49,676 [INFO] 已点击结束迷宫按钮
+2026-04-06 01:36:49,812 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-06 01:36:51,907 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-06 01:37:02,929 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-06 01:37:02,929 [INFO] 循环完成，等待 18.08 秒后开始下一个循环...
+2026-04-06 01:37:21,006 [INFO] 开始第 3 个循环
+2026-04-06 01:37:31,024 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:37:31,024 [INFO] 开始检测迷宫状态...
+2026-04-06 01:37:41,079 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 01:37:41,079 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 01:37:41,080 [INFO] 开始检测门票数量...
+2026-04-06 01:37:51,113 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:37:51,113 [INFO] 开始检测门票数量...
+2026-04-06 01:37:51,130 [INFO] 门票文本: '入场券: 4 / 5'
+2026-04-06 01:37:51,131 [INFO] 检测到门票数量: 4/5
+2026-04-06 01:37:51,131 [INFO] 当前门票: 4/5
+2026-04-06 01:37:51,131 [INFO] 门票充足，无需补充
+2026-04-06 01:37:51,132 [INFO] 准备进入迷宫...
+2026-04-06 01:38:01,135 [INFO] 未检测到离线进度弹窗
+2026-04-06 01:38:01,136 [INFO] 尝试进入迷宫...
+2026-04-06 01:38:01,136 [INFO] 查找进入迷宫按钮...
+2026-04-06 01:38:01,161 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-06 01:38:01,161 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-06 01:38:01,214 [INFO] 已点击进入迷宫按钮
+2026-04-06 01:38:03,615 [INFO] 找到开始按钮，准备点击
+2026-04-06 01:38:03,668 [INFO] 已点击开始按钮
+2026-04-06 01:38:03,668 [INFO] 门票数量已减少，当前: 3/5
+2026-04-06 01:38:03,668 [INFO] 等待迷宫开始运行...
+2026-04-06 01:38:08,669 [INFO] 等待迷宫运行...
+2026-04-06 01:38:21,331 [INFO] 
+用户中断，停止自动化...
+2026-04-06 01:38:21,331 [INFO] 停止迷宫自动化...
+2026-04-06 01:38:21,334 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/ee984f2657e2079e90294184492bd255/cookie
+2026-04-06 01:38:25,434 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=50662): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ee984f2657e2079e90294184492bd255/cookie
+2026-04-06 01:38:29,533 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=50662): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/ee984f2657e2079e90294184492bd255/cookie
+2026-04-06 01:38:33,618 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=50662): Max retries exceeded with url: /session/ee984f2657e2079e90294184492bd255/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=50662): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-06 01:38:37,718 [INFO] 
+程序被用户中断
+2026-04-06 01:38:37,718 [INFO] 停止迷宫自动化...
+2026-04-06 01:38:39,760 [INFO] 程序结束
+2026-04-06 11:18:36,912 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 11:18:36,914 [INFO] 开始自动化进程...
+2026-04-06 11:18:36,915 [INFO] 开始自动化进程...
+2026-04-06 11:18:36,915 [INFO] 初始化浏览器...
+2026-04-06 11:18:36,915 [INFO] 开始设置浏览器驱动...
+2026-04-06 11:18:36,915 [INFO] ====== WebDriver manager ======
+2026-04-06 11:18:38,406 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 11:18:38,648 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 11:18:38,865 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 11:18:40,024 [INFO] 浏览器驱动设置完成
+2026-04-06 11:18:40,024 [INFO] 尝试加载cookies...
+2026-04-06 11:19:47,260 [INFO] 成功加载cookies
+2026-04-06 11:19:47,260 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 11:20:31,455 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 11:20:31,455 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 11:20:34,810 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 11:20:34,811 [INFO] 登录信息已保存
+2026-04-06 11:20:34,811 [INFO] 导航到迷宫页面...
+2026-04-06 11:20:34,811 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 11:21:36,586 [INFO] 找到 23 个导航项
+2026-04-06 11:21:36,586 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 11:21:36,636 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 11:21:36,642 [INFO] 迷宫导航已是激活状态
+2026-04-06 11:21:36,658 [INFO] 当前已在迷宫页面
+2026-04-06 11:21:36,659 [INFO] 获取初始门票数量...
+2026-04-06 11:21:46,687 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:21:46,688 [INFO] 开始检测门票数量...
+2026-04-06 11:21:46,707 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-06 11:21:46,708 [INFO] 检测到门票数量: 3/5
+2026-04-06 11:21:46,708 [INFO] 初始门票数量: 3/5
+2026-04-06 11:21:46,708 [INFO] 开始自动化循环...
+2026-04-06 11:21:46,708 [INFO] 开始第 1 个循环
+2026-04-06 11:21:46,708 [INFO] 检查初始离线进度弹窗...
+2026-04-06 11:21:56,765 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:22:06,769 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:22:06,770 [INFO] 开始检测迷宫状态...
+2026-04-06 11:23:16,993 [INFO] 检测到迷宫网格，正在迷宫中
+2026-04-06 11:23:16,993 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-06 11:23:27,040 [INFO] '立即开始'按钮不存在，等待迷宫自然结束...
+2026-04-06 11:23:27,040 [INFO] 等待迷宫运行...
+2026-04-06 11:23:57,041 [INFO] 尝试退出迷宫...
+2026-04-06 11:23:57,041 [INFO] 正在退出迷宫...
+2026-04-06 11:23:57,108 [INFO] 已点击结束迷宫按钮
+2026-04-06 11:24:07,171 [INFO] 没有更多确认弹窗，退出处理循环
+2026-04-06 11:24:07,177 [INFO] 循环完成，等待 15.39 秒后开始下一个循环...
+2026-04-06 11:24:22,587 [INFO] 开始第 2 个循环
+2026-04-06 11:24:32,623 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:24:32,624 [INFO] 开始检测迷宫状态...
+2026-04-06 11:25:16,413 [INFO] 
+用户中断，停止自动化...
+2026-04-06 11:25:16,413 [INFO] 停止迷宫自动化...
+2026-04-06 11:25:20,480 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie
+2026-04-06 11:25:24,565 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie
+2026-04-06 11:25:28,654 [INFO] 
+程序被用户中断
+2026-04-06 11:25:28,654 [INFO] 停止迷宫自动化...
+2026-04-06 11:25:32,736 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie
+2026-04-06 11:25:36,850 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie
+2026-04-06 11:25:40,959 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie
+2026-04-06 11:25:45,072 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=56800): Max retries exceeded with url: /session/eb21cdbdf2a3035eb1eff13c53e7cec8/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-06 11:25:49,177 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=56800): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/eb21cdbdf2a3035eb1eff13c53e7cec8
+2026-04-06 11:25:51,231 [INFO] 程序结束
+2026-04-06 11:32:19,978 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 11:32:19,980 [INFO] 开始自动化进程...
+2026-04-06 11:32:19,980 [INFO] 开始自动化进程...
+2026-04-06 11:32:19,980 [INFO] 初始化浏览器...
+2026-04-06 11:32:19,980 [INFO] 开始设置浏览器驱动...
+2026-04-06 11:32:19,980 [INFO] ====== WebDriver manager ======
+2026-04-06 11:32:20,930 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 11:32:21,095 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 11:32:21,319 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 11:32:21,976 [INFO] 浏览器驱动设置完成
+2026-04-06 11:32:21,976 [INFO] 尝试加载cookies...
+2026-04-06 11:32:28,057 [INFO] 成功加载cookies
+2026-04-06 11:32:28,057 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 11:32:29,131 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 11:32:29,131 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 11:32:33,044 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 11:32:33,044 [INFO] 登录信息已保存
+2026-04-06 11:32:33,045 [INFO] 检查初始离线进度弹窗...
+2026-04-06 11:32:43,066 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:32:43,066 [INFO] 导航到迷宫页面...
+2026-04-06 11:32:43,066 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 11:32:49,720 [INFO] 找到 23 个导航项
+2026-04-06 11:32:49,720 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 11:32:49,752 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 11:32:49,758 [INFO] 迷宫导航已是激活状态
+2026-04-06 11:32:49,777 [INFO] 当前已在迷宫页面
+2026-04-06 11:32:49,777 [INFO] 获取初始门票数量...
+2026-04-06 11:32:59,816 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:32:59,817 [INFO] 开始检测门票数量...
+2026-04-06 11:32:59,832 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-06 11:32:59,832 [INFO] 检测到门票数量: 3/5
+2026-04-06 11:32:59,833 [INFO] 初始门票数量: 3/5
+2026-04-06 11:32:59,833 [INFO] 开始自动化循环...
+2026-04-06 11:32:59,833 [INFO] 开始第 1 个循环
+2026-04-06 11:33:09,836 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:33:09,837 [INFO] 开始检测迷宫状态...
+2026-04-06 11:34:01,810 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 11:34:01,811 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-06 11:34:11,824 [INFO] '立即开始'按钮不存在，等待迷宫自然结束...
+2026-04-06 11:34:11,824 [INFO] 等待迷宫自然结束...
+2026-04-06 11:34:11,824 [INFO] 迷宫状态检查间隔设置为: 1556.01 秒
+2026-04-06 11:34:21,874 [INFO] 未检测到离线进度弹窗
+2026-04-06 11:34:21,874 [INFO] 开始检测迷宫状态...
+2026-04-06 11:35:09,664 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 11:35:09,664 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 12:01:15,724 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:01:15,724 [INFO] 开始检测迷宫状态...
+2026-04-06 12:01:15,737 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-06 12:01:15,752 [INFO] 检测到'停止'按钮，迷宫正在运行中
+2026-04-06 12:01:15,752 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 12:02:03,870 [INFO] 
+用户中断，停止自动化...
+2026-04-06 12:02:03,871 [INFO] 停止迷宫自动化...
+2026-04-06 12:02:03,874 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/977b30e363616ce9e644c36b59323666/cookie
+2026-04-06 12:02:07,975 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52218): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/977b30e363616ce9e644c36b59323666/cookie
+2026-04-06 12:02:12,076 [WARNING] Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52218): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/977b30e363616ce9e644c36b59323666/cookie
+2026-04-06 12:02:16,198 [ERROR] 保存cookies失败: HTTPConnectionPool(host='localhost', port=52218): Max retries exceeded with url: /session/977b30e363616ce9e644c36b59323666/cookie (Caused by NewConnectionError("HTTPConnection(host='localhost', port=52218): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。"))
+2026-04-06 12:02:20,277 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=52218): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")': /session/977b30e363616ce9e644c36b59323666
+2026-04-06 12:02:22,317 [INFO] 
+程序被用户中断
+2026-04-06 12:02:22,317 [INFO] 停止迷宫自动化...
+2026-04-06 12:02:24,367 [INFO] 程序结束
+2026-04-06 12:12:52,417 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 12:12:52,418 [INFO] 开始自动化进程...
+2026-04-06 12:12:52,418 [INFO] 开始自动化进程...
+2026-04-06 12:12:52,418 [INFO] 初始化浏览器...
+2026-04-06 12:12:52,418 [INFO] 开始设置浏览器驱动...
+2026-04-06 12:12:52,418 [INFO] ====== WebDriver manager ======
+2026-04-06 12:12:53,432 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:12:53,613 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:12:53,786 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 12:12:56,082 [ERROR] 浏览器驱动设置失败: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x76cdf3+10b03]
+	chromedriver!GetHandleVerifier [0x76cf24+10c34]
+	chromedriver!(No symbol) [0x552120]
+	chromedriver!(No symbol) [0x5874ab]
+	chromedriver!(No symbol) [0x582690]
+	chromedriver!(No symbol) [0x5c9cbf]
+	chromedriver!(No symbol) [0x5c94d7]
+	chromedriver!(No symbol) [0x5bd8a6]
+	chromedriver!(No symbol) [0x590229]
+	chromedriver!(No symbol) [0x590fe4]
+	chromedriver!GetHandleVerifier [0x9d48b9+2785c9]
+	chromedriver!GetHandleVerifier [0x9cfeb5+273bc5]
+	chromedriver!GetHandleVerifier [0x9ee06b+291d7b]
+	chromedriver!GetHandleVerifier [0x785cc8+299d8]
+	chromedriver!GetHandleVerifier [0x78d9fd+3170d]
+	chromedriver!GetHandleVerifier [0x7758c8+195d8]
+	chromedriver!GetHandleVerifier [0x775a92+197a2]
+	chromedriver!GetHandleVerifier [0x75ee9a+2baa]
+	KERNEL32!BaseThreadInitThunk [0x76b55d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d6db+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d661+231]
+
+2026-04-06 12:12:56,083 [ERROR] 浏览器初始化失败
+2026-04-06 12:12:56,084 [INFO] 程序结束
+2026-04-06 12:13:07,299 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 12:13:07,299 [INFO] 开始自动化进程...
+2026-04-06 12:13:07,299 [INFO] 开始自动化进程...
+2026-04-06 12:13:07,299 [INFO] 初始化浏览器...
+2026-04-06 12:13:07,300 [INFO] 开始设置浏览器驱动...
+2026-04-06 12:13:07,300 [INFO] ====== WebDriver manager ======
+2026-04-06 12:13:08,223 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:13:08,412 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:13:08,602 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 12:13:09,246 [INFO] 浏览器驱动设置完成
+2026-04-06 12:13:09,247 [INFO] 尝试加载cookies...
+2026-04-06 12:13:14,894 [INFO] 成功加载cookies
+2026-04-06 12:13:14,894 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 12:13:15,782 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 12:13:15,783 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 12:13:21,102 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 12:13:21,103 [INFO] 登录信息已保存
+2026-04-06 12:13:21,103 [INFO] 检查初始离线进度弹窗...
+2026-04-06 12:13:31,125 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:13:31,125 [INFO] 导航到迷宫页面...
+2026-04-06 12:13:31,125 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 12:13:36,791 [INFO] 找到 23 个导航项
+2026-04-06 12:13:36,791 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 12:13:36,824 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 12:13:36,948 [INFO] 已点击迷宫导航项
+2026-04-06 12:13:38,752 [INFO] 已成功导航到迷宫页面
+2026-04-06 12:13:38,752 [INFO] 获取初始门票数量...
+2026-04-06 12:13:38,757 [INFO] 检测到离线进度弹窗，准备关闭
+2026-04-06 12:13:38,771 [INFO] 找到关闭按钮，使用选择器: .OfflineProgressModal_closeButton__3g3Y2
+2026-04-06 12:13:38,826 [INFO] 已点击关闭按钮
+2026-04-06 12:13:48,880 [INFO] 离线进度弹窗已关闭
+2026-04-06 12:13:48,881 [INFO] 开始检测门票数量...
+2026-04-06 12:13:48,898 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-06 12:13:48,899 [INFO] 检测到门票数量: 3/5
+2026-04-06 12:13:48,899 [INFO] 初始门票数量: 3/5
+2026-04-06 12:13:48,899 [INFO] 开始自动化循环...
+2026-04-06 12:13:48,899 [INFO] 开始第 1 个循环
+2026-04-06 12:13:58,929 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:13:58,930 [INFO] 开始检测迷宫状态...
+2026-04-06 12:14:08,970 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 12:14:08,970 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 12:14:08,971 [INFO] 开始检测门票数量...
+2026-04-06 12:14:19,006 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:14:19,006 [INFO] 开始检测门票数量...
+2026-04-06 12:14:19,023 [INFO] 门票文本: '入场券: 3 / 5'
+2026-04-06 12:14:19,023 [INFO] 检测到门票数量: 3/5
+2026-04-06 12:14:19,023 [INFO] 当前门票: 3/5
+2026-04-06 12:14:19,023 [INFO] 门票充足，无需补充
+2026-04-06 12:14:19,024 [INFO] 准备进入迷宫...
+2026-04-06 12:14:29,088 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:14:29,088 [INFO] 尝试进入迷宫...
+2026-04-06 12:14:29,088 [INFO] 查找进入迷宫按钮...
+2026-04-06 12:14:29,117 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-06 12:14:29,117 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-06 12:14:29,170 [INFO] 已点击进入迷宫按钮
+2026-04-06 12:14:31,868 [INFO] 找到开始按钮，准备点击
+2026-04-06 12:14:31,912 [INFO] 已点击开始按钮
+2026-04-06 12:14:31,913 [INFO] 门票数量已减少，当前: 2/5
+2026-04-06 12:14:31,913 [INFO] 等待迷宫开始运行...
+2026-04-06 12:14:36,914 [INFO] 等待迷宫运行...
+2026-04-06 12:14:36,914 [INFO] 迷宫状态检查间隔设置为: 1247.75 秒
+2026-04-06 12:14:46,963 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:14:46,963 [INFO] 开始检测迷宫状态...
+2026-04-06 12:15:36,136 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 12:15:36,136 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 12:21:01,603 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 12:21:01,604 [INFO] 开始自动化进程...
+2026-04-06 12:21:01,604 [INFO] 开始自动化进程...
+2026-04-06 12:21:01,604 [INFO] 初始化浏览器...
+2026-04-06 12:21:01,604 [INFO] 开始设置浏览器驱动...
+2026-04-06 12:21:01,604 [INFO] ====== WebDriver manager ======
+2026-04-06 12:21:02,424 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:21:02,597 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 12:21:02,788 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 12:21:03,430 [INFO] 浏览器驱动设置完成
+2026-04-06 12:21:03,431 [INFO] 尝试加载cookies...
+2026-04-06 12:21:08,712 [INFO] 成功加载cookies
+2026-04-06 12:21:08,712 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 12:21:09,649 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 12:21:09,649 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 12:21:27,915 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 12:21:27,915 [INFO] 登录信息已保存
+2026-04-06 12:21:27,915 [INFO] 导航到迷宫页面...
+2026-04-06 12:21:27,915 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 12:21:34,017 [INFO] 找到 23 个导航项
+2026-04-06 12:21:34,018 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 12:21:34,053 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 12:21:34,058 [INFO] 迷宫导航已是激活状态
+2026-04-06 12:21:34,072 [INFO] 当前已在迷宫页面
+2026-04-06 12:21:34,073 [INFO] 检查初始离线进度弹窗...
+2026-04-06 12:21:44,103 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:21:44,103 [INFO] 获取初始门票数量...
+2026-04-06 12:21:54,142 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:21:54,143 [INFO] 开始检测门票数量...
+2026-04-06 12:21:54,158 [INFO] 门票文本: '入场券: 2 / 5'
+2026-04-06 12:21:54,158 [INFO] 检测到门票数量: 2/5
+2026-04-06 12:21:54,158 [INFO] 初始门票数量: 2/5
+2026-04-06 12:21:54,158 [INFO] 开始自动化循环...
+2026-04-06 12:21:54,159 [INFO] 开始第 1 个循环
+2026-04-06 12:22:04,171 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:22:04,171 [INFO] 开始检测迷宫状态...
+2026-04-06 12:23:14,505 [INFO] 检测到迷宫网格，正在迷宫中
+2026-04-06 12:23:14,505 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-06 12:23:24,525 [INFO] '立即开始'按钮不存在，等待迷宫自然结束...
+2026-04-06 12:23:24,525 [INFO] 等待迷宫自然结束...
+2026-04-06 12:23:24,526 [INFO] 迷宫状态检查间隔设置为: 1627.05 秒
+2026-04-06 12:23:34,536 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:23:34,536 [INFO] 开始检测迷宫状态...
+2026-04-06 12:24:14,675 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 12:24:14,676 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 12:51:31,757 [INFO] 未检测到离线进度弹窗
+2026-04-06 12:51:31,757 [INFO] 开始检测迷宫状态...
+2026-04-06 12:52:11,912 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 12:52:11,912 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 13:19:29,006 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:19:29,007 [INFO] 开始检测迷宫状态...
+2026-04-06 13:20:09,126 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 13:20:09,127 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 13:47:26,197 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:47:26,197 [INFO] 开始检测迷宫状态...
+2026-04-06 13:47:26,218 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-06 13:47:46,254 [INFO] 没有检测到迷宫中的'停止'按钮（可能已完成），迷宫可能已完成或即将开始
+2026-04-06 13:47:46,269 [INFO] 检测到'立即开始'按钮，迷宫尚未开始运行
+2026-04-06 13:47:46,269 [INFO] 迷宫已结束，耗时 5061.74 秒
+2026-04-06 13:47:46,269 [INFO] 尝试退出迷宫...
+2026-04-06 13:47:46,269 [INFO] 正在退出迷宫...
+2026-04-06 13:47:46,387 [INFO] 已点击结束迷宫按钮
+2026-04-06 13:47:46,506 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-06 13:47:48,624 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-06 13:47:59,640 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-06 13:47:59,640 [INFO] 循环完成，等待 18.65 秒后开始下一个循环...
+2026-04-06 13:48:18,287 [INFO] 开始第 2 个循环
+2026-04-06 13:48:28,323 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:48:28,323 [INFO] 开始检测迷宫状态...
+2026-04-06 13:48:38,340 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 13:48:38,340 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 13:48:38,340 [INFO] 开始检测门票数量...
+2026-04-06 13:48:48,363 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:48:48,363 [INFO] 开始检测门票数量...
+2026-04-06 13:48:48,382 [INFO] 门票文本: '入场券: 2 / 5'
+2026-04-06 13:48:48,382 [INFO] 检测到门票数量: 2/5
+2026-04-06 13:48:48,382 [INFO] 当前门票: 2/5
+2026-04-06 13:48:48,382 [INFO] 门票充足，无需补充
+2026-04-06 13:48:48,382 [INFO] 准备进入迷宫...
+2026-04-06 13:48:58,444 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:48:58,445 [INFO] 尝试进入迷宫...
+2026-04-06 13:48:58,445 [INFO] 查找进入迷宫按钮...
+2026-04-06 13:48:58,473 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-06 13:48:58,473 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-06 13:48:58,526 [INFO] 已点击进入迷宫按钮
+2026-04-06 13:49:01,430 [INFO] 找到开始按钮，准备点击
+2026-04-06 13:49:01,497 [INFO] 已点击开始按钮
+2026-04-06 13:49:01,497 [INFO] 门票数量已减少，当前: 1/5
+2026-04-06 13:49:01,497 [INFO] 等待迷宫开始运行...
+2026-04-06 13:49:06,499 [INFO] 等待迷宫运行...
+2026-04-06 13:49:06,499 [INFO] 迷宫状态检查间隔设置为: 1602.60 秒
+2026-04-06 13:49:16,543 [INFO] 未检测到离线进度弹窗
+2026-04-06 13:49:16,543 [INFO] 开始检测迷宫状态...
+2026-04-06 13:49:58,869 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 13:49:58,870 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 14:16:51,479 [INFO] 未检测到离线进度弹窗
+2026-04-06 14:16:51,479 [INFO] 开始检测迷宫状态...
+2026-04-06 14:17:39,076 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 14:17:39,077 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 14:44:31,693 [INFO] 未检测到离线进度弹窗
+2026-04-06 14:44:31,693 [INFO] 开始检测迷宫状态...
+2026-04-06 14:45:31,864 [INFO] 未检测到迷宫状态，可能不在迷宫中
+2026-04-06 14:45:31,864 [INFO] 迷宫已结束，耗时 3385.37 秒
+2026-04-06 14:45:31,864 [INFO] 尝试退出迷宫...
+2026-04-06 14:45:31,864 [INFO] 正在退出迷宫...
+2026-04-06 14:45:41,877 [WARNING] 未找到退出迷宫的相关按钮，可能已自动退出
+2026-04-06 14:45:41,878 [INFO] 循环完成，等待 18.62 秒后开始下一个循环...
+2026-04-06 14:46:00,495 [INFO] 开始第 3 个循环
+2026-04-06 14:46:10,499 [INFO] 未检测到离线进度弹窗
+2026-04-06 14:46:10,499 [INFO] 开始检测迷宫状态...
+2026-04-06 14:47:10,764 [INFO] 未检测到迷宫状态，可能不在迷宫中
+2026-04-06 14:47:10,764 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 14:47:10,764 [INFO] 开始检测门票数量...
+2026-04-06 14:47:46,772 [INFO] 未检测到离线进度弹窗
+2026-04-06 14:47:46,772 [INFO] 开始检测门票数量...
+2026-04-06 14:47:46,802 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-06 14:47:46,803 [INFO] 检测到门票数量: 1/5
+2026-04-06 14:47:46,803 [INFO] 当前门票: 1/5
+2026-04-06 14:47:46,803 [INFO] 门票充足，无需补充
+2026-04-06 14:47:46,804 [INFO] 准备进入迷宫...
+2026-04-06 14:47:56,830 [INFO] 未检测到离线进度弹窗
+2026-04-06 14:47:56,830 [INFO] 尝试进入迷宫...
+2026-04-06 14:47:56,830 [INFO] 查找进入迷宫按钮...
+2026-04-06 14:48:53,070 [ERROR] 未找到进入迷宫按钮
+2026-04-06 14:48:53,070 [ERROR] 进入迷宫失败，跳过本次循环
+2026-04-06 14:54:09,499 [INFO] 
+用户中断，停止自动化...
+2026-04-06 14:54:09,499 [INFO] 停止迷宫自动化...
+2026-04-06 14:54:09,502 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/342297a533b80430bc57ab5f1593e740/cookie
+2026-04-06 14:54:13,595 [INFO] 
+程序被用户中断
+2026-04-06 14:54:13,595 [INFO] 停止迷宫自动化...
+2026-04-06 14:54:34,310 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 14:54:34,311 [INFO] 开始自动化进程...
+2026-04-06 14:54:34,311 [INFO] 开始自动化进程...
+2026-04-06 14:54:34,311 [INFO] 初始化浏览器...
+2026-04-06 14:54:34,311 [INFO] 开始设置浏览器驱动...
+2026-04-06 14:54:34,311 [INFO] ====== WebDriver manager ======
+2026-04-06 14:54:35,257 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 14:54:35,436 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 14:54:35,599 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 14:54:36,240 [INFO] 浏览器驱动设置完成
+2026-04-06 14:54:36,240 [INFO] 尝试加载cookies...
+2026-04-06 14:55:27,428 [INFO] 成功加载cookies
+2026-04-06 14:55:27,429 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 14:56:25,882 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 14:56:25,883 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 15:08:01,228 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 15:08:01,228 [INFO] 登录信息已保存
+2026-04-06 15:08:01,229 [INFO] 导航到迷宫页面...
+2026-04-06 15:08:01,229 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 15:08:07,670 [INFO] 找到 23 个导航项
+2026-04-06 15:08:07,670 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 15:08:07,701 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 15:08:07,705 [INFO] 迷宫导航已是激活状态
+2026-04-06 15:08:07,720 [INFO] 当前已在迷宫页面
+2026-04-06 15:08:07,720 [INFO] 检查初始离线进度弹窗...
+2026-04-06 15:08:17,738 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:08:17,738 [INFO] 获取初始门票数量...
+2026-04-06 15:08:27,789 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:08:27,789 [INFO] 开始检测门票数量...
+2026-04-06 15:08:27,804 [INFO] 门票文本: '入场券: 1 / 5'
+2026-04-06 15:08:27,805 [INFO] 检测到门票数量: 1/5
+2026-04-06 15:08:27,805 [INFO] 初始门票数量: 1/5
+2026-04-06 15:08:27,805 [INFO] 开始自动化循环...
+2026-04-06 15:08:27,805 [INFO] 开始第 1 个循环
+2026-04-06 15:08:37,861 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:08:37,861 [INFO] 开始检测迷宫状态...
+2026-04-06 15:08:39,289 [ERROR] 检测迷宫状态时出现错误: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-04-06 15:08:39,290 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 15:08:39,290 [INFO] 开始检测门票数量...
+2026-04-06 15:20:34,297 [INFO] 初始化基于Selenium的迷宫自动化程序...
+2026-04-06 15:20:34,298 [INFO] 开始自动化进程...
+2026-04-06 15:20:34,298 [INFO] 开始自动化进程...
+2026-04-06 15:20:34,298 [INFO] 初始化浏览器...
+2026-04-06 15:20:34,298 [INFO] 开始设置浏览器驱动...
+2026-04-06 15:20:34,298 [INFO] ====== WebDriver manager ======
+2026-04-06 15:20:35,099 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 15:20:35,270 [INFO] Get LATEST chromedriver version for google-chrome
+2026-04-06 15:20:35,424 [INFO] Driver [C:\Users\cjy\.wdm\drivers\chromedriver\win64\146.0.7680.165\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-06 15:20:36,042 [INFO] 浏览器驱动设置完成
+2026-04-06 15:20:36,043 [INFO] 尝试加载cookies...
+2026-04-06 15:20:42,388 [INFO] 成功加载cookies
+2026-04-06 15:20:42,388 [INFO] 访问页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 15:20:43,233 [INFO] 检测到需要登录，将在浏览器中打开页面，请手动登录...
+2026-04-06 15:20:43,233 [INFO] 登录完成后，请返回此程序并按Enter键继续...
+2026-04-06 15:20:59,441 [INFO] 成功保存 2 个cookies到文件
+2026-04-06 15:20:59,441 [INFO] 登录信息已保存
+2026-04-06 15:20:59,442 [INFO] 导航到迷宫页面...
+2026-04-06 15:20:59,442 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 15:21:05,157 [INFO] 找到 23 个导航项
+2026-04-06 15:21:05,157 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 15:21:05,197 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 15:21:05,204 [INFO] 迷宫导航已是激活状态
+2026-04-06 15:21:05,230 [INFO] 当前已在迷宫页面
+2026-04-06 15:21:05,230 [INFO] 检查初始离线进度弹窗...
+2026-04-06 15:21:15,265 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:21:15,265 [INFO] 获取初始门票数量...
+2026-04-06 15:21:25,281 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:21:25,281 [INFO] 开始检测门票数量...
+2026-04-06 15:21:25,297 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 15:21:25,298 [INFO] 检测到门票数量: 0/5
+2026-04-06 15:21:25,298 [INFO] 初始门票数量: 0/5
+2026-04-06 15:21:25,298 [INFO] 开始自动化循环...
+2026-04-06 15:21:25,298 [INFO] 开始第 1 个循环
+2026-04-06 15:21:35,314 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:21:35,314 [INFO] 开始检测迷宫状态...
+2026-04-06 15:22:16,594 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 15:22:16,594 [INFO] 当前已在迷宫中，准备等待迷宫结束...
+2026-04-06 15:22:26,605 [INFO] '立即开始'按钮不存在，等待迷宫自然结束...
+2026-04-06 15:22:26,606 [INFO] 等待迷宫自然结束...
+2026-04-06 15:22:26,606 [INFO] 迷宫状态检查间隔设置为: 20.28 分钟
+2026-04-06 15:22:36,614 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:22:36,615 [INFO] 开始检测迷宫状态...
+2026-04-06 15:23:17,286 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 15:23:17,286 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 15:43:43,929 [INFO] 未检测到离线进度弹窗
+2026-04-06 15:43:43,930 [INFO] 开始检测迷宫状态...
+2026-04-06 15:44:54,277 [INFO] 检测到迷宫网格，正在迷宫中
+2026-04-06 15:44:54,277 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 16:05:20,904 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:05:20,904 [INFO] 开始检测迷宫状态...
+2026-04-06 16:06:31,171 [INFO] 检测到迷宫网格，正在迷宫中
+2026-04-06 16:06:31,171 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 16:26:57,813 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:26:57,813 [INFO] 开始检测迷宫状态...
+2026-04-06 16:28:05,291 [INFO] 检测到'立即开始'按钮，正在迷宫中
+2026-04-06 16:28:05,292 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 16:48:31,964 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:48:31,965 [INFO] 开始检测迷宫状态...
+2026-04-06 16:48:31,983 [INFO] 检测到结束迷宫按钮，正在迷宫中或已开始
+2026-04-06 16:48:52,030 [INFO] 没有检测到迷宫中的'停止'按钮（可能已完成），迷宫可能已完成或即将开始
+2026-04-06 16:48:52,048 [INFO] 检测到'立即开始'按钮，迷宫尚未开始运行
+2026-04-06 16:48:52,048 [INFO] 迷宫已结束，耗时 86.42 分钟
+2026-04-06 16:48:52,048 [INFO] 尝试退出迷宫...
+2026-04-06 16:48:52,048 [INFO] 正在退出迷宫...
+2026-04-06 16:48:52,178 [INFO] 已点击结束迷宫按钮
+2026-04-06 16:48:52,343 [INFO] 已点击确认按钮 (弹窗 #1)
+2026-04-06 16:48:54,491 [INFO] 已点击确认按钮 (弹窗 #2)
+2026-04-06 16:49:05,506 [INFO] 确认弹窗处理完毕，共处理了 2 个弹窗
+2026-04-06 16:49:05,507 [INFO] 循环完成，等待 19.27 秒后开始下一个循环...
+2026-04-06 16:49:24,774 [INFO] 开始第 2 个循环
+2026-04-06 16:49:34,834 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:49:34,835 [INFO] 开始检测迷宫状态...
+2026-04-06 16:49:44,888 [INFO] 检测到进入迷宫按钮，当前在迷宫主页
+2026-04-06 16:49:44,889 [INFO] 当前不在迷宫中，开始执行迷宫循环...
+2026-04-06 16:49:44,889 [INFO] 开始检测门票数量...
+2026-04-06 16:49:54,929 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:49:54,929 [INFO] 开始检测门票数量...
+2026-04-06 16:49:54,947 [INFO] 门票文本: '入场券: 0 / 5'
+2026-04-06 16:49:54,947 [INFO] 检测到门票数量: 0/5
+2026-04-06 16:49:54,948 [INFO] 当前门票: 0/5
+2026-04-06 16:49:54,948 [INFO] 门票不足，尝试补充...
+2026-04-06 16:50:05,056 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:50:05,057 [INFO] 尝试补充门票...
+2026-04-06 16:50:05,057 [INFO] 查找设置导航...
+2026-04-06 16:50:05,144 [INFO] 找到设置导航项（通过aria-label），准备点击
+2026-04-06 16:50:05,294 [INFO] 已点击设置导航项
+2026-04-06 16:50:07,726 [INFO] 查找补充门票按钮...
+2026-04-06 16:50:07,784 [INFO] 使用选择器 '//button[contains(text(), '补充入场券') and not(contains(@class, 'Button_disabled__wCyIq'))]' 找到补充门票按钮
+2026-04-06 16:50:07,784 [INFO] 找到补充门票按钮，准备点击
+2026-04-06 16:50:07,859 [INFO] 已点击补充门票按钮
+2026-04-06 16:50:10,494 [INFO] 导航到页面: https://test.milkywayidle.com/game?characterId=25055
+2026-04-06 16:50:17,443 [INFO] 找到 23 个导航项
+2026-04-06 16:50:17,443 [INFO] 尝试策略1: 通过 aria-label 查找迷宫导航...
+2026-04-06 16:50:17,479 [INFO] 找到迷宫导航项，准备点击
+2026-04-06 16:50:17,597 [INFO] 已点击迷宫导航项
+2026-04-06 16:50:19,911 [INFO] 已成功导航到迷宫页面
+2026-04-06 16:50:22,019 [INFO] 检测到离线进度弹窗，准备关闭
+2026-04-06 16:50:22,037 [INFO] 找到关闭按钮，使用选择器: .OfflineProgressModal_closeButton__3g3Y2
+2026-04-06 16:50:22,094 [INFO] 已点击关闭按钮
+2026-04-06 16:50:32,137 [INFO] 离线进度弹窗已关闭
+2026-04-06 16:50:32,138 [INFO] 开始检测门票数量...
+2026-04-06 16:50:32,155 [INFO] 门票文本: '入场券: 5 / 5'
+2026-04-06 16:50:32,156 [INFO] 检测到门票数量: 5/5
+2026-04-06 16:50:32,156 [INFO] 门票补充成功，当前数量: 5/5
+2026-04-06 16:50:32,156 [INFO] 准备进入迷宫...
+2026-04-06 16:50:42,187 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:50:42,187 [INFO] 尝试进入迷宫...
+2026-04-06 16:50:42,188 [INFO] 查找进入迷宫按钮...
+2026-04-06 16:50:42,214 [INFO] 使用选择器 '//button[contains(text(), '进入迷宫')]' 找到进入迷宫按钮
+2026-04-06 16:50:42,214 [INFO] 找到进入迷宫按钮，准备点击
+2026-04-06 16:50:42,276 [INFO] 已点击进入迷宫按钮
+2026-04-06 16:50:44,856 [INFO] 找到开始按钮，准备点击
+2026-04-06 16:50:44,922 [INFO] 已点击开始按钮
+2026-04-06 16:50:44,922 [INFO] 门票数量已减少，当前: 4/5
+2026-04-06 16:50:44,922 [INFO] 等待迷宫开始运行...
+2026-04-06 16:50:49,923 [INFO] 等待迷宫运行...
+2026-04-06 16:50:49,924 [INFO] 迷宫状态检查间隔设置为: 20.77 分钟
+2026-04-06 16:50:59,937 [INFO] 未检测到离线进度弹窗
+2026-04-06 16:50:59,938 [INFO] 开始检测迷宫状态...
+2026-04-06 16:51:40,441 [INFO] 迷宫中有房间活动，正在迷宫中
+2026-04-06 16:51:40,441 [INFO] 迷宫仍在进行中，继续等待...
+2026-04-06 17:04:14,538 [INFO] 
+用户中断，停止自动化...
+2026-04-06 17:04:14,539 [INFO] 停止迷宫自动化...
+2026-04-06 17:04:14,542 [WARNING] Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)': /session/a387c701d89b7ccde2ac09628ae31aa7/cookie
