@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         [银河奶牛]装备强化轻松+20（测试服专用）
-// @version      2.4.13
+// @version      2.4.16
 // @namespace    http://tampermonkey.net/
 // @description  通过自由强化、批量强化基底、批量合成功能轻松完成物品的强化😀
 // @author       sunrishe
@@ -15,8 +15,8 @@
 // @license      MIT
 // @reference    脚本设计思路参考 https://greasyfork.org/zh-CN/scripts/560117
 // @reference    部分工具方法参考 https://greasyfork.org/zh-CN/scripts/538797
-// @downloadURL https://updategf.qytechs.cn/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.user.js
-// @updateURL https://updategf.qytechs.cn/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.meta.js
+// @downloadURL https://update.greasyfork.org/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.user.js
+// @updateURL https://update.greasyfork.org/scripts/567954/%5B%E9%93%B6%E6%B2%B3%E5%A5%B6%E7%89%9B%5D%E8%A3%85%E5%A4%87%E5%BC%BA%E5%8C%96%E8%BD%BB%E6%9D%BE%2B20%EF%BC%88%E6%B5%8B%E8%AF%95%E6%9C%8D%E4%B8%93%E7%94%A8%EF%BC%89.meta.js
 // ==/UserScript==
 
 (function () {
@@ -29,9 +29,9 @@
     const isDebug = false;
     const retry = 3; // 添加队列时失败最大重试次数
     const wsReceiveTimeout = 120 * 1000; // 添加队列时等待回执的超时时间
-    const reqSpamProtecTimeout = 5000; // 触发过快发送游戏指令的等待时间
-    const addQueueSleepMinTime = 1000; // 添加队列成功后的最小等待时间
-    const addQueueSleepMaxTime = 2000; // 添加队列成功后的最大等待时间
+    const reqSpamProtecTimeout = 3000; // 触发过快发送游戏指令的等待时间
+    const addQueueSleepMinTime = 800; // 添加队列成功后的最小等待时间
+    const addQueueSleepMaxTime = 1200; // 添加队列成功后的最大等待时间
 
     // 引入SweetAlert2自定义样式
     GM_addStyle(`
@@ -217,6 +217,15 @@
             } catch {}
             return 0;
         },
+        getCountByIdAndMax(itemId, maxLevel = 0) {
+            if (!itemId) return new Array(maxLevel + 1).fill(0);
+            // 获取0到目标等级强化等级的物品数量
+            const result = [];
+            for (let i = 0; i <= maxLevel; i++) {
+                result.push(this.getCountById(itemId, i));
+            }
+            return result;
+        },
         /**
          * 创建强化任务的WebSocket消息
          * @param {*} hrid 物品ItemId
@@ -226,7 +235,7 @@
          * @param {*} isProtec true使用保护之镜，false使用贤者之镜
          * @returns  {Object} 返回消息体
          */
-        createEnhanceMessage(hrid, curLevel, maxLevel, loadoutId, isProtec = true, protecId = null) {
+        createEnhanceMessage(hrid, curLevel, maxLevel, loadoutId, isProtec = true, protecId = null, maxCount = 0) {
             // 普通强化模式下保护物品选择贤者之镜则置为空
             protecId = isProtec && protecId === 'philosophers_mirror' ? null : protecId;
             const secondaryItemId = isProtec ? protecId || 'mirror_of_protection' : 'philosophers_mirror';
@@ -239,9 +248,9 @@
                     difficultyTier: 0,
                     enhancingMaxLevel: parseInt(maxLevel),
                     enhancingProtectionMinLevel: 2,
-                    hasMaxCount: false,
+                    hasMaxCount: maxCount > 0,
                     isStartNow: false,
-                    maxCount: 0,
+                    maxCount: maxCount,
                     primaryItemHash: `${characterId}::/item_locations/inventory::/items/${hrid}::${curLevel}`,
                     secondaryItemHash: `${characterId}::/item_locations/inventory::/items/${secondaryItemId}::0`,
                     shouldClearQueue: false,
@@ -621,14 +630,7 @@
                 targetLevel: parseInt(this.targetBtn?.value || 20),
                 // 强化等级0到目标等级的物品数量
                 get levelCount() {
-                    const _targetLevel = this.targetLevel;
-                    if (!this.itemId) return new Array(_targetLevel + 1).fill(0);
-                    // 获取0到目标等级强化等级的物品数量
-                    const result = [];
-                    for (let i = 0; i <= _targetLevel; i++) {
-                        result.push(utils.getCountById(this.itemId, i));
-                    }
-                    return result;
+                    return utils.getCountByIdAndMax(this.itemId, this.targetLevel);
                 },
             };
         },
@@ -639,6 +641,34 @@
             const statusMsgs = {1: '批量强化基底', 2: `批量合成+${baseInfo.targetLevel}`, 3: '自由强化'};
             if (this.taskStatus === -1) throw new Error('⚠️ 批量任务停止中，请稍等');
             if (this.taskStatus > 0) throw new Error(`⚠️ ${statusMsgs[this.taskStatus] || '批量'}任务执行中，请等待执行完成后再试`);
+        },
+
+        parseFreedomExpression(input) {
+            if (!input) return [];
+            const regex = /^(?:(?:(\+)?(?:((?:(\d{1,2})~)?(1?\d))-))?([1-9]|1\d|20))(?:\s*[:：]\s*(\d{1,4}))?\s*[:：]\s*(\d{1,4}|@)$/;
+            return input
+                .trim()
+                .split(/\s*[,，;；]\s*/)
+                .map((v) => {
+                    let m = null;
+                    if ((m = regex.exec(v)) !== null) {
+                        const r = {
+                            input: v,
+                            isProtec: m[1] !== '+',
+                            start: m[2],
+                            start1: parseInt(m[3] || -1),
+                            start2: parseInt(m[4] || 0),
+                            target: parseInt(m[5]),
+                            repeat: parseInt(m[6] || 0),
+                            count: m[7] === '@' ? 0 : parseInt(m[7]),
+                            countAuto: m[7] === '@',
+                        };
+                        r.success = r.start1 < r.start2 && r.start2 < r.target && (r.count > 0 || r.countAuto);
+                        return r;
+                    } else {
+                        return {success: false, input: v};
+                    }
+                });
         },
 
         async clickFreedomBtn() {
@@ -666,51 +696,86 @@
             if (!(await modal.confirm(tips, '自由强化提示'))) return;
 
             const useInfo =
-                '使用保护之镜强化0到m共300次输入m:300\n' +
-                '使用保护之镜强化n到m共300次输入n-m:300\n' +
-                '使用贤者之镜合成n到m共300次输入+n-m:300\n' +
+                '[贤者之镜][[起始等级1~]起始等级2-]目标等级[:重复次数]:任务数量\n' +
+                '[]的内容表示可省略，会取该项对应的默认值；贤者之镜用+表示；任务数量支持数字或@自动获取库存\n' +
+                '使用保护之镜强化0到m共300个任务输入m:300\n' +
+                '使用保护之镜强化n到m共300个任务输入n-m:300\n' +
+                '使用保护之镜强化n到m重复100次共300个任务输入n-m:100:300\n' +
+                '使用贤者之镜合成n到m共300个任务输入+n-m:300\n' +
                 '请输入自由强化信息，多个任务用逗号隔开';
             const input = (await modal.prompt(useInfo, '自由强化')) || '';
-            if (!input) return;
 
+            // 解析输入的表达式
+            const result = this.parseFreedomExpression(input);
+            console.log('自由强化表达式解析结果', result);
+
+            // 展示解析结果
+            if (result.length === 0) return;
+            let errCnt = 0, maxLevel = 0;
+            const parseInfo = result
+                .map((v, i) => {
+                    errCnt += v.success ? 0 : 1;
+                    maxLevel = Math.max(maxLevel, v.start2);
+                    return !v.success
+                        ? `❌ 第${i + 1}轮，无法解析${v.input}`
+                        : `第${i + 1}轮，${v.isProtec ? '普通强化' : '贤者之镜合成'}${itemName}+${v.start || v.start2}到+${v.target}${v.repeat === 0 ? '' : '重复' + v.repeat + '次'}共${v.countAuto ? '自动' : v.count}个任务`;
+                })
+                .join('\n');
+            if (errCnt > 0) {
+                modal.alert(parseInfo, '自由强化解析结果');
+                return;
+            }
+            if (!(await modal.confirm(parseInfo, '自由强化解析结果'))) return;
+
+            // 获取库存数量
+            const levelCount = utils.getCountByIdAndMax(itemId, maxLevel);
             const st = new Date().getTime();
             try {
                 // 发送强化指令
                 this.taskStatus = 3;
-                let count = 0,
+                let sum = 0,
                     round = 0;
-                const regex = /(?<=(?:^|[,，]))\s*(?:(?:(\+)?([0-9]|1[1-9])-)?([0-9]|1[1-9]|20))\s*[:：]\s*(\d{1,4})\s*([,，]|$)/g;
-                let result = null;
-                while ((result = regex.exec(input)) !== null) {
+                for (const v of result) {
+                    if (!v.success) continue;
                     round++;
-                    const isProtec = result[1] !== '+';
-                    const start = result[2] || 0;
-                    const target = result[3];
-                    const repeat = result[4];
-                    const info = `第${round}轮，${isProtec ? '普通强化' : '贤者之镜合成'}${itemName}+${start}到+${target}`;
-                    console.log(`自由强化，匹配内容：${result[0]}，${info}`);
-                    for (let i = 0; i < repeat; i++) {
+                    const {isProtec, start, start1, start2, target, repeat, countAuto} = v;
+                    let {count} = v;
+                    const _loadoutId = isProtec ? loadoutId : 0;
+                    if (countAuto) count = levelCount.slice(Math.max(0, start1), start2 + 1).reduce((sum, val) => sum + val, 0);
+                    const info = `第${round}轮，${isProtec ? '普通强化' : '贤者之镜合成'}${itemName}+${start || start2}到+${target}`;
+                    console.log(`自由强化，匹配内容：${v.input}，${info}`, levelCount);
+                    for (let i = 0; i < count; i++) {
+                        // 查找实际起始等级
+                        let cur = start2;
+                        if (start1 >= 0) {
+                            for (; cur >= start1; cur--) {
+                                if (cur === 0 || levelCount[cur] > 0) {
+                                    break;
+                                }
+                            }
+                        }
+                        levelCount[cur]--;
                         let retryCnt = 0;
                         while (retryCnt++ <= retry) {
                             try {
                                 if (this.taskStatus === -1) {
                                     modal.alert(
-                                        `🚫 自由强化中止！\n共发起 ${round} 轮 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
+                                        `🚫 自由强化中止！\n共发起 ${round} 轮 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
                                         '自由强化',
                                     );
                                     return;
                                 }
-                                const message = utils.createEnhanceMessage(itemId, start, target, isProtec ? loadoutId : 0, isProtec, protecId);
+                                const message = utils.createEnhanceMessage(itemId, cur, target, _loadoutId, isProtec, protecId, repeat);
                                 const result = await utils.sendEnhanceTask(ws, message);
-                                const msg = `♻️ 自由强化，${info}: ${i + 1}/${repeat}任务执行成功`;
-                                console.log(msg, message, result);
+                                const msg = `♻️ 自由强化，${info}: ${i + 1}/${count}任务执行成功`;
+                                // console.log(msg, message, result);
                                 modal.toast(msg);
-                                count++;
+                                sum++;
                                 if (this.taskStatus > 0) await utils.sleepRandom(addQueueSleepMinTime, addQueueSleepMaxTime);
                                 break;
                             } catch (err) {
                                 if (retryCnt > retry) throw err;
-                                const msg = `⚠️ 自由强化，${info}: ${i + 1}/${repeat}任务执行失败，重试第${retryCnt}次。${err.message || ''}`;
+                                const msg = `⚠️ 自由强化，${info}: ${i + 1}/${count}任务执行失败，重试第${retryCnt}次。${err.message || ''}`;
                                 console.log(msg);
                                 modal.toast(msg);
                             }
@@ -718,13 +783,14 @@
                     }
                 }
 
-                modal.alert(`✅ 自由强化完成！\n共发起 ${round} 轮 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`, '自由强化');
+                modal.alert(`✅ 自由强化完成！\n共发起 ${round} 轮 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`, '自由强化');
             } catch (err) {
                 console.error(err);
                 modal.alert(`❌ 自由强化任务出现异常，耗时${utils.getShowTime(st)}。${err.message || ''}`, '自由强化');
             } finally {
                 this.taskStatus = 0;
             }
+            console.log('自由强化结束，levelCount', levelCount);
         },
 
         changeSelectBtn() {
@@ -880,7 +946,7 @@
             try {
                 // 发送强化指令
                 this.taskStatus = 1;
-                let count = 0;
+                let sum = 0;
                 for (const key in enhanceTaskKeys) {
                     const value = enhanceTaskKeys[key];
                     const level = parseInt(value);
@@ -891,7 +957,7 @@
                             try {
                                 if (this.taskStatus === -1) {
                                     modal.alert(
-                                        `🚫 批量强化基底中止！\n使用 (${low}, ${low + 1}) 目标+${targetLevel}，共发起 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
+                                        `🚫 批量强化基底中止！\n使用 (${low}, ${low + 1}) 目标+${targetLevel}，共发起 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
                                         `批量强化+${targetLevel}基底`,
                                     );
                                     return;
@@ -899,9 +965,9 @@
                                 const message = utils.createEnhanceMessage(itemId, childTask[i], level, loadoutId, true, protecId);
                                 const result = await utils.sendEnhanceTask(ws, message);
                                 const msg = `♻️ 批量强化基底，${itemName}+${level}: ${i + 1}/${childTask.length}任务执行成功`;
-                                console.log(msg, message, result);
+                                // console.log(msg, message, result);
                                 modal.toast(msg);
-                                count++;
+                                sum++;
                                 if (this.taskStatus > 0) await utils.sleepRandom(addQueueSleepMinTime, addQueueSleepMaxTime);
                                 break;
                             } catch (err) {
@@ -915,12 +981,15 @@
                 }
 
                 modal.alert(
-                    `✅ 批量强化基底完成！\n使用 (${low}, ${low + 1}) 目标+${targetLevel}，共发起 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
+                    `✅ 批量强化基底完成！\n使用 (${low}, ${low + 1}) 目标+${targetLevel}，共发起 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
                     `批量强化+${targetLevel}基底`,
                 );
             } catch (err) {
                 console.error(err);
-                modal.alert(`❌ 执行基底强化任务出现异常，耗时${utils.getShowTime(st)}。${err.message || ''}`, `批量强化+${targetLevel}基底`);
+                modal.alert(
+                    `❌ 执行基底强化任务出现异常，耗时${utils.getShowTime(st)}。${err.message || ''}`,
+                    `批量强化+${targetLevel}基底`,
+                );
             } finally {
                 this.taskStatus = 0;
             }
@@ -963,7 +1032,7 @@
                 try {
                     // 发送强化指令
                     this.taskStatus = 2;
-                    let count = 0;
+                    let sum = 0;
                     for (let i = 0; i < minMergeTask.length; i++) {
                         let retryCnt = 0;
                         while (retryCnt++ <= retry) {
@@ -972,7 +1041,7 @@
                             try {
                                 if (this.taskStatus === -1) {
                                     modal.alert(
-                                        `🚫 批量合成+${targetLevel}中止！\n共发起 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
+                                        `🚫 批量合成+${targetLevel}中止！\n共发起 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
                                         `批量合成+${targetLevel}`,
                                     );
                                     return;
@@ -980,9 +1049,9 @@
                                 const message = utils.createEnhanceMessage(itemId, level, maxLevel, loadoutId, false);
                                 const result = await utils.sendEnhanceTask(ws, message);
                                 const msg = `♻️ 批量合成+${targetLevel}，${itemName}${i + 1}/${minMergeTask.length}任务执行成功，${level}→${maxLevel}`;
-                                console.log(msg, message, result);
+                                // console.log(msg, message, result);
                                 modal.toast(msg);
-                                count++;
+                                sum++;
                                 if (this.taskStatus > 0) await utils.sleepRandom(addQueueSleepMinTime, addQueueSleepMaxTime);
                                 break;
                             } catch (err) {
@@ -994,10 +1063,16 @@
                         }
                     }
 
-                    modal.alert(`✅ 批量合成+${targetLevel}任务完成！\n共发起 ${count} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`, `批量合成+${targetLevel}`);
+                    modal.alert(
+                        `✅ 批量合成+${targetLevel}任务完成！\n共发起 ${sum} 次${itemName}强化任务，耗时${utils.getShowTime(st)}`,
+                        `批量合成+${targetLevel}`,
+                    );
                 } catch (err) {
                     console.error(err);
-                    modal.alert(`❌ 执行批量合成+${targetLevel}任务出现异常，耗时${utils.getShowTime(st)}。${err.message || ''}`, `批量合成+${targetLevel}`);
+                    modal.alert(
+                        `❌ 执行批量合成+${targetLevel}任务出现异常，耗时${utils.getShowTime(st)}。${err.message || ''}`,
+                        `批量合成+${targetLevel}`,
+                    );
                 } finally {
                     this.taskStatus = 0;
                 }
@@ -1042,7 +1117,7 @@
         // 判断是否是在强化页面
         const mwiEnhanceBtn = document.querySelector('.EnhancingPanel_enhancingAction__2GJtD .Button_success__6d6kU');
         if (!mwiEnhanceBtn) {
-            document.querySelectorAll('.easy20-component')?.forEach(el => el.remove());
+            document.querySelectorAll('.easy20-component')?.forEach((el) => el.remove());
             return;
         }
 
